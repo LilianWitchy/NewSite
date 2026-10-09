@@ -1,0 +1,1306 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#21152f">
+
+    <title>Lilians Kräutermagie – Wo Kräuter flüstern und Geschichten leuchten</title>
+
+    <meta name="description" content="Entdecke Lilians Kräutermagie: Kräuterwissen, Musik, Bücher und eine bunte Welt voller Natur, Geschichten und Magie.">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           FARBEN UND GRUNDLAGEN
+        ======================================== */
+
+        :root {
+            --night: #21152f;
+            --night-light: #302044;
+            --plum: #713e78;
+            --berry: #bd4d83;
+            --teal: #54c6b2;
+            --forest: #245547;
+            --gold: #f0c777;
+            --cream: #fff0d5;
+            --muted: #d8c9e0;
+
+            --shadow: 0 18px 45px rgba(10, 5, 20, 0.28);
+            --radius: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--cream);
+
+            background:
+                radial-gradient(
+                    ellipse at 12% 12%,
+                    rgba(113, 62, 120, 0.42),
+                    transparent 34rem
+                ),
+                radial-gradient(
+                    ellipse at 88% 42%,
+                    rgba(36, 85, 71, 0.28),
+                    transparent 36rem
+                ),
+                var(--night);
+
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 1rem;
+            z-index: 1000;
+            padding: 0.75rem 1rem;
+            color: var(--night);
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .skip-link:focus {
+            left: 1rem;
+        }
+
+
+        /* ========================================
+           KOPFZEILE UND NAVIGATION
+        ======================================== */
+
+        .site-header {
+            position: relative;
+            z-index: 20;
+            background: rgba(27, 17, 40, 0.92);
+            border-bottom: 1px solid rgba(240, 199, 119, 0.24);
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-wrap {
+            width: min(1180px, calc(100% - 2rem));
+            min-height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+
+            min-width: max-content;
+            color: var(--cream);
+            text-decoration: none;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .main-nav a {
+            padding: 0.65rem 0.8rem;
+            border-radius: 999px;
+
+            color: #f6e8fa;
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 800;
+
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(84, 198, 178, 0.15);
+            color: var(--teal);
+        }
+
+        .main-nav .nav-highlight {
+            background: var(--gold);
+            color: var(--night);
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+
+            padding: 0.55rem 0.8rem;
+            color: var(--cream);
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 12px;
+
+            cursor: pointer;
+        }
+
+
+        /* ========================================
+           TITELBEREICH
+        ======================================== */
+
+        .hero {
+            min-height: 600px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            isolation: isolate;
+
+            padding: 5rem 1.25rem;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(25, 15, 38, 0.88),
+                    rgba(25, 15, 38, 0.45) 58%,
+                    rgba(25, 15, 38, 0.28)
+                ),
+                linear-gradient(
+                    0deg,
+                    var(--night),
+                    transparent 32%
+                ),
+                url("picture/test.jpg") center 45% / cover no-repeat;
+
+            border-bottom: 1px solid rgba(240, 199, 119, 0.2);
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        .hero::before {
+            width: 320px;
+            height: 320px;
+
+            right: 5%;
+            top: 12%;
+
+            border: 1px solid rgba(240, 199, 119, 0.34);
+
+            box-shadow:
+                0 0 90px rgba(189, 77, 131, 0.18),
+                inset 0 0 65px rgba(84, 198, 178, 0.12);
+        }
+
+        .hero::after {
+            width: 9px;
+            height: 9px;
+
+            right: 19%;
+            top: 25%;
+
+            background: var(--gold);
+
+            box-shadow:
+                45px 65px 0 2px rgba(84, 198, 178, 0.8),
+                -65px 135px 0 1px rgba(240, 199, 119, 0.8),
+                95px 180px 0 1px rgba(189, 77, 131, 0.9),
+                -145px 42px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-inner {
+            width: min(1180px, 100%);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+
+            color: var(--gold);
+
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0.8rem 0 1rem;
+
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(3.3rem, 8vw, 6.8rem);
+            line-height: 0.92;
+            letter-spacing: -0.035em;
+        }
+
+        .hero h1 span {
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 610px;
+            color: #f0e4f3;
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .button {
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            padding: 0.8rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+
+            text-decoration: none;
+            font-weight: 800;
+
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.06);
+        }
+
+        .button-primary {
+            color: var(--night);
+            background: var(--gold);
+        }
+
+        .button-secondary {
+            color: var(--cream);
+            border-color: rgba(255, 255, 255, 0.45);
+            background: rgba(33, 21, 47, 0.42);
+        }
+
+
+        /* ========================================
+           SPRACHWAHL
+        ======================================== */
+
+        .language-switcher {
+            position: absolute;
+            z-index: 5;
+            top: 1rem;
+            right: max(1rem, calc((100vw - 1180px) / 2));
+
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-switcher a {
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+            background: rgba(25, 15, 38, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+        }
+
+        .language-switcher img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+
+        /* ========================================
+           ALLGEMEINE ABSCHNITTE
+        ======================================== */
+
+        main {
+            overflow: hidden;
+        }
+
+        .section {
+            width: min(1180px, calc(100% - 2rem));
+            margin: auto;
+            padding: 5rem 0;
+        }
+
+        .section-heading {
+            max-width: 740px;
+            margin-bottom: 2rem;
+        }
+
+        .section-heading h2 {
+            margin: 0.45rem 0 0.8rem;
+
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .section-heading.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+
+        /* ========================================
+           VIER THEMENWELTEN
+        ======================================== */
+
+        .world-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .world-card {
+            position: relative;
+            isolation: isolate;
+            min-height: 270px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+
+            overflow: hidden;
+            padding: 1.4rem;
+
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: var(--shadow);
+
+            text-decoration: none;
+            transition: transform 0.25s ease;
+        }
+
+        .world-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .world-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background: var(--card-bg);
+        }
+
+        .world-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+
+            background: linear-gradient(
+                0deg,
+                rgba(20, 12, 30, 0.96),
+                rgba(20, 12, 30, 0.08) 90%
+            );
+        }
+
+        .world-card .symbol {
+            position: absolute;
+            top: 1rem;
+            right: 1.1rem;
+
+            font-size: 3rem;
+            opacity: 0.9;
+            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .world-card h3 {
+            margin: 0 0 0.45rem;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+            line-height: 1.05;
+            font-weight: 600;
+        }
+
+        .world-card p {
+            margin: 0;
+            color: #f2e8f3;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .world-card .card-link {
+            margin-top: 0.9rem;
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .herbs-card {
+            --card-bg:
+                radial-gradient(circle at 80% 15%, #7cbb8c, transparent 35%),
+                linear-gradient(145deg, #245547, #172e34);
+        }
+
+        .music-card {
+            --card-bg:
+                radial-gradient(circle at 78% 20%, #e78db0, transparent 32%),
+                linear-gradient(145deg, #7b3e77, #302044);
+        }
+
+        .books-card {
+            --card-bg:
+                radial-gradient(circle at 78% 15%, #f2c778, transparent 32%),
+                linear-gradient(145deg, #9a4f51, #42233e);
+        }
+
+        .newbook-card {
+            --card-bg:
+                radial-gradient(circle at 80% 15%, #65d1c4, transparent 32%),
+                linear-gradient(145deg, #294f76, #21152f);
+        }
+
+
+        /* ========================================
+           HERVORGEHOBENE THEMENBEREICHE
+        ======================================== */
+
+        .feature-band {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 2rem;
+
+            padding: clamp(1.5rem, 4vw, 3.5rem);
+
+            border-radius: 32px;
+            overflow: hidden;
+
+            background: linear-gradient(
+                120deg,
+                rgba(113, 62, 120, 0.9),
+                rgba(48, 32, 68, 0.95) 55%,
+                rgba(36, 85, 71, 0.85)
+            );
+
+            border: 1px solid rgba(240, 199, 119, 0.28);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-band h2 {
+            margin: 0.7rem 0 1rem;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.4rem, 4vw, 3.8rem);
+            line-height: 0.98;
+            font-weight: 600;
+        }
+
+        .feature-band p {
+            color: #f0e4f3;
+        }
+
+        .feature-art {
+            min-height: 300px;
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(33, 21, 47, 0.1),
+                    rgba(33, 21, 47, 0.1)
+                ),
+                url("picture/baum.jpg") center / cover no-repeat;
+
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            transform: rotate(1.5deg);
+        }
+
+
+        /* ========================================
+           MUSIK UND BÜCHER
+        ======================================== */
+
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .panel {
+            padding: clamp(1.5rem, 3vw, 2.3rem);
+
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.045);
+        }
+
+        .panel h3 {
+            margin: 0.4rem 0 0.7rem;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+            line-height: 1.1;
+            font-weight: 600;
+        }
+
+        .panel p {
+            color: var(--muted);
+        }
+
+        .panel-link {
+            color: var(--gold);
+            font-weight: 800;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+
+
+        /* ========================================
+           NEWSLETTER
+        ======================================== */
+
+        .newsletter {
+            padding: clamp(2rem, 5vw, 4rem);
+            text-align: center;
+            color: #261b30;
+
+            border-radius: 32px;
+
+            background:
+                radial-gradient(circle at 10% 10%, #fff1c8, transparent 35%),
+                linear-gradient(135deg, #e6b7d3, #b8e5d9 55%, #f3d08d);
+
+            box-shadow: var(--shadow);
+        }
+
+        .newsletter h2 {
+            margin: 0.5rem 0;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.3rem, 5vw, 3.6rem);
+            line-height: 1;
+            font-weight: 600;
+        }
+
+        .newsletter p {
+            max-width: 680px;
+            margin: 0.7rem auto 1.5rem;
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .newsletter input {
+            min-width: min(100%, 300px);
+            min-height: 48px;
+            padding: 0.8rem 1rem;
+
+            color: #261b30;
+            background: rgba(255, 255, 255, 0.82);
+
+            border: 1px solid rgba(38, 27, 48, 0.3);
+            border-radius: 999px;
+        }
+
+        .newsletter button {
+            min-height: 48px;
+            padding: 0.8rem 1.25rem;
+
+            color: white;
+            background: var(--night);
+
+            border: 0;
+            border-radius: 999px;
+
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .newsletter small {
+            display: block;
+            max-width: 700px;
+            margin: 1rem auto 0;
+            font-size: 0.78rem;
+        }
+
+
+        /* ========================================
+           FUSSZEILE
+        ======================================== */
+
+        footer {
+            margin-top: 5rem;
+            background: #160f21;
+            border-top: 1px solid rgba(240, 199, 119, 0.25);
+        }
+
+        .footer-inner {
+            width: min(1180px, calc(100% - 2rem));
+            margin: auto;
+            padding: 2rem 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            text-underline-offset: 3px;
+        }
+
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 980px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                padding: 0.4rem 0 1rem;
+            }
+
+            .main-nav.open {
+                display: flex;
+            }
+
+            .main-nav a {
+                border-radius: 12px;
+            }
+
+            .main-nav .nav-highlight {
+                margin-top: 0.35rem;
+                text-align: center;
+            }
+
+            .world-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                min-height: 540px;
+            }
+        }
+
+
+        /* ========================================
+           SMARTPHONES
+        ======================================== */
+
+        @media (max-width: 650px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero {
+                min-height: 520px;
+                padding: 5rem 1rem 4rem;
+                background-position: 58% center;
+            }
+
+            .hero::before {
+                width: 210px;
+                height: 210px;
+                right: -2rem;
+                top: 22%;
+            }
+
+            .language-switcher {
+                top: 0.7rem;
+                right: 0.7rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 15vw, 4.7rem);
+            }
+
+            .section {
+                padding: 3.5rem 0;
+            }
+
+            .world-grid,
+            .split,
+            .feature-band {
+                grid-template-columns: 1fr;
+            }
+
+            .world-card {
+                min-height: 230px;
+            }
+
+            .feature-art {
+                min-height: 230px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        /* Weniger Bewegung, wenn im Betriebssystem aktiviert */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+
+    <header class="site-header">
+        <div class="nav-wrap">
+
+            <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>Lilians Kräutermagie</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span aria-hidden="true">☰</span>
+                Menü
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="steckbriefe.html">Kräuterwelt</a>
+                <a href="lieder.html">Musik</a>
+                <a href="meinebücher.html">Bücher</a>
+                <a href="about.html">Über Lilian</a>
+                <a class="nav-highlight" href="#neues-buch">Neues Buch ✦</a>
+                <a href="angebot.html">Angebote</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================
+         TITELBEREICH
+    ======================================== -->
+
+    <section class="hero" aria-labelledby="hero-title">
+
+        <div class="language-switcher" aria-label="Sprache wählen">
+            <a href="index.html" aria-label="Deutsch">
+                <img src="picture/defavicon.png" alt="">
+            </a>
+
+            <a href="/en/" aria-label="English">
+                <img src="picture/enfavicon.png" alt="">
+            </a>
+
+            <a href="/dk/" aria-label="Dansk">
+                <img src="picture/dkfavicon.png" alt="">
+            </a>
+        </div>
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                ✧ Natur · Worte · Klang · Magie ✧
+            </span>
+
+            <h1 id="hero-title">
+                Wo Kräuter flüstern und
+                <span>Geschichten leuchten.</span>
+            </h1>
+
+            <p>
+                Willkommen in meiner bunten Welt zwischen Pflanzenwissen,
+                Musik, Büchern und den kleinen Wundern des Alltags.
+                Schön, dass du hier bist.
+            </p>
+
+            <div class="hero-actions">
+                <a class="button button-primary" href="#welten">
+                    Entdecke meine Welten →
+                </a>
+
+                <a class="button button-secondary" href="about.html">
+                    Lerne Lilian kennen
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         HAUPTINHALT
+    ======================================== -->
+
+    <main id="inhalt">
+
+
+        <!-- VIER THEMENWELTEN -->
+
+        <section class="section" id="welten">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Finde deinen Weg</span>
+
+                <h2>Vier Türen in eine bunte Welt</h2>
+
+                <p>
+                    Stöbere, lass dich inspirieren und entdecke,
+                    was dich gerade ruft. Jede Welt hat ihren eigenen Klang –
+                    und doch gehören alle zusammen.
+                </p>
+
+            </div>
+
+
+            <div class="world-grid">
+
+                <a class="world-card herbs-card" href="steckbriefe.html">
+                    <span class="symbol" aria-hidden="true">❧</span>
+
+                    <h3>Kräuter & Pflanzen</h3>
+
+                    <p>
+                        Pflanzenporträts, Kräuterwissen,
+                        Rezepte und kreative Ideen aus der Natur.
+                    </p>
+
+                    <span class="card-link">In die Kräuterwelt →</span>
+                </a>
+
+
+                <a class="world-card music-card" href="lieder.html">
+                    <span class="symbol" aria-hidden="true">♫</span>
+
+                    <h3>Musik & Klang</h3>
+
+                    <p>
+                        Lieder, Texte und Klänge für unterschiedliche
+                        Stimmungen und Lebensmomente.
+                    </p>
+
+                    <span class="card-link">Musik entdecken →</span>
+                </a>
+
+
+                <a class="world-card books-card" href="meinebücher.html">
+                    <span class="symbol" aria-hidden="true">✧</span>
+
+                    <h3>Bücher & Geschichten</h3>
+
+                    <p>
+                        Geschriebene Schätze, Bücher und Hörgeschichten
+                        zum Eintauchen.
+                    </p>
+
+                    <span class="card-link">Zu den Büchern →</span>
+                </a>
+
+
+                <a class="world-card newbook-card" href="#neues-buch">
+                    <span class="symbol" aria-hidden="true">☾</span>
+
+                    <h3>Ein neues Kapitel</h3>
+
+                    <p>
+                        Ein neues Buch wächst heran.
+                        Hier entsteht nach und nach ein Blick hinter die Kulissen.
+                    </p>
+
+                    <span class="card-link">Mehr erfahren →</span>
+                </a>
+
+            </div>
+        </section>
+
+
+
+        <!-- KRÄUTERWELT -->
+
+        <section class="section" id="kraeuter">
+
+            <div class="feature-band">
+
+                <div>
+
+                    <span class="eyebrow">Mit den Händen in der Erde</span>
+
+                    <h2>
+                        Die Magie wächst direkt vor unserer Tür.
+                    </h2>
+
+                    <p>
+                        Manchmal beginnt eine Entdeckung mit einem Blatt,
+                        einem Duft oder einer einfachen Frage.
+                        Tauche ein in die Welt der Kräuter – mit
+                        Pflanzensteckbriefen, Rezeptideen und Inspiration
+                        für deinen Alltag.
+                    </p>
+
+                    <a class="button button-primary" href="steckbriefe.html">
+                        Kräuterwissen entdecken →
+                    </a>
+
+                </div>
+
+                <div
+                    class="feature-art"
+                    role="img"
+                    aria-label="Baum und Natur als Symbol für Wachstum und Verbundenheit"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- BÜCHER UND MUSIK -->
+
+        <section class="section">
+
+            <div class="section-heading center">
+
+                <span class="eyebrow">Von Herzen geschaffen</span>
+
+                <h2>Worte, die bleiben. Klänge, die begleiten.</h2>
+
+                <p>
+                    Meine kreativen Arbeiten gehören genauso zu dieser Welt
+                    wie die Kräuter. Hier findest du eigene Wege in Bücher,
+                    Hörbücher und Musik.
+                </p>
+
+            </div>
+
+
+            <div class="split">
+
+                <article class="panel">
+
+                    <span class="eyebrow">Geschriebene Schätze</span>
+
+                    <h3>Bücher zum Entdecken und Weiterträumen</h3>
+
+                    <p>
+                        Stöbere durch meine Bücher und Hörbücher.
+                        Zu jedem Werk können nach und nach mehr Einblicke,
+                        Hintergründe und Hörproben dazukommen.
+                    </p>
+
+                    <p>
+                        <a class="panel-link" href="meinebücher.html">
+                            Meine Bücher ansehen →
+                        </a>
+                    </p>
+
+                    <p>
+                        <a class="panel-link" href="hörbuch.html">
+                            Zu den Hörbüchern →
+                        </a>
+                    </p>
+
+                </article>
+
+
+                <article class="panel">
+
+                    <span class="eyebrow">Musik & Klang</span>
+
+                    <h3>Ein Lied für einen bestimmten Moment</h3>
+
+                    <p>
+                        Musik kann Erinnerungen wecken, trösten,
+                        begleiten oder einfach Freude machen.
+                        Entdecke meine Lieder und die Geschichten dahinter.
+                    </p>
+
+                    <p>
+                        <a class="panel-link" href="lieder.html">
+                            Meine Musik entdecken →
+                        </a>
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DAS NEUE BUCH -->
+
+        <section class="section" id="neues-buch">
+
+            <div class="feature-band">
+
+                <div>
+
+                    <span class="eyebrow">Ein neues Kapitel entsteht</span>
+
+                    <h2>
+                        Manche Geschichten wachsen im Verborgenen.
+                    </h2>
+
+                    <p>
+                        Seit Monaten entsteht ein neues Buch.
+                        Auf dieser Seite kann nach und nach ein kleines
+                        Fenster in den Schreibprozess geöffnet werden –
+                        mit Gedanken, Inspirationen und ausgewählten
+                        Einblicken, sobald sie bereit sind.
+                    </p>
+
+                    <a class="button button-secondary" href="kontakt.html">
+                        Bleib mit mir in Verbindung →
+                    </a>
+
+                </div>
+
+                <div
+                    class="feature-art"
+                    style="background-image:
+                        linear-gradient(
+                            135deg,
+                            rgba(33, 21, 47, 0.1),
+                            rgba(113, 62, 120, 0.15)
+                        ),
+                        url('picture/test.jpg');"
+                    role="img"
+                    aria-label="Atmosphärisches Bild als Platzhalter für das neue Buchprojekt"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- NEWSLETTER -->
+
+        <section class="section" id="newsletter">
+
+            <div class="newsletter">
+
+                <span class="eyebrow" style="color: #713e78;">
+                    Post aus meiner Welt
+                </span>
+
+                <h2>Ein bisschen Magie im Postfach?</h2>
+
+                <p>
+                    Erfahre mehr über meine Arbeit, neue Bücher,
+                    Kräuterideen und kommende Projekte.
+                </p>
+
+                <form action="https://formspree.io/f/mkgjyywk" method="POST">
+
+                    <label for="email" class="skip-link">
+                        Deine E-Mail-Adresse
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        autocomplete="email"
+                        placeholder="deine@email.de"
+                    >
+
+                    <button type="submit">
+                        Ich bin dabei ✦
+                    </button>
+
+                </form>
+
+                <small>
+                    Mit dem Absenden erklärst du dich mit der Speicherung
+                    deiner E-Mail-Adresse zum Zweck des Newsletter-Versands
+                    einverstanden.
+                    <a href="agb.html">Mehr erfahren</a>.
+                    Bitte prüfe, ob deine Datenschutzhinweise und die
+                    Newsletter-Anmeldung zu deinem tatsächlichen Ablauf passen.
+                </small>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         FUSSZEILE
+    ======================================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div>
+                © Lilians Kräutermagie ·
+                Mit Liebe, Neugier und einer Prise Magie gestaltet.
+            </div>
+
+            <div class="footer-links">
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="agb.html">AGB</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT: MOBILES MENÜ
+    ======================================== -->
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector("#main-nav");
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuButton.querySelector("span").textContent =
+                isOpen ? "✕" : "☰";
+        });
+
+
+        // Menü nach Auswahl eines Links schließen.
+
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                mainNav.classList.remove("open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuButton.querySelector("span").textContent = "☰";
+            });
+        });
+    </script>
+
+</body>
+</html>
