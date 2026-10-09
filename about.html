@@ -9,783 +9,772 @@
     <meta name="description" content="Lerne Elisabeth-Ann Wolf kennen: ihre Liebe zu Kräutern, Natur, Kreativität, Traumreisen und magischen Geschichten.">
 
     <link rel="icon" href="picture/defavicon.png" type="image/png">
-
-    <!-- Gemeinsame Gestaltung der Website -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Schriftarten wie auf der Startseite -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-   
+    <style>
+        /* =========================================
+           LILIAN'S KRÄUTER-MAGIE
+           HELL, CREMEFARBEN UND LICHTVOLL
+           Nur für die About-Seite
+           ========================================= */
 
-<style>
-    /* =========================================
-       ÜBER MICH – WEISS, LICHTVOLL UND BUNT
-       ========================================= */
-
-    body.theme-about {
-        --about-green: #83a978;
-        --about-green-light: #e7f2df;
-        --about-green-dark: #52734b;
-        --about-rose: #d58aaa;
-        --about-rose-light: #f9e5ed;
-        --about-purple: #ad96d0;
-        --about-purple-light: #f0e9fa;
-        --about-brown: #795d4d;
-        --about-brown-light: #c6a58c;
-        --about-gold: #d4ad51;
-        --about-cream: #ffffff;
-        --about-text: #514946;
-        --about-muted: #716561;
-
-        background-color: #ffffff;
-        background-image:
-            radial-gradient(
-                ellipse at 5% 7%,
-                rgba(255, 224, 165, 0.25),
-                transparent 28%
-            ),
-            radial-gradient(
-                ellipse at 95% 17%,
-                rgba(221, 204, 248, 0.22),
-                transparent 30%
-            ),
-            radial-gradient(
-                ellipse at 4% 48%,
-                rgba(207, 235, 193, 0.18),
-                transparent 28%
-            ),
-            radial-gradient(
-                ellipse at 96% 75%,
-                rgba(248, 208, 224, 0.22),
-                transparent 30%
-            );
-
-        color: var(--about-text);
-        font-family: "Nunito Sans", sans-serif;
-        min-height: 100vh;
-    }
-
-    body.theme-about *,
-    body.theme-about *::before,
-    body.theme-about *::after {
-        box-sizing: border-box;
-    }
-
-    body.theme-about a {
-        color: inherit;
-    }
-
-    body.theme-about h1,
-    body.theme-about h2,
-    body.theme-about h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 600;
-        line-height: 1.15;
-    }
-
-    body.theme-about h2 {
-        color: #bd7798;
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin: 0 0 1rem;
-    }
-
-    body.theme-about p {
-        line-height: 1.85;
-    }
-
-    /* =========================================
-       FEINE LICHTPUNKTE
-       ========================================= */
-
-    .about-sparkles {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-        overflow: hidden;
-    }
-
-    .about-sparkles span {
-        position: absolute;
-        display: block;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background: #e4bd60;
-        box-shadow: 0 0 12px rgba(228, 189, 96, 0.65);
-        opacity: 0.55;
-        animation: aboutTwinkle 4s ease-in-out infinite alternate;
-    }
-
-    .about-sparkles span:nth-child(1) {
-        top: 13%;
-        left: 9%;
-    }
-
-    .about-sparkles span:nth-child(2) {
-        top: 28%;
-        left: 88%;
-        animation-delay: 1s;
-    }
-
-    .about-sparkles span:nth-child(3) {
-        top: 55%;
-        left: 6%;
-        animation-delay: 2s;
-    }
-
-    .about-sparkles span:nth-child(4) {
-        top: 73%;
-        left: 93%;
-        animation-delay: 0.5s;
-    }
-
-    .about-sparkles span:nth-child(5) {
-        top: 88%;
-        left: 27%;
-        animation-delay: 1.5s;
-    }
-
-    @keyframes aboutTwinkle {
-        from {
-            opacity: 0.25;
-            transform: scale(0.8);
+        html:has(body.theme-about) {
+            background: #fffdf8 !important;
+            color-scheme: light;
         }
 
-        to {
-            opacity: 0.85;
-            transform: scale(1.5);
-        }
-    }
-
-    .about-page {
-        position: relative;
-        z-index: 1;
-    }
-
-    .about-shell {
-        width: min(1120px, calc(100% - 36px));
-        margin-inline: auto;
-    }
-
-    /* =========================================
-       NAVIGATION – WEISS, ROSÉ UND GOLD
-       ========================================= */
-
-    .about-nav {
-        position: relative;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.96);
-        border-bottom: 1px solid #f0e5e9;
-        box-shadow: 0 4px 20px rgba(105, 79, 87, 0.045);
-        backdrop-filter: blur(14px);
-    }
-
-    .about-nav-inner {
-        width: min(1200px, calc(100% - 36px));
-        min-height: 78px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-    }
-
-    .about-brand {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(1.35rem, 3vw, 1.85rem);
-        font-weight: 700;
-        text-decoration: none;
-        color: #80658c !important;
-        white-space: nowrap;
-    }
-
-    .about-brand span {
-        color: #c77599;
-    }
-
-    .about-menu {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        gap: 0.35rem;
-    }
-
-    .about-menu a {
-        display: inline-block;
-        padding: 0.65rem 0.8rem;
-        border-radius: 999px;
-        color: #625753 !important;
-        text-decoration: none;
-        font-size: 0.92rem;
-        font-weight: 700;
-        transition: background 0.25s ease, color 0.25s ease;
-    }
-
-    .about-menu a:hover,
-    .about-menu a[aria-current="page"] {
-        color: #a6547b !important;
-        background: #fff0f5;
-    }
-
-    .about-menu-toggle {
-        display: none;
-        border: 1px solid #e7c4d2;
-        border-radius: 12px;
-        background: #ffffff;
-        color: #98627d;
-        padding: 0.6rem 0.85rem;
-        font: inherit;
-        font-weight: 700;
-        cursor: pointer;
-    }
-
-    /* =========================================
-       HERO – VIEL WEISS, SANFTE FARBLICHTER
-       ========================================= */
-
-    .about-hero {
-        position: relative;
-        isolation: isolate;
-        overflow: hidden;
-        padding: clamp(4rem, 9vw, 7.5rem) 0 4rem;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.45);
-    }
-
-    .about-hero::before,
-    .about-hero::after {
-        content: "";
-        position: absolute;
-        width: 330px;
-        height: 330px;
-        border-radius: 50%;
-        filter: blur(75px);
-        pointer-events: none;
-        z-index: -1;
-        opacity: 0.42;
-    }
-
-    .about-hero::before {
-        top: -150px;
-        left: -120px;
-        background: #dcefd2;
-    }
-
-    .about-hero::after {
-        right: -120px;
-        bottom: -150px;
-        background: #f3d8ed;
-    }
-
-    .about-eyebrow {
-        position: relative;
-        display: inline-block;
-        margin: 0 0 1.2rem;
-        padding: 0.6rem 1.1rem;
-        border: 1px solid #ead7a6;
-        border-radius: 999px;
-        background: #ffffff;
-        color: #a17e35;
-        font-size: 0.82rem;
-        font-weight: 800;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-        box-shadow: 0 5px 18px rgba(140, 112, 53, 0.06);
-    }
-
-    .about-hero h1 {
-        position: relative;
-        max-width: 900px;
-        margin: 0 auto 1.25rem;
-        color: #826b92;
-        font-size: clamp(3rem, 8vw, 5.8rem);
-        text-wrap: balance;
-    }
-
-    .about-hero h1 span {
-        color: #ce7fa1;
-        font-style: italic;
-    }
-
-    .about-hero-intro {
-        position: relative;
-        max-width: 720px;
-        margin: 0 auto;
-        color: #6e625d;
-        font-size: clamp(1rem, 2vw, 1.2rem);
-    }
-
-    .about-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin: 2rem auto 0;
-        color: #d2ad55;
-        font-size: 1.5rem;
-    }
-
-    .about-divider::before,
-    .about-divider::after {
-        content: "";
-        width: 70px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #d2ad55);
-    }
-
-    .about-divider::after {
-        transform: rotate(180deg);
-    }
-
-    /* =========================================
-       PORTRÄT – ANTIKER GOLDRAHMEN
-       ========================================= */
-
-    .about-portrait-section {
-        padding: 0 0 4rem;
-        background: rgba(255, 255, 255, 0.35);
-    }
-
-    .about-portrait-layout {
-        display: grid;
-        grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.35fr);
-        align-items: center;
-        gap: clamp(2rem, 6vw, 5rem);
-    }
-
-    .about-portrait-wrap {
-        display: flex;
-        justify-content: center;
-        padding: 1.2rem 0;
-    }
-
-    .portrait-frame {
-        position: relative;
-        width: min(100%, 340px);
-        padding: 13px;
-        border: 3px ridge #d8b35f;
-        border-radius: 7px;
-        background: linear-gradient(
-            135deg,
-            #fff4c7 0%,
-            #c69c4c 15%,
-            #fff0ae 29%,
-            #b58a40 47%,
-            #f7df91 64%,
-            #bd9147 82%,
-            #fff3bf 100%
-        );
-        box-shadow:
-            0 0 0 3px #fff5d8,
-            0 0 0 6px #d5ad5d,
-            0 15px 38px rgba(121, 86, 63, 0.15),
-            inset 0 0 12px rgba(255, 255, 255, 0.75);
-    }
-
-    .portrait-frame::before {
-        content: "";
-        position: absolute;
-        inset: 5px;
-        border: 1px solid rgba(135, 94, 39, 0.65);
-        pointer-events: none;
-        z-index: 2;
-    }
-
-    .portrait-frame img {
-        display: block;
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        object-fit: cover;
-        object-position: center;
-        border: 2px solid #b58a48;
-        border-radius: 2px;
-    }
-
-    .frame-ornament {
-        position: absolute;
-        left: 50%;
-        z-index: 3;
-        color: #fff5cb;
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.5rem;
-        line-height: 1;
-        text-shadow: 1px 1px 2px #8b6934, 0 0 8px #fff1ad;
-        transform: translateX(-50%);
-        pointer-events: none;
-    }
-
-    .ornament-top {
-        top: -24px;
-    }
-
-    .ornament-bottom {
-        bottom: -24px;
-        transform: translateX(-50%) rotate(180deg);
-    }
-
-    .portrait-caption {
-        margin: 1.5rem 0 0;
-        color: #bd7194;
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.35rem;
-        font-style: italic;
-        text-align: center;
-    }
-
-    /* =========================================
-       PERSÖNLICHE VORSTELLUNG – WEISSE KARTE
-       ========================================= */
-
-    .about-intro-card {
-        position: relative;
-        padding: clamp(1.5rem, 4vw, 2.5rem);
-        border: 1px solid #f0dfe6;
-        border-radius: 24px;
-        background: #ffffff;
-        box-shadow: 0 15px 42px rgba(124, 92, 107, 0.075);
-    }
-
-    .about-intro-card h2 {
-        margin-top: 0;
-        color: #b96f92;
-    }
-
-    .about-intro-card p {
-        color: #625753;
-        margin: 0 0 1rem;
-    }
-
-    .about-intro-card p:last-child {
-        margin-bottom: 0;
-    }
-
-    .about-highlight {
-        color: #b45f87;
-        font-weight: 800;
-    }
-
-    /* =========================================
-       MEIN WEG – KLAR UND HELL
-       ========================================= */
-
-    .about-section {
-        padding: 2rem 0 4rem;
-        background: transparent;
-    }
-
-    .about-section-heading {
-        max-width: 760px;
-        margin: 0 auto 2rem;
-        text-align: center;
-    }
-
-    .about-section-heading h2 {
-        color: #b76d91;
-    }
-
-    .about-section-heading p {
-        color: #71635d;
-        margin: 0;
-    }
-
-    .about-story-card {
-        padding: clamp(1.5rem, 4vw, 2.5rem);
-        border: 1px solid #eee3e7;
-        border-radius: 24px;
-        background: #ffffff;
-        box-shadow: 0 12px 36px rgba(105, 79, 87, 0.055);
-    }
-
-    .about-story-card p {
-        color: #625753;
-        margin-top: 0;
-    }
-
-    .about-story-card p:last-child {
-        margin-bottom: 0;
-    }
-
-    .about-story-card strong {
-        color: #b45f87;
-    }
-
-    /* =========================================
-       INTERESSEN – VIER HELLE FARBWELTEN
-       ========================================= */
-
-    .about-interest-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.2rem;
-    }
-
-    .about-interest-card {
-        position: relative;
-        overflow: hidden;
-        padding: 1.6rem;
-        border: 1px solid #eee7e9;
-        border-radius: 22px;
-        background: #ffffff;
-        box-shadow: 0 10px 28px rgba(105, 79, 87, 0.055);
-        transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease;
-    }
-
-    .about-interest-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 34px rgba(105, 79, 87, 0.10);
-    }
-
-    .about-interest-card::before {
-        content: "";
-        position: absolute;
-        width: 145px;
-        height: 145px;
-        right: -75px;
-        top: -75px;
-        border-radius: 50%;
-        background: var(--card-glow, #f5e7ee);
-        opacity: 0.65;
-        filter: blur(22px);
-        pointer-events: none;
-    }
-
-    .about-interest-card h3 {
-        position: relative;
-        margin: 0 0 0.7rem;
-        color: #80658c;
-        font-size: 1.7rem;
-    }
-
-    .about-interest-card p {
-        position: relative;
-        margin: 0;
-        color: #625753;
-        font-size: 0.98rem;
-    }
-
-    /* Kräutergrün – nur als feiner Akzent */
-
-    .interest-herbs {
-        --card-glow: #e3f0d9;
-        border-top: 4px solid #a3c58e;
-        background: linear-gradient(145deg, #ffffff 0%, #ffffff 78%, #f7fbf3 100%);
-    }
-
-    .interest-herbs h3 {
-        color: #68875c;
-    }
-
-    /* Rosé – weich und blütenhaft */
-
-    .interest-care {
-        --card-glow: #f9e0e9;
-        border-top: 4px solid #e2a1ba;
-        background: linear-gradient(145deg, #ffffff 0%, #ffffff 78%, #fff7fa 100%);
-    }
-
-    .interest-care h3 {
-        color: #b66c8c;
-    }
-
-    /* Flieder – verträumt und kreativ */
-
-    .interest-stories {
-        --card-glow: #eee4fa;
-        border-top: 4px solid #c0a8e0;
-        background: linear-gradient(145deg, #ffffff 0%, #ffffff 78%, #faf7ff 100%);
-    }
-
-    .interest-stories h3 {
-        color: #8970aa;
-    }
-
-    /* Gold – warm und sonnig */
-
-    .interest-creative {
-        --card-glow: #fff0c7;
-        border-top: 4px solid #e3c36d;
-        background: linear-gradient(145deg, #ffffff 0%, #ffffff 78%, #fffdf5 100%);
-    }
-
-    .interest-creative h3 {
-        color: #9d7b37;
-    }
-
-    /* =========================================
-       ABSCHLUSS – LICHT, LIEBE UND WÄRME
-       ========================================= */
-
-    .about-quote {
-        position: relative;
-        margin: 1rem auto 5rem;
-        padding: clamp(2rem, 5vw, 3.5rem);
-        border: 1px solid #f0e1df;
-        border-radius: 28px;
-        background: linear-gradient(
-            120deg,
-            #ffffff 0%,
-            #fff7fa 42%,
-            #faf7ff 72%,
-            #fffdf5 100%
-        );
-        box-shadow: 0 14px 38px rgba(124, 92, 107, 0.065);
-        text-align: center;
-    }
-
-    .about-quote .quote-symbol {
-        color: #d0aa50;
-        font-family: "Cormorant Garamond", serif;
-        font-size: 3rem;
-        line-height: 1;
-    }
-
-    .about-quote p {
-        max-width: 780px;
-        margin: 0.5rem auto 1rem;
-        color: #92729e;
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(1.7rem, 4vw, 2.5rem);
-        font-style: italic;
-        line-height: 1.35;
-    }
-
-    .about-quote span {
-        color: #b76d91;
-        font-size: 0.9rem;
-        font-weight: 700;
-    }
-
-    /* =========================================
-       FUSSZEILE – WEISS UND LEICHT
-       ========================================= */
-
-    .about-footer {
-        position: relative;
-        padding: 2.5rem 1rem;
-        border-top: 1px solid #f0e5e9;
-        background: #ffffff;
-        box-shadow: 0 -4px 20px rgba(105, 79, 87, 0.035);
-        text-align: center;
-    }
-
-    .about-footer p {
-        margin: 0.35rem 0;
-        color: #71635d;
-        font-size: 0.92rem;
-    }
-
-    .about-footer a {
-        color: #b45f87 !important;
-        text-decoration: none;
-    }
-
-    .about-footer a:hover {
-        color: #718f65 !important;
-        text-decoration: underline;
-    }
-
-    .about-footer .footer-brand {
-        color: #92729e;
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.8rem;
-        font-weight: 700;
-    }
-
-    /* =========================================
-       RESPONSIVE DESIGN
-       ========================================= */
-
-    @media (max-width: 850px) {
-        .about-portrait-layout {
-            grid-template-columns: 1fr;
-            gap: 2rem;
+        body.theme-about {
+            --about-green: #83a978;
+            --about-green-light: #edf5e8;
+            --about-green-dark: #52734b;
+            --about-rose: #d58aaa;
+            --about-rose-light: #fff0f5;
+            --about-purple: #ad96d0;
+            --about-purple-light: #f5f0fb;
+            --about-brown: #795d4d;
+            --about-brown-light: #c6a58c;
+            --about-gold: #d4ad51;
+            --about-cream: #fffdf8;
+            --about-text: #51463f;
+            --about-muted: #75675f;
+
+            margin: 0;
+            min-height: 100vh;
+            background-color: #fffdf8 !important;
+            background-image:
+                radial-gradient(ellipse at 8% 8%, rgba(255,224,165,.18), transparent 32%),
+                radial-gradient(ellipse at 92% 20%, rgba(221,204,248,.15), transparent 32%),
+                radial-gradient(ellipse at 5% 52%, rgba(207,235,193,.14), transparent 30%),
+                radial-gradient(ellipse at 95% 80%, rgba(248,208,224,.16), transparent 32%) !important;
+            color: #51463f !important;
+            font-family: "Nunito Sans", sans-serif;
+            line-height: 1.7;
         }
 
-        .about-portrait-wrap {
-            padding-top: 1rem;
+        body.theme-about *,
+        body.theme-about *::before,
+        body.theme-about *::after {
+            box-sizing: border-box;
         }
 
-        .about-intro-card {
+        body.theme-about .about-page {
+            position: relative;
+            z-index: 1;
+            background: transparent !important;
+            color: #51463f !important;
+        }
+
+        body.theme-about main,
+        body.theme-about .about-shell,
+        body.theme-about .about-section,
+        body.theme-about .about-portrait-section {
+            background-color: transparent !important;
+            color: #51463f !important;
+        }
+
+        body.theme-about h1,
+        body.theme-about h2,
+        body.theme-about h3,
+        body.theme-about h4,
+        body.theme-about h5,
+        body.theme-about h6 {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            line-height: 1.15;
+            color: #665044 !important;
+        }
+
+        body.theme-about p,
+        body.theme-about li {
+            color: #62564f !important;
+        }
+
+        body.theme-about a {
+            color: #a85f80;
+        }
+
+        body.theme-about a:hover {
+            color: #68875c;
+        }
+
+        body.theme-about .about-shell {
+            width: min(1120px, calc(100% - 36px));
+            margin-inline: auto;
+        }
+
+        /* Lichtpunkte */
+
+        body.theme-about .about-sparkles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        body.theme-about .about-sparkles span {
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #d4ad51;
+            box-shadow: 0 0 12px rgba(212,173,81,.45);
+            opacity: .55;
+            animation: aboutTwinkle 4s ease-in-out infinite alternate;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(1) {
+            top: 13%;
+            left: 9%;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(2) {
+            top: 28%;
+            left: 88%;
+            animation-delay: 1s;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(3) {
+            top: 55%;
+            left: 6%;
+            animation-delay: 2s;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(4) {
+            top: 73%;
+            left: 93%;
+            animation-delay: .5s;
+        }
+
+        body.theme-about .about-sparkles span:nth-child(5) {
+            top: 88%;
+            left: 27%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes aboutTwinkle {
+            from {
+                opacity: .25;
+                transform: scale(.8);
+            }
+            to {
+                opacity: .85;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Navigation */
+
+        body.theme-about .about-nav {
+            position: relative;
+            z-index: 10;
+            background: rgba(255,253,248,.97) !important;
+            background-image: none !important;
+            border-bottom: 1px solid #eee1d8 !important;
+            box-shadow: 0 4px 20px rgba(105,79,87,.045) !important;
+            backdrop-filter: blur(14px);
+        }
+
+        body.theme-about .about-nav-inner {
+            width: min(1200px, calc(100% - 36px));
+            min-height: 78px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        body.theme-about .about-brand {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.35rem, 3vw, 1.85rem);
+            font-weight: 700;
+            text-decoration: none;
+            color: #80658c !important;
+            white-space: nowrap;
+        }
+
+        body.theme-about .about-brand span {
+            color: #c77599 !important;
+        }
+
+        body.theme-about .about-menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: .35rem;
+        }
+
+        body.theme-about .about-menu a {
+            display: inline-block;
+            padding: .65rem .8rem;
+            border-radius: 999px;
+            color: #62564f !important;
+            text-decoration: none;
+            font-size: .92rem;
+            font-weight: 700;
+            transition: background .25s ease, color .25s ease;
+        }
+
+        body.theme-about .about-menu a:hover,
+        body.theme-about .about-menu a[aria-current="page"] {
+            color: #a6547b !important;
+            background: #fff0f5 !important;
+        }
+
+        body.theme-about .about-menu-toggle {
+            display: none;
+            border: 1px solid #e7c4d2;
+            border-radius: 12px;
+            background: #fffdf8 !important;
+            color: #98627d !important;
+            padding: .6rem .85rem;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Begrüßungsbereich */
+
+        body.theme-about .about-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: clamp(4rem, 9vw, 7.5rem) 0 4rem;
+            text-align: center;
+            background: rgba(255,255,255,.35) !important;
+        }
+
+        body.theme-about .about-hero::before,
+        body.theme-about .about-hero::after {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            filter: blur(75px);
+            pointer-events: none;
+            z-index: -1;
+            opacity: .42;
+        }
+
+        body.theme-about .about-hero::before {
+            top: -150px;
+            left: -120px;
+            background: #dcefd2;
+        }
+
+        body.theme-about .about-hero::after {
+            right: -120px;
+            bottom: -150px;
+            background: #f3d8ed;
+        }
+
+        body.theme-about .about-eyebrow {
+            position: relative;
+            display: inline-block;
+            margin: 0 0 1.2rem;
+            padding: .6rem 1.1rem;
+            border: 1px solid #ead7a6;
+            border-radius: 999px;
+            background: #fff !important;
+            color: #96752f !important;
+            font-size: .82rem;
+            font-weight: 800;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            box-shadow: 0 5px 18px rgba(140,112,53,.06);
+        }
+
+        body.theme-about .about-hero h1 {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 1.25rem;
+            color: #665044 !important;
+            font-size: clamp(3rem, 8vw, 5.8rem);
+            text-wrap: balance;
+        }
+
+        body.theme-about .about-hero h1 span {
+            color: #c77599 !important;
+            font-style: italic;
+        }
+
+        body.theme-about .about-hero-intro {
+            position: relative;
             max-width: 720px;
             margin: 0 auto;
-        }
-    }
-
-    @media (max-width: 720px) {
-        .about-nav-inner {
-            min-height: 70px;
-            flex-wrap: wrap;
-            padding: 0.8rem 0;
+            color: #75675f !important;
+            font-size: clamp(1rem, 2vw, 1.2rem);
         }
 
-        .about-menu-toggle {
-            display: inline-block;
-        }
-
-        .about-menu {
-            display: none;
-            width: 100%;
-            align-items: stretch;
-            flex-direction: column;
-            padding: 0.5rem 0 0.8rem;
-        }
-
-        .about-menu.is-open {
+        body.theme-about .about-divider {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem auto 0;
+            color: #d2ad55;
+            font-size: 1.5rem;
         }
 
-        .about-menu a {
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
+        body.theme-about .about-divider::before,
+        body.theme-about .about-divider::after {
+            content: "";
+            width: 70px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d2ad55);
         }
 
-        .about-interest-grid {
-            grid-template-columns: 1fr;
+        body.theme-about .about-divider::after {
+            transform: rotate(180deg);
         }
 
-        .about-hero {
-            padding-top: 4rem;
-        }
-    }
+        /* Porträt und antiker Goldrahmen */
 
-    @media (max-width: 420px) {
-        .about-shell {
-            width: min(100% - 28px, 1120px);
+        body.theme-about .about-portrait-section {
+            padding: 0 0 4rem;
         }
 
-        .portrait-frame {
-            width: min(100%, 290px);
-            padding: 10px;
+        body.theme-about .about-portrait-layout {
+            display: grid;
+            grid-template-columns: minmax(260px, .85fr) minmax(0, 1.35fr);
+            align-items: center;
+            gap: clamp(2rem, 6vw, 5rem);
         }
 
-        .about-intro-card,
-        .about-story-card,
-        .about-interest-card {
-            border-radius: 18px;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .about-sparkles span {
-            animation: none;
+        body.theme-about .about-portrait-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 1.2rem 0;
         }
 
-        *,
-        *::before,
-        *::after {
-            scroll-behavior: auto !important;
-            transition-duration: 0.01ms !important;
+        body.theme-about .portrait-frame {
+            position: relative;
+            width: min(100%, 340px);
+            padding: 13px;
+            border: 3px ridge #d8b35f;
+            border-radius: 7px;
+            background: linear-gradient(
+                135deg,
+                #fff4c7 0%,
+                #c69c4c 15%,
+                #fff0ae 29%,
+                #b58a40 47%,
+                #f7df91 64%,
+                #bd9147 82%,
+                #fff3bf 100%
+            ) !important;
+            box-shadow:
+                0 0 0 3px #fff5d8,
+                0 0 0 6px #d5ad5d,
+                0 15px 38px rgba(121,86,63,.15),
+                inset 0 0 12px rgba(255,255,255,.75);
         }
-    }
-</style>
 
+        body.theme-about .portrait-frame::before {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            border: 1px solid rgba(135,94,39,.65);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        body.theme-about .portrait-frame img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center;
+            border: 2px solid #b58a48;
+            border-radius: 2px;
+        }
+
+        body.theme-about .frame-ornament {
+            position: absolute;
+            left: 50%;
+            z-index: 3;
+            color: #fff5cb !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.5rem;
+            line-height: 1;
+            text-shadow: 1px 1px 2px #8b6934, 0 0 8px #fff1ad;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        body.theme-about .ornament-top {
+            top: -24px;
+        }
+
+        body.theme-about .ornament-bottom {
+            bottom: -24px;
+            transform: translateX(-50%) rotate(180deg);
+        }
+
+        body.theme-about .portrait-caption {
+            margin: 1.5rem 0 0;
+            color: #b76d91 !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Persönliche Vorstellung */
+
+        body.theme-about .about-intro-card {
+            position: relative;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border: 1px solid #eee1d8 !important;
+            border-radius: 24px;
+            background: #fff !important;
+            color: #51463f !important;
+            box-shadow: 0 15px 42px rgba(124,92,107,.075);
+        }
+
+        body.theme-about .about-intro-card h2 {
+            margin-top: 0;
+            color: #b76d91 !important;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        body.theme-about .about-intro-card p {
+            margin: 0 0 1rem;
+            color: #62564f !important;
+        }
+
+        body.theme-about .about-intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        body.theme-about .about-highlight {
+            color: #a85f80 !important;
+            font-weight: 800;
+        }
+
+        /* Mein Weg */
+
+        body.theme-about .about-section {
+            padding: 2rem 0 4rem;
+        }
+
+        body.theme-about .about-section-heading {
+            max-width: 760px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        body.theme-about .about-section-heading h2 {
+            color: #b76d91 !important;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0 0 1rem;
+        }
+
+        body.theme-about .about-section-heading p {
+            color: #75675f !important;
+            margin: 0;
+        }
+
+        body.theme-about .about-story-card {
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border: 1px solid #eee1d8 !important;
+            border-radius: 24px;
+            background: #fff !important;
+            color: #51463f !important;
+            box-shadow: 0 12px 36px rgba(105,79,87,.065);
+        }
+
+        body.theme-about .about-story-card p {
+            color: #62564f !important;
+            margin-top: 0;
+        }
+
+        body.theme-about .about-story-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        body.theme-about .about-story-card strong {
+            color: #a85f80 !important;
+        }
+
+        /* Vier Interessenkarten */
+
+        body.theme-about .about-interest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        body.theme-about .about-interest-card {
+            position: relative;
+            overflow: hidden;
+            padding: 1.6rem;
+            border: 1px solid #eee1d8 !important;
+            border-radius: 22px;
+            background-color: #fff !important;
+            color: #51463f !important;
+            box-shadow: 0 10px 28px rgba(105,79,87,.055);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        body.theme-about .about-interest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 34px rgba(105,79,87,.10);
+        }
+
+        body.theme-about .about-interest-card::before {
+            content: "";
+            position: absolute;
+            width: 145px;
+            height: 145px;
+            right: -75px;
+            top: -75px;
+            border-radius: 50%;
+            background: var(--card-glow, #f5e7ee);
+            opacity: .65;
+            filter: blur(22px);
+            pointer-events: none;
+        }
+
+        body.theme-about .about-interest-card h3 {
+            position: relative;
+            margin: 0 0 .7rem;
+            color: #80658c !important;
+            font-size: 1.7rem;
+        }
+
+        body.theme-about .about-interest-card p {
+            position: relative;
+            margin: 0;
+            color: #62564f !important;
+            font-size: .98rem;
+        }
+
+        /* Salbeigrün */
+
+        body.theme-about .interest-herbs {
+            --card-glow: #e3f0d9;
+            border-top: 4px solid #a3c58e !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #f5faf1 100%) !important;
+        }
+
+        body.theme-about .interest-herbs h3 {
+            color: #68875c !important;
+        }
+
+        /* Rosé */
+
+        body.theme-about .interest-care {
+            --card-glow: #f9e0e9;
+            border-top: 4px solid #e2a1ba !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #fff5f8 100%) !important;
+        }
+
+        body.theme-about .interest-care h3 {
+            color: #b66c8c !important;
+        }
+
+        /* Flieder */
+
+        body.theme-about .interest-stories {
+            --card-glow: #eee4fa;
+            border-top: 4px solid #c0a8e0 !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #f8f4fd 100%) !important;
+        }
+
+        body.theme-about .interest-stories h3 {
+            color: #8970aa !important;
+        }
+
+        /* Gold */
+
+        body.theme-about .interest-creative {
+            --card-glow: #fff0c7;
+            border-top: 4px solid #e3c36d !important;
+            background: linear-gradient(145deg, #fff 0%, #fff 78%, #fffdf4 100%) !important;
+        }
+
+        body.theme-about .interest-creative h3 {
+            color: #9d7b37 !important;
+        }
+
+        /* Persönlicher Abschluss */
+
+        body.theme-about .about-quote {
+            position: relative;
+            margin: 1rem auto 5rem;
+            padding: clamp(2rem, 5vw, 3.5rem);
+            border: 1px solid #f0e1df !important;
+            border-radius: 28px;
+            background: linear-gradient(
+                120deg,
+                #fff 0%,
+                #fff7fa 42%,
+                #faf7ff 72%,
+                #fffdf5 100%
+            ) !important;
+            color: #51463f !important;
+            box-shadow: 0 14px 38px rgba(124,92,107,.065);
+            text-align: center;
+        }
+
+        body.theme-about .about-quote .quote-symbol {
+            color: #c5a04d !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        body.theme-about .about-quote p {
+            max-width: 780px;
+            margin: .5rem auto 1rem;
+            color: #80658c !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.7rem, 4vw, 2.5rem);
+            font-style: italic;
+            line-height: 1.35;
+        }
+
+        body.theme-about .about-quote span {
+            color: #b76d91 !important;
+            font-size: .9rem;
+            font-weight: 700;
+        }
+
+        /* Fußzeile */
+
+        body.theme-about .about-footer {
+            position: relative;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid #eadfd1 !important;
+            background: #f8f3eb !important;
+            background-image: none !important;
+            color: #59483e !important;
+            box-shadow: 0 -4px 20px rgba(105,79,87,.035);
+            text-align: center;
+        }
+
+        body.theme-about .about-footer p {
+            margin: .35rem 0;
+            color: #71635d !important;
+            font-size: .92rem;
+        }
+
+        body.theme-about .about-footer a {
+            color: #a85f80 !important;
+            text-decoration: none;
+        }
+
+        body.theme-about .about-footer a:hover {
+            color: #68875c !important;
+            text-decoration: underline;
+        }
+
+        body.theme-about .about-footer .footer-brand {
+            color: #80658c !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Responsive Darstellung */
+
+        @media (max-width: 850px) {
+            body.theme-about .about-portrait-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            body.theme-about .about-portrait-wrap {
+                padding-top: 1rem;
+            }
+
+            body.theme-about .about-intro-card {
+                max-width: 720px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body.theme-about .about-nav-inner {
+                min-height: 70px;
+                flex-wrap: wrap;
+                padding: .8rem 0;
+            }
+
+            body.theme-about .about-menu-toggle {
+                display: inline-block;
+            }
+
+            body.theme-about .about-menu {
+                display: none;
+                width: 100%;
+                align-items: stretch;
+                flex-direction: column;
+                padding: .5rem 0 .8rem;
+            }
+
+            body.theme-about .about-menu.is-open {
+                display: flex;
+                background: #fffdf8 !important;
+            }
+
+            body.theme-about .about-menu a {
+                padding: .8rem 1rem;
+                border-radius: 12px;
+            }
+
+            body.theme-about .about-interest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body.theme-about .about-hero {
+                padding-top: 4rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body.theme-about .about-shell {
+                width: calc(100% - 28px);
+            }
+
+            body.theme-about .portrait-frame {
+                width: min(100%, 290px);
+                padding: 10px;
+            }
+
+            body.theme-about .about-intro-card,
+            body.theme-about .about-story-card,
+            body.theme-about .about-interest-card {
+                border-radius: 18px;
+            }
+
+            body.theme-about .about-brand {
+                white-space: normal;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body.theme-about .about-sparkles span {
+                animation: none !important;
+            }
+
+            body.theme-about *,
+            body.theme-about *::before,
+            body.theme-about *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="theme-about">
