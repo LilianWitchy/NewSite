@@ -983,112 +983,293 @@ footer:not(.about-footer) a:hover {
    im <style>-Bereich der about.html.
    ========================================================== */
 
+
+/* ==========================================================
+   13. ÜBER-MICH-THEMA
+   HELL, CREMEFARBEN UND LICHTVOLL
+   Die Startseite bleibt dunkel.
+   ========================================================== */
+
+html:has(body.theme-about) {
+    background: #fffdf8 !important;
+    color-scheme: light;
+}
+
 body.theme-about {
-    --text-main: #f8eee5;
-    --text-muted: #e0d1c6;
+    --text-main: #51463f;
+    --text-muted: #75675f;
 
-    --surface-dark: rgba(39, 32, 43, 0.76);
-    --surface-light: rgba(255, 245, 233, 0.06);
-    --surface-border: rgba(213, 141, 165, 0.2);
+    --surface-dark: #ffffff;
+    --surface-light: #fffaf5;
+    --surface-border: #eee1d8;
 
-    background:
+    background-color: #fffdf8 !important;
+    background-image:
         radial-gradient(
-            ellipse at 10% 15%,
-            rgba(84, 123, 85, 0.32),
-            transparent 36%
+            ellipse at 8% 8%,
+            rgba(255, 224, 165, 0.16),
+            transparent 32%
         ),
         radial-gradient(
-            ellipse at 90% 30%,
-            rgba(148, 120, 183, 0.24),
-            transparent 35%
+            ellipse at 92% 20%,
+            rgba(221, 204, 248, 0.13),
+            transparent 32%
         ),
         radial-gradient(
-            ellipse at 45% 75%,
-            rgba(213, 141, 165, 0.12),
-            transparent 38%
+            ellipse at 5% 52%,
+            rgba(207, 235, 193, 0.12),
+            transparent 30%
         ),
-        linear-gradient(
-            150deg,
-            #211d2b 0%,
-            #302438 42%,
-            #26372f 100%
-        );
+        radial-gradient(
+            ellipse at 95% 78%,
+            rgba(248, 208, 224, 0.14),
+            transparent 32%
+        ) !important;
 
-    color: #f8eee5;
+    color: #51463f !important;
+}
+
+/* Allgemeine Texte und Überschriften */
+body.theme-about h1,
+body.theme-about h2,
+body.theme-about h3,
+body.theme-about h4,
+body.theme-about h5,
+body.theme-about h6 {
+    color: #665044;
+}
+
+body.theme-about p,
+body.theme-about li {
+    color: #62564f;
 }
 
 body.theme-about a {
-    color: var(--rose-light);
+    color: #a85f80;
 }
 
 body.theme-about a:hover {
-    color: var(--gold);
+    color: #68875c;
 }
 
-body.theme-about h1,
-body.theme-about h2,
-body.theme-about h3 {
-    font-family: var(--font-heading);
+/* Navigation */
+body.theme-about .about-nav,
+body.theme-about .site-header {
+    background: rgba(255, 253, 248, 0.97) !important;
+    border-bottom: 1px solid #eee1d8 !important;
+    box-shadow: 0 4px 20px rgba(105, 79, 87, 0.045);
 }
 
-body.theme-about .site-header,
-body.theme-about .about-nav {
-    background: rgba(30, 29, 39, 0.82);
-    border-bottom-color: rgba(232, 197, 116, 0.24);
+body.theme-about .about-brand,
+body.theme-about .site-logo,
+body.theme-about .brand,
+body.theme-about .logo {
+    color: #80658c !important;
 }
 
+body.theme-about .about-brand span,
 body.theme-about .site-logo span,
 body.theme-about .brand span,
 body.theme-about .logo span {
-    color: var(--rose-light);
+    color: #c77599 !important;
 }
 
-body.theme-about .nav-menu a:hover,
-body.theme-about .main-nav a:hover,
-body.theme-about .site-menu a:hover {
-    background: rgba(213, 141, 165, 0.2);
-    color: var(--cream);
+body.theme-about .about-menu a {
+    color: #62564f !important;
 }
 
-body.theme-about .card,
-body.theme-about .content-card,
-body.theme-about .feature-card {
-    border-color: rgba(213, 141, 165, 0.22);
-    background: rgba(39, 32, 43, 0.76);
+body.theme-about .about-menu a:hover,
+body.theme-about .about-menu a[aria-current="page"] {
+    background: #fff0f5 !important;
+    color: #a6547b !important;
 }
 
-body.theme-about .card:hover,
-body.theme-about .content-card:hover,
-body.theme-about .feature-card:hover {
-    border-color: rgba(232, 197, 116, 0.5);
+body.theme-about .about-menu-toggle {
+    background: #ffffff !important;
+    border-color: #e7c4d2 !important;
+    color: #98627d !important;
 }
 
-body.theme-about .card p,
-body.theme-about .content-card p,
-body.theme-about .feature-card p {
-    color: #e0d1c6;
+/* Helle Flächen für den Seiteninhalt */
+body.theme-about .about-page,
+body.theme-about .about-shell,
+body.theme-about .about-hero,
+body.theme-about .about-portrait-section,
+body.theme-about .about-section {
+    background-color: transparent !important;
+    color: #51463f !important;
 }
 
+/* Hero */
+body.theme-about .about-eyebrow {
+    background: #ffffff !important;
+    color: #96752f !important;
+}
+
+body.theme-about .about-hero h1 {
+    color: #665044 !important;
+}
+
+body.theme-about .about-hero h1 span {
+    color: #c77599 !important;
+}
+
+body.theme-about .about-hero-intro,
+body.theme-about .about-section-heading p {
+    color: #75675f !important;
+}
+
+/* Helle Inhaltskarten */
+body.theme-about .about-intro-card,
+body.theme-about .about-story-card,
+body.theme-about .about-interest-card,
+body.theme-about .about-quote {
+    background-color: #ffffff !important;
+    color: #51463f !important;
+    border-color: #eee1d8 !important;
+    box-shadow: 0 12px 36px rgba(105, 79, 87, 0.065);
+}
+
+body.theme-about .about-intro-card p,
+body.theme-about .about-story-card p,
+body.theme-about .about-interest-card p {
+    color: #62564f !important;
+}
+
+body.theme-about .about-intro-card h2,
+body.theme-about .about-section-heading h2 {
+    color: #b76d91 !important;
+}
+
+body.theme-about .about-highlight,
+body.theme-about .about-story-card strong {
+    color: #a85f80 !important;
+}
+
+/* Vier Farbakzente: Grün, Rosé, Lila und Gold */
+body.theme-about .interest-herbs {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f5faf1
+    ) !important;
+    border-top: 4px solid #a3c58e !important;
+}
+
+body.theme-about .interest-herbs h3 {
+    color: #68875c !important;
+}
+
+body.theme-about .interest-care {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #fff5f8
+    ) !important;
+    border-top: 4px solid #e2a1ba !important;
+}
+
+body.theme-about .interest-care h3 {
+    color: #b66c8c !important;
+}
+
+body.theme-about .interest-stories {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f8f4fd
+    ) !important;
+    border-top: 4px solid #c0a8e0 !important;
+}
+
+body.theme-about .interest-stories h3 {
+    color: #8970aa !important;
+}
+
+body.theme-about .interest-creative {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #fffdf4
+    ) !important;
+    border-top: 4px solid #e3c36d !important;
+}
+
+body.theme-about .interest-creative h3 {
+    color: #9d7b37 !important;
+}
+
+/* Zitat */
+body.theme-about .about-quote {
+    background: linear-gradient(
+        120deg,
+        #ffffff,
+        #fff7fa 42%,
+        #faf7ff 72%,
+        #fffdf5
+    ) !important;
+}
+
+body.theme-about .about-quote p {
+    color: #80658c !important;
+}
+
+body.theme-about .about-quote .quote-symbol {
+    color: #c5a04d !important;
+}
+
+body.theme-about .about-quote span {
+    color: #b76d91 !important;
+}
+
+/* Goldrahmen und Lichtpunkte */
+body.theme-about .portrait-caption {
+    color: #b76d91 !important;
+}
+
+body.theme-about .frame-ornament {
+    color: #fff5cb !important;
+}
+
+/* Buttons, falls auf der Seite vorhanden */
 body.theme-about .btn-primary,
 body.theme-about .button-primary {
     background: linear-gradient(
         120deg,
-        var(--rose),
-        var(--rose-light)
-    );
-    color: #35222e;
+        #d58da5,
+        #f1c8d6
+    ) !important;
+    color: #49333e !important;
 }
 
-body.theme-about .btn-primary:hover,
-body.theme-about .button-primary:hover {
-    color: #35222e;
+body.theme-about .btn-secondary,
+body.theme-about .button-secondary {
+    background: #ffffff !important;
+    border-color: #e5c9d4 !important;
+    color: #98627d !important;
 }
 
+/* Footer */
+body.theme-about .about-footer,
 body.theme-about .site-footer {
-    background: rgba(25, 24, 31, 0.78);
-    border-top-color: rgba(232, 197, 116, 0.23);
+    background: #f8f3eb !important;
+    color: #59483e !important;
+    border-top: 1px solid #eadfd1 !important;
 }
 
+body.theme-about .about-footer p,
+body.theme-about .site-footer p {
+    color: #71635d !important;
+}
+
+body.theme-about .about-footer a,
+body.theme-about .site-footer a {
+    color: #a85f80 !important;
+}
+
+body.theme-about .about-footer .footer-brand {
+    color: #80658c !important;
+}
 
 /* ==========================================================
    14. SPRACHUMSCHALTER
