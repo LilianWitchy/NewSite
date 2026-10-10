@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nimm Kontakt mit Lilian Lübke auf, folge ihr auf Instagram und YouTube oder melde dich für den Newsletter an.">
+  <meta name="theme-color" content="#211b30">
+  <title>Kontakt | Lilian Lübke</title>
+
+  <link rel="icon" type="image/png" href="defavicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --midnight: #211b30;
+      --midnight-light: #302641;
+      --accent: #a994d4;
+      --accent-light: #c9b8ed;
+      --gold: #e6d1a8;
+      --gold-light: #f7ebce;
+      --cream: #fbf7ff;
+      --muted: #d1c6df;
+      --panel: #30273e;
+      --panel-light: #3c304d;
+      --border: rgba(201, 184, 237, 0.23);
+      --shadow: 0 18px 45px rgba(10, 7, 18, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(169, 148, 212, 0.15), transparent 34%),
+        radial-gradient(ellipse at 88% 48%, rgba(230, 209, 168, 0.07), transparent 33%),
+        var(--midnight);
+      color: var(--cream);
+      font-family: "Nunito Sans", sans-serif;
+      line-height: 1.8;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.4;
+      background-image:
+        radial-gradient(1px 1px at 10% 18%, rgba(255,255,255,.8) 50%, transparent 100%),
+        radial-gradient(1px 1px at 32% 72%, rgba(255,255,255,.6) 50%, transparent 100%),
+        radial-gradient(2px 2px at 68% 22%, rgba(201,184,237,.8) 50%, transparent 100%),
+        radial-gradient(1px 1px at 84% 66%, rgba(255,255,255,.6) 50%, transparent 100%),
+        radial-gradient(1px 1px at 51% 43%, rgba(230,209,168,.7) 50%, transparent 100%),
+        radial-gradient(1px 1px at 91% 90%, rgba(255,255,255,.6) 50%, transparent 100%);
+      background-size: 320px 320px;
+    }
+
+    a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color .25s ease, opacity .25s ease, transform .25s ease;
+    }
+
+    a:hover {
+      color: var(--gold-light);
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(33, 27, 48, .93);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(1200px, calc(100% - 44px));
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      color: var(--cream);
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: .035em;
+    }
+
+    .brand-subtitle {
+      margin-top: 5px;
+      color: var(--accent-light);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2vw, 27px);
+    }
+
+    .main-nav > a {
+      position: relative;
+      padding: 9px 0;
+      color: var(--muted);
+      font-size: .85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .main-nav > a:hover,
+    .main-nav > a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .main-nav > a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 1px;
+      left: 0;
+      height: 2px;
+      border-radius: 3px;
+      background: var(--accent);
+    }
+
+    .main-nav .new-book-link {
+      color: var(--gold-light);
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 5px;
+      padding-left: 16px;
+      border-left: 1px solid var(--border);
+    }
+
+    .language-switcher a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      opacity: .75;
+    }
+
+    .language-switcher a:hover,
+    .language-switcher a[aria-current="page"] {
+      border-color: var(--accent-light);
+      opacity: 1;
+    }
+
+    .language-switcher img {
+      display: block;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 350px;
+      padding: 78px 24px 72px;
+      overflow: hidden;
+      text-align: center;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: min(750px, 90vw);
+      height: 310px;
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse,
+        rgba(169, 148, 212, .24),
+        rgba(169, 148, 212, .04) 50%,
+        transparent 72%
+      );
+      filter: blur(12px);
+    }
+
+    .hero-content {
+      width: min(850px, 100%);
+      animation: fade-up .9s ease both;
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    h1 {
+      color: var(--cream);
+      font-size: clamp(3.3rem, 7vw, 5.7rem);
+      letter-spacing: -.025em;
+    }
+
+    .hero-description {
+      max-width: 640px;
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 27px;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .hero-ornament::before,
+    .hero-ornament::after {
+      content: "";
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-light));
+    }
+
+    .hero-ornament::after {
+      transform: rotate(180deg);
+    }
+
+    main {
+      width: min(1100px, calc(100% - 44px));
+      margin: 0 auto;
+      padding-bottom: 95px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr .88fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .panel {
+      position: relative;
+      padding: clamp(25px, 4vw, 42px);
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(60, 48, 77, .96), rgba(42, 33, 55, .97));
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      animation: fade-up .8s ease both;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      top: -90px;
+      right: -80px;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(201, 184, 237, .12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 20px rgba(201, 184, 237, .025),
+        0 0 0 40px rgba(201, 184, 237, .02);
+      pointer-events: none;
+    }
+
+    .panel-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-eyebrow {
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .panel h2 {
+      margin-bottom: 17px;
+      color: var(--cream);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .panel p {
+      color: var(--muted);
+    }
+
+    .contact-text {
+      margin-bottom: 28px;
+      font-size: 1rem;
+      line-height: 1.95;
+    }
+
+    .contact-text .highlight {
+      color: var(--accent-light);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 11px 17px;
+      color: #fff;
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .25s ease, filter .25s ease;
+    }
+
+    .social-link:hover {
+      color: #fff;
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+
+    .social-link img {
+      display: block;
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .instagram-link {
+      background: #c13573;
+    }
+
+    .youtube-link {
+      background: #b92532;
+    }
+
+    .social-caption {
+      margin-top: 17px;
+      color: rgba(209, 198, 223, .76) !important;
+      font-size: .84rem;
+    }
+
+    .newsletter-panel {
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(169, 148, 212, .15), transparent 46%),
+        linear-gradient(145deg, rgba(60, 48, 77, .98), rgba(42, 33, 55, .98));
+    }
+
+    .newsletter-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 20px;
+      color: var(--gold-light);
+      background: rgba(230, 209, 168, .1);
+      border: 1px solid rgba(230, 209, 168, .25);
+      border-radius: 16px;
+      font-size: 1.5rem;
+    }
+
+    .newsletter-description {
+      margin-bottom: 24px;
+      font-size: .96rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .newsletter-form label {
+      color: var(--cream);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .newsletter-form input[type="email"] {
+      width: 100%;
+      min-height: 51px;
+      padding: 13px 15px;
+      color: var(--cream);
+      background: rgba(22, 17, 31, .65);
+      border: 1px solid rgba(201, 184, 237, .3);
+      border-radius: 11px;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .newsletter-form input[type="email"]::placeholder {
+      color: #b7aabe;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--accent-light);
+      box-shadow: 0 0 0 3px rgba(169, 148, 212, .15);
+    }
+
+    .submit-button {
+      min-height: 50px;
+      margin-top: 3px;
+      padding: 12px 20px;
+      color: #241b30;
+      background: linear-gradient(120deg, var(--accent-light), var(--gold-light));
+      border: 0;
+      border-radius: 11px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .submit-button:hover {
+      filter: brightness(1.06);
+      transform: translateY(-2px);
+    }
+
+    .privacy-note {
+      margin-top: 15px;
+      color: rgba(209, 198, 223, .8) !important;
+      font-size: .78rem;
+      line-height: 1.7;
+    }
+
+    .privacy-note a {
+      color: var(--gold-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .closing-note {
+      margin-top: 27px;
+      padding: 22px 26px;
+      color: var(--muted);
+      background: rgba(169, 148, 212, .07);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      text-align: center;
+    }
+
+    .closing-note p {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold-light);
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+    }
+
+    .site-footer {
+      padding: 35px 22px 28px;
+      background: rgba(15, 11, 22, .55);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 10px;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.7rem;
+    }
+
+    .footer-note {
+      max-width: 600px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 24px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .footer-links a:hover,
+    .footer-links a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .copyright {
+      color: rgba(209, 198, 223, .62);
+      font-size: .78rem;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .header-inner {
+        width: min(100% - 32px, 900px);
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 24px 24px;
+        background: rgba(33, 27, 48, .98);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, .22);
+      }
+
+      .main-nav.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-nav > a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(201, 184, 237, .1);
+      }
+
+      .main-nav > a[aria-current="page"]::after {
+        right: auto;
+        width: 42px;
+      }
+
+      .language-switcher {
+        margin: 14px 0 0;
+        padding: 12px 0 0;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 1.55rem;
+      }
+
+      .brand-subtitle {
+        font-size: .58rem;
+      }
+
+      .hero {
+        min-height: 290px;
+        padding: 58px 20px;
+      }
+
+      .hero-description {
+        font-size: .97rem;
+      }
+
+      main {
+        width: calc(100% - 28px);
+        padding-bottom: 65px;
+      }
+
+      .panel {
+        padding: 25px 21px;
+        border-radius: 20px;
+      }
+
+      .social-links {
+        flex-direction: column;
+      }
+
+      .social-link {
+        width: 100%;
+      }
+
+      .closing-note {
+        padding: 19px;
+      }
+
+      .footer-links {
+        gap: 8px 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <span class="brand-name">Lilian Lübke</span>
+        <span class="brand-subtitle">Kreativität · Natur · Klang</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >☰</button>
+
+      <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation">
+        <a href="index.html">Startseite</a>
+        <a href="kraeuter.html">Kräuterwelt</a>
+        <a href="musik.html">Musik</a>
+        <a href="buecher.html">Bücher</a>
+        <a href="angebote.html">Angebote</a>
+        <a href="about.html">Über mich</a>
+        <a class="new-book-link" href="index.html#neues-buch">Neues Buch ✦</a>
+
+        <div class="language-switcher" aria-label="Sprache auswählen">
+          <a href="index.html" aria-label="Deutsch" aria-current="page">
+            <img src="defavicon.png" alt="Deutsch">
+          </a>
+          <a href="/en/" aria-label="English">
+            <img src="enfavicon.png" alt="English">
+          </a>
+          <a href="/dk/" aria-label="Dansk">
+            <img src="dkfavicon.png" alt="Dansk">
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Austausch · Begegnung · Verbindung</p>
+      <h1>Kontakt</h1>
+      <p class="hero-description">
+        Manchmal beginnt etwas Schönes mit einer Nachricht.
+        Ich freue mich, von dir zu hören und mit dir in Verbindung zu treten.
+      </p>
+      <div class="hero-ornament" aria-hidden="true">✦</div>
+    </div>
+  </section>
+
+  <main>
+    <div class="contact-layout" id="kontakt">
+      <section class="panel" aria-labelledby="contact-heading">
+        <div class="panel-content">
+          <p class="section-eyebrow">Schön, dass du hier bist</p>
+          <h2 id="contact-heading">Lass uns in Verbindung kommen</h2>
+
+          <p class="contact-text">
+            Ich freue mich, dass du den Weg zu meiner Seite gefunden hast.
+            Falls du Fragen zu meiner Arbeit, meinen Projekten oder einfach
+            etwas auf dem Herzen hast, kannst du mir hier eine Nachricht
+            senden. Ich werde mich so bald wie möglich bei dir melden.
+          </p>
+
+          <p>
+            Du findest mich auch auf Social Media. Dort teile ich Einblicke
+            in meine Arbeit, neue Ideen und aktuelle Projekte.
+          </p>
+
+          <div class="social-links">
+            <a
+              class="social-link instagram-link"
+              href="https://www.instagram.com/elisabethann_wolf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Lilian Lübke auf Instagram öffnen"
+            >
+              <img src="picture/instagram.png" alt="">
+              <span>Folge mir auf Instagram</span>
+            </a>
+
+            <a
+              class="social-link youtube-link"
+              href="https://www.youtube.com/channel/UC60W9fyZAJyXKZ3vzj3OxLA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube-Kanal von Lilian Lübke öffnen"
+            >
+              <img src="picture/youtube.png" alt="">
+              <span>Besuche meinen YouTube-Kanal</span>
+            </a>
+          </div>
+
+          <p class="social-caption">
+            Ich freue mich, wenn wir uns dort begegnen!
+          </p>
+        </div>
+      </section>
+
+      <section class="panel newsletter-panel" aria-labelledby="newsletter-heading">
+        <div class="panel-content">
+          <div class="newsletter-icon" aria-hidden="true">✉</div>
+          <p class="section-eyebrow">Post aus meiner Welt</p>
+          <h2 id="newsletter-heading">Bleib auf dem Laufenden</h2>
+
+          <p class="newsletter-description">
+            Möchtest du mehr über meine Arbeit, kommende Bücher und spannende
+            Projekte erfahren? Dann trage dich hier für meinen Newsletter ein
+            und bleibe auf dem Laufenden.
+          </p>
+
+          <form
+            class="newsletter-form"
+            action="https://formspree.io/f/mkgjyywk"
+            method="POST"
+          >
+            <label for="email">Deine E-Mail-Adresse</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              placeholder="dein@email.de"
+              required
+            >
+
+            <button class="submit-button" type="submit">
+              Für den Newsletter anmelden
+            </button>
+
+            <p class="privacy-note">
+              Mit dem Absenden erklärst du dich mit der Speicherung deiner
+              E-Mail-Adresse zum Zweck des Newsletter-Versands einverstanden.
+              <a href="agb.html">Mehr erfahren</a>
+            </p>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <div class="closing-note">
+      <p>Ich freue mich auf deine Nachricht.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">Lilian Lübke</div>
+    <p class="footer-note">
+      Ein Raum für Naturverbundenheit, Kreativität, Musik und neue Impulse.
+    </p>
+
+    <nav class="footer-links" aria-label="Fußnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="kraeuter.html">Kräuterwelt</a>
+      <a href="musik.html">Musik</a>
+      <a href="buecher.html">Bücher</a>
+      <a href="angebote.html">Angebote</a>
+      <a href="about.html">Über mich</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </nav>
+
+    <p class="copyright">
+      © <span id="current-year"></span> Lilian Lübke · Alle Rechte vorbehalten
+    </p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNavigation = document.querySelector(".main-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNavigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Menü schließen" : "Menü öffnen"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    mainNavigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNavigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Menü öffnen");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
