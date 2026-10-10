@@ -1,0 +1,2748 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#342333">
+
+    <title>Angebote – Lilians Kräutermagie</title>
+
+    <meta name="description" content="Entdecke Lilians Angebote: individuelle Lernbegleitung, Erlebnispädagogik, Klangarbeit über Zoom, Kartenlegen, Pendeln und natürliche Onlinekurse.">
+    <meta name="keywords" content="Lilians Kräutermagie, Angebote, Lernbegleitung, Erlebnispädagogik, Klangheilung, Klangarbeit, Kartenlegen, Pendeln, Onlinekurse, Naturwissen">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           FARBEN UND GRUNDLAGEN
+        ======================================== */
+
+        :root {
+            --plum: #342333;
+            --plum-deep: #211622;
+            --plum-light: #51384e;
+
+            --terracotta: #B96F58;
+            --terracotta-light: #D9957E;
+            --rose: #E8C9C2;
+            --rose-light: #F4E2DC;
+
+            --gold: #D8B978;
+            --gold-light: #F1DCA7;
+
+            --cream: #FFF7F0;
+            --paper: #F8EDE5;
+            --muted: #DCCBCF;
+            --text-dark: #342333;
+
+            --shadow: 0 18px 45px rgba(19, 9, 18, 0.28);
+            --radius: 24px;
+            --content-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+            background: var(--plum-deep);
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--cream);
+
+            background:
+                radial-gradient(
+                    ellipse at 8% 12%,
+                    rgba(185, 111, 88, 0.19),
+                    transparent 36rem
+                ),
+                radial-gradient(
+                    ellipse at 92% 42%,
+                    rgba(81, 56, 78, 0.45),
+                    transparent 38rem
+                ),
+                radial-gradient(
+                    ellipse at 50% 88%,
+                    rgba(185, 111, 88, 0.09),
+                    transparent 34rem
+                ),
+                var(--plum-deep);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--gold-light);
+            outline-offset: 4px;
+        }
+
+        ::selection {
+            color: var(--plum-deep);
+            background: var(--gold-light);
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 1rem;
+            z-index: 1000;
+
+            padding: 0.75rem 1rem;
+            color: var(--plum-deep);
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .skip-link:focus {
+            left: 1rem;
+        }
+
+
+        /* ========================================
+           STERNENHIMMEL
+        ======================================== */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(232,201,194,.9) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(216,185,120,.9) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(255,247,240,.6) 1px, transparent 1.7px);
+
+            background-size:
+                97px 91px,
+                151px 137px,
+                211px 183px,
+                263px 227px;
+
+            background-position:
+                12px 17px,
+                48px 62px,
+                91px 24px,
+                19px 105px;
+
+            opacity: 0.3;
+            animation: stars-twinkle 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes stars-twinkle {
+            from { opacity: 0.22; }
+            to { opacity: 0.43; }
+        }
+
+
+        /* ========================================
+           KOPFZEILE UND NAVIGATION
+        ======================================== */
+
+        .site-header {
+            position: relative;
+            z-index: 20;
+
+            background: rgba(33, 22, 34, 0.93);
+            border-bottom: 1px solid rgba(216, 185, 120, 0.3);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .nav-wrap {
+            width: min(var(--content-width), calc(100% - 2rem));
+            min-height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+
+            min-width: max-content;
+            color: var(--cream);
+            text-decoration: none;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .main-nav a {
+            padding: 0.65rem 0.8rem;
+            border-radius: 999px;
+
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 800;
+
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a[aria-current="page"] {
+            background: rgba(232, 201, 194, 0.12);
+            color: var(--rose-light);
+        }
+
+        .main-nav .nav-highlight {
+            background: linear-gradient(
+                120deg,
+                var(--gold-light),
+                var(--terracotta-light)
+            );
+            color: var(--plum-deep);
+        }
+
+        .main-nav .nav-highlight:hover {
+            color: var(--plum-deep);
+            filter: brightness(1.06);
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+
+            padding: 0.55rem 0.8rem;
+            color: var(--cream);
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 12px;
+
+            cursor: pointer;
+        }
+
+        .menu-toggle:hover {
+            color: var(--gold-light);
+            border-color: var(--gold);
+        }
+
+
+        /* ========================================
+           SPRACHWAHL
+        ======================================== */
+
+        .language-switcher {
+            position: absolute;
+            z-index: 5;
+            top: 1rem;
+            right: max(1rem, calc((100vw - var(--content-width)) / 2));
+
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-switcher a {
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+            background: rgba(33, 22, 34, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold);
+        }
+
+        .language-switcher img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .hero {
+            min-height: 420px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 5.5rem 1.25rem 4.5rem;
+
+            background:
+                radial-gradient(
+                    ellipse at 18% 35%,
+                    rgba(185, 111, 88, 0.32),
+                    transparent 38%
+                ),
+                radial-gradient(
+                    ellipse at 72% 18%,
+                    rgba(232, 201, 194, 0.16),
+                    transparent 34%
+                ),
+                radial-gradient(
+                    ellipse at 82% 76%,
+                    rgba(216, 185, 120, 0.13),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    110deg,
+                    rgba(33, 22, 34, 0.55),
+                    rgba(52, 35, 51, 0.48),
+                    rgba(120, 67, 64, 0.35)
+                );
+
+            border-bottom: 1px solid rgba(216, 185, 120, 0.35);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: -18% -10%;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    ellipse at 18% 42%,
+                    rgba(185, 111, 88, 0.35),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    ellipse at 40% 18%,
+                    rgba(232, 201, 194, 0.2),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    ellipse at 70% 35%,
+                    rgba(81, 56, 78, 0.45),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    ellipse at 85% 62%,
+                    rgba(216, 185, 120, 0.16),
+                    transparent 25%
+                );
+
+            filter: blur(28px);
+            opacity: 0.9;
+            animation: aurora-drift 16s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.85) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(232,201,194,.9) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(216,185,120,.85) 1px, transparent 1.8px);
+
+            background-size: 97px 91px, 151px 137px, 211px 183px;
+            background-position: 12px 17px, 48px 62px, 91px 24px;
+            opacity: 0.42;
+        }
+
+        @keyframes aurora-drift {
+            from {
+                transform: translate3d(-1.5%, -1%, 0) rotate(-8deg) scale(1.05);
+            }
+            to {
+                transform: translate3d(2%, 1.5%, 0) rotate(-3deg) scale(1.12);
+            }
+        }
+
+        .hero-inner {
+            width: min(var(--content-width), 100%);
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+
+            color: var(--gold-light);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 1rem 0;
+
+            color: var(--cream);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(3.3rem, 8vw, 6rem);
+            line-height: 0.98;
+            letter-spacing: -0.035em;
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-top: 0.2em;
+
+            color: var(--rose);
+            font-style: italic;
+            text-shadow: 0 0 28px rgba(232, 201, 194, 0.2);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 1.25rem auto 0;
+
+            color: #F3E4E1;
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+        }
+
+        .hero-divider {
+            width: min(230px, 55%);
+            height: 1px;
+            margin: 2rem auto 0;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--terracotta-light),
+                var(--gold),
+                var(--rose),
+                transparent
+            );
+        }
+
+
+        /* ========================================
+           ALLGEMEINE ABSCHNITTE
+        ======================================== */
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 4.5rem 0;
+        }
+
+        .section-heading {
+            max-width: 820px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0.5rem 0 0.8rem;
+
+            color: var(--rose);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            line-height: 1.08;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .section-kicker {
+            color: var(--gold-light);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+
+        /* ========================================
+           ANGEBOTSÜBERSICHT
+        ======================================== */
+
+        .overview-section {
+            padding-top: 2.5rem;
+            padding-bottom: 2rem;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .overview-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 210px;
+            padding: 1.6rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            text-decoration: none;
+
+            background:
+                radial-gradient(
+                    ellipse at 100% 0%,
+                    rgba(185, 111, 88, 0.18),
+                    transparent 55%
+                ),
+                linear-gradient(
+                    145deg,
+                    rgba(81, 56, 78, 0.96),
+                    rgba(33, 22, 34, 0.98)
+                );
+
+            border: 1px solid rgba(232, 201, 194, 0.22);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(19, 9, 18, 0.2);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .overview-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--terracotta-light),
+                var(--gold),
+                transparent
+            );
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--terracotta-light);
+            box-shadow: 0 15px 35px rgba(19, 9, 18, 0.3);
+        }
+
+        .overview-symbol {
+            margin-bottom: 0.65rem;
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.3rem;
+            line-height: 1;
+        }
+
+        .overview-card h3 {
+            margin: 0 0 0.55rem;
+
+            color: var(--rose);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .overview-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.96rem;
+            line-height: 1.6;
+        }
+
+        .overview-link {
+            display: inline-block;
+            margin-top: auto;
+            padding-top: 1rem;
+
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           GROSSE ANGEBOTSKARTEN
+        ======================================== */
+
+        .offer-section {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .offer-card {
+            position: relative;
+            overflow: hidden;
+
+            margin: 0 auto 2rem;
+            padding: clamp(1.5rem, 4vw, 3rem);
+
+            background:
+                radial-gradient(
+                    ellipse at 100% 0%,
+                    rgba(185, 111, 88, 0.16),
+                    transparent 44%
+                ),
+                linear-gradient(
+                    135deg,
+                    rgba(81, 56, 78, 0.94),
+                    rgba(33, 22, 34, 0.98)
+                );
+
+            border: 1px solid rgba(232, 201, 194, 0.25);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 100px;
+        }
+
+        .offer-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .offer-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--terracotta-light),
+                var(--gold),
+                var(--rose),
+                transparent
+            );
+            opacity: 0.85;
+        }
+
+        .offer-header {
+            max-width: 850px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .offer-number {
+            display: inline-block;
+            margin-bottom: 0.6rem;
+
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .offer-header h2 {
+            margin: 0 0 0.8rem;
+
+            color: var(--rose);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+            font-weight: 600;
+            line-height: 1.08;
+        }
+
+        .offer-header p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .offer-card h3 {
+            margin: 2rem 0 0.7rem;
+
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.65rem, 3vw, 2.2rem);
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .offer-card p {
+            margin: 0 0 1rem;
+            color: #F3E7E4;
+            line-height: 1.85;
+        }
+
+        .offer-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .offer-card strong {
+            color: var(--gold-light);
+        }
+
+        .offer-card a:not(.button-link) {
+            text-underline-offset: 4px;
+        }
+
+        .offer-card a:not(.button-link):hover {
+            color: var(--gold-light);
+        }
+
+        .offer-columns {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .inner-card {
+            padding: 1.4rem;
+
+            background: rgba(33, 22, 34, 0.52);
+            border: 1px solid rgba(232, 201, 194, 0.18);
+            border-radius: 18px;
+        }
+
+        .inner-card h3 {
+            margin-top: 0;
+        }
+
+        .inner-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list,
+        .simple-list {
+            margin: 0 0 1.3rem;
+            padding-left: 1.4rem;
+            color: #F3E7E4;
+        }
+
+        .feature-list li,
+        .simple-list li {
+            padding: 0.28rem 0 0.28rem 0.15rem;
+        }
+
+        .feature-list li::marker,
+        .simple-list li::marker {
+            color: var(--terracotta-light);
+        }
+
+        .number-list {
+            margin: 0 0 1.3rem;
+            padding-left: 1.5rem;
+            color: #F3E7E4;
+        }
+
+        .number-list li {
+            padding: 0.35rem 0 0.35rem 0.2rem;
+        }
+
+        .number-list li::marker {
+            color: var(--gold);
+            font-weight: 800;
+        }
+
+        .button-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            margin-top: 0.8rem;
+            padding: 0.85rem 1.35rem;
+
+            color: var(--plum-deep);
+            background: linear-gradient(
+                120deg,
+                var(--gold-light),
+                var(--terracotta-light)
+            );
+
+            border: 0;
+            border-radius: 999px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 800;
+
+            box-shadow: 0 6px 20px rgba(19, 9, 18, 0.2);
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .button-link:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.06);
+            color: var(--plum-deep);
+        }
+
+        .button-secondary {
+            color: var(--cream);
+            background: rgba(232, 201, 194, 0.1);
+            border: 1px solid rgba(232, 201, 194, 0.45);
+            box-shadow: none;
+        }
+
+        .button-secondary:hover {
+            color: var(--cream);
+            background: rgba(232, 201, 194, 0.17);
+        }
+
+
+        /* ========================================
+           PREISE
+        ======================================== */
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .price-card {
+            padding: 1.4rem;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(185, 111, 88, 0.13),
+                    rgba(33, 22, 34, 0.65)
+                );
+
+            border: 1px solid rgba(216, 185, 120, 0.36);
+            border-radius: 18px;
+        }
+
+        .price-card h3 {
+            margin: 0 0 0.7rem;
+            color: var(--rose);
+            font-size: 1.55rem;
+        }
+
+        .price {
+            display: block;
+            margin: 0.5rem 0;
+
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .price-note {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .price-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .price-card p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* ========================================
+           HINWEISE
+        ======================================== */
+
+        .notice {
+            margin: 1.7rem 0;
+            padding: clamp(1.25rem, 3vw, 2rem);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(92, 57, 54, 0.72),
+                    rgba(33, 22, 34, 0.95)
+                );
+
+            border: 1px solid rgba(216, 185, 120, 0.48);
+            border-left: 4px solid var(--gold);
+            border-radius: 18px;
+        }
+
+        .notice h3 {
+            margin: 0 0 0.8rem;
+
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.85rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .notice p {
+            margin: 0 0 0.9rem;
+            color: #F0E4DF;
+            line-height: 1.8;
+        }
+
+        .notice p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* ========================================
+           KLEINERE ANGEBOTE
+        ======================================== */
+
+        .small-offers {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.3rem;
+        }
+
+        .small-offer {
+            position: relative;
+            overflow: hidden;
+
+            padding: clamp(1.4rem, 3vw, 2rem);
+
+            background:
+                radial-gradient(
+                    ellipse at 100% 0%,
+                    rgba(185, 111, 88, 0.16),
+                    transparent 55%
+                ),
+                linear-gradient(
+                    145deg,
+                    rgba(81, 56, 78, 0.94),
+                    rgba(33, 22, 34, 0.98)
+                );
+
+            border: 1px solid rgba(232, 201, 194, 0.25);
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(19, 9, 18, 0.2);
+            scroll-margin-top: 100px;
+        }
+
+        .small-offer h2 {
+            margin: 0.3rem 0 0.8rem;
+
+            color: var(--rose);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2rem, 3.5vw, 2.7rem);
+            font-weight: 600;
+            line-height: 1.08;
+        }
+
+        .small-offer h3 {
+            margin: 1.6rem 0 0.65rem;
+
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .small-offer p {
+            margin: 0 0 0.9rem;
+            color: #F3E7E4;
+            line-height: 1.8;
+        }
+
+        .small-offer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .small-offer strong {
+            color: var(--gold-light);
+        }
+
+        .small-offer .offer-tag {
+            display: inline-block;
+            margin-bottom: 0.4rem;
+
+            color: var(--gold);
+            font-size: 0.73rem;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+
+        /* ========================================
+           ONLINEKURSE
+        ======================================== */
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .course-card {
+            padding: 1.5rem;
+
+            background: rgba(33, 22, 34, 0.55);
+            border: 1px solid rgba(216, 185, 120, 0.32);
+            border-radius: 20px;
+        }
+
+        .course-card h3 {
+            margin: 0 0 1rem;
+            color: var(--rose);
+        }
+
+        .course-card ul {
+            margin: 0;
+            padding-left: 1.35rem;
+            color: #F3E7E4;
+        }
+
+        .course-card li {
+            padding: 0.3rem 0;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin: 0.5rem 0 1rem;
+            padding: 0.4rem 0.8rem;
+
+            color: var(--plum-deep);
+            background: var(--gold-light);
+            border-radius: 999px;
+
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+
+
+        /* ========================================
+           ABSCHLIESSENDE EINLADUNG
+        ======================================== */
+
+        .closing-section {
+            padding-top: 2rem;
+            padding-bottom: 4.5rem;
+        }
+
+        .closing-card {
+            position: relative;
+            overflow: hidden;
+
+            padding: clamp(2rem, 5vw, 4rem);
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    ellipse at 15% 20%,
+                    rgba(185, 111, 88, 0.24),
+                    transparent 38%
+                ),
+                radial-gradient(
+                    ellipse at 85% 85%,
+                    rgba(216, 185, 120, 0.13),
+                    transparent 38%
+                ),
+                linear-gradient(
+                    135deg,
+                    rgba(81, 56, 78, 0.96),
+                    rgba(33, 22, 34, 0.98)
+                );
+
+            border: 1px solid rgba(216, 185, 120, 0.38);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .closing-card h2 {
+            margin: 0 0 1rem;
+
+            color: var(--rose);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            line-height: 1.05;
+        }
+
+        .closing-card p {
+            max-width: 720px;
+            margin: 0 auto 1rem;
+            color: #F3E7E4;
+        }
+
+
+        /* ========================================
+           VIER THEMENBLÖCKE
+        ======================================== */
+
+        .discover-section {
+            padding-top: 1rem;
+            padding-bottom: 4rem;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .discover-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 190px;
+            padding: 1.5rem 1.2rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            text-decoration: none;
+
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(185, 111, 88, 0.16),
+                    transparent 60%
+                ),
+                linear-gradient(
+                    150deg,
+                    rgba(81, 56, 78, 0.95),
+                    rgba(33, 22, 34, 0.98)
+                );
+
+            border: 1px solid rgba(232, 201, 194, 0.25);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(19, 9, 18, 0.22);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .discover-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--terracotta-light),
+                var(--gold),
+                transparent
+            );
+
+            opacity: 0.75;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--terracotta-light);
+            box-shadow: 0 16px 35px rgba(19, 9, 18, 0.32);
+        }
+
+        .discover-symbol {
+            display: block;
+            margin-bottom: 0.65rem;
+
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .discover-card h3 {
+            margin: 0 0 0.55rem;
+
+            color: var(--rose);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .discover-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .discover-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           URHEBERRECHT
+        ======================================== */
+
+        .copyright {
+            position: relative;
+            z-index: 1;
+
+            width: min(900px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 0 0 1rem;
+
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            text-align: center;
+        }
+
+        .copyright p {
+            margin: 0 0 0.7rem;
+        }
+
+        .copyright .copyright-brand {
+            margin-top: 1.5rem;
+            padding-bottom: 2.5rem;
+
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+
+        /* ========================================
+           FUSSZEILE
+        ======================================== */
+
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+
+            background: #211622;
+            border-top: 1px solid rgba(216, 185, 120, 0.28);
+        }
+
+        .footer-inner {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 2rem 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 980px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                padding: 0.4rem 0 1rem;
+            }
+
+            .main-nav.open {
+                display: flex;
+            }
+
+            .main-nav a {
+                border-radius: 12px;
+            }
+
+            .main-nav .nav-highlight {
+                margin-top: 0.35rem;
+                text-align: center;
+            }
+
+            .overview-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .discover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                min-height: 370px;
+            }
+        }
+
+
+        /* ========================================
+           SMARTPHONES
+        ======================================== */
+
+        @media (max-width: 650px) {
+            body {
+                font-size: 16px;
+            }
+
+            .brand {
+                gap: 0.5rem;
+                font-size: 1.35rem;
+            }
+
+            .brand-mark {
+                font-size: 1.55rem;
+            }
+
+            .language-switcher {
+                top: 0.7rem;
+                right: 0.7rem;
+            }
+
+            .hero {
+                min-height: 340px;
+                padding: 5rem 1rem 3.5rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 14vw, 4.6rem);
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .overview-section {
+                padding-top: 1.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 460px;
+                margin: 0 auto;
+            }
+
+            .overview-card {
+                min-height: 175px;
+                padding: 1.4rem;
+            }
+
+            .offer-section {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .offer-card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 20px;
+            }
+
+            .offer-card p,
+            .small-offer p {
+                line-height: 1.75;
+            }
+
+            .offer-columns,
+            .price-grid,
+            .course-list,
+            .small-offers {
+                grid-template-columns: 1fr;
+            }
+
+            .inner-card,
+            .price-card,
+            .course-card {
+                padding: 1.2rem;
+            }
+
+            .notice {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+
+            .closing-card {
+                padding: 2rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .discover-section {
+                padding-top: 1rem;
+                padding-bottom: 3rem;
+            }
+
+            .discover-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 460px;
+                margin: 0 auto;
+            }
+
+            .discover-card {
+                min-height: 160px;
+                padding: 1.4rem 1rem;
+            }
+
+            .copyright {
+                font-size: 0.88rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .button-link {
+                max-width: 100%;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand {
+                font-size: 1.15rem;
+            }
+
+            .menu-toggle {
+                padding: 0.5rem 0.65rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .offer-card,
+            .small-offer {
+                padding: 1.2rem 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <div class="stars" aria-hidden="true"></div>
+
+
+    <!-- ========================================
+         KOPFZEILE UND HAUPTNAVIGATION
+    ======================================== -->
+
+    <header class="site-header">
+        <div class="nav-wrap">
+
+            <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>Lilians Kräutermagie</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span class="menu-icon" aria-hidden="true">☰</span>
+                <span class="menu-label">Menü</span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="kraeuter.html">Kräuterwelt</a>
+                <a href="lieder.html">Musik</a>
+                <a href="buecher.html">Bücher</a>
+                <a href="about.html">Über Mich</a>
+                <a class="nav-highlight" href="index.html#neues-buch">Neues Buch ✦</a>
+                <a href="angebote.html" aria-current="page">Angebote</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================
+         TITELBEREICH
+    ======================================== -->
+
+    <section class="hero" aria-labelledby="hero-title">
+
+        <div class="language-switcher" aria-label="Sprache wählen">
+            <a href="index.html" aria-label="Deutsch" title="Deutsch">
+                <img src="defavicon.png" alt="">
+            </a>
+
+            <a href="/en/" aria-label="English" title="English">
+                <img src="enfavicon.png" alt="">
+            </a>
+
+            <a href="/dk/" aria-label="Dansk" title="Dansk">
+                <img src="dkfavicon.png" alt="">
+            </a>
+        </div>
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                ✧ Begleitung · Entwicklung · Inspiration ✧
+            </span>
+
+            <h1 id="hero-title">
+                Raum für
+                <span>deine Möglichkeiten</span>
+            </h1>
+
+            <p>
+                Manchmal braucht es neue Impulse, manchmal Raum zum Lernen,
+                manchmal eine kreative Auszeit oder einen anderen Blickwinkel.
+                Entdecke meine Angebote – individuell, achtsam und mit viel Herz.
+            </p>
+
+            <div class="hero-divider" aria-hidden="true"></div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         HAUPTINHALT
+    ======================================== -->
+
+    <main id="inhalt">
+
+
+        <!-- ========================================
+             ANGEBOTSÜBERSICHT
+        ======================================== -->
+
+        <section class="section overview-section" aria-labelledby="overview-title">
+
+            <div class="section-heading">
+                <span class="eyebrow">Finde das Passende für dich</span>
+
+                <h2 id="overview-title">Meine Angebote im Überblick</h2>
+
+                <p>
+                    Unterschiedliche Wege, um Neues zu entdecken, eigene
+                    Fähigkeiten zu stärken, zur Ruhe zu kommen oder sich
+                    mit den eigenen Fragen zu beschäftigen.
+                </p>
+            </div>
+
+            <div class="overview-grid">
+
+                <a class="overview-card" href="#lernangebot">
+                    <span class="overview-symbol" aria-hidden="true">✧</span>
+                    <h3>Individuelle Lernbegleitung</h3>
+                    <p>
+                        Spielerisches Lernen für Kinder von 3 bis 9 Jahren –
+                        orientiert an Interessen, Stärken und Neugier.
+                    </p>
+                    <span class="overview-link">Lernangebot entdecken →</span>
+                </a>
+
+                <a class="overview-card" href="#erlebnispaedagogik">
+                    <span class="overview-symbol" aria-hidden="true">◇</span>
+                    <h3>Erlebnispädagogik</h3>
+                    <p>
+                        Bewegung, gemeinsame Herausforderungen und
+                        wertvolle Erfahrungen für Kinder und Erwachsene.
+                    </p>
+                    <span class="overview-link">Mehr erfahren →</span>
+                </a>
+
+                <a class="overview-card" href="#klangarbeit">
+                    <span class="overview-symbol" aria-hidden="true">♫</span>
+                    <h3>Klangarbeit über Zoom</h3>
+                    <p>
+                        Eine achtsame, individuelle Klangbegleitung
+                        im geschützten Rahmen einer Fernsitzung.
+                    </p>
+                    <span class="overview-link">Klangarbeit kennenlernen →</span>
+                </a>
+
+                <a class="overview-card" href="#kartenlegen">
+                    <span class="overview-symbol" aria-hidden="true">☆</span>
+                    <h3>Kartenlegen &amp; Pendeln</h3>
+                    <p>
+                        Intuitive Impulse und neue Blickwinkel
+                        für persönliche Fragen und Entscheidungen.
+                    </p>
+                    <span class="overview-link">Zur intuitiven Wegweisung →</span>
+                </a>
+
+                <a class="overview-card" href="#onlinekurse">
+                    <span class="overview-symbol" aria-hidden="true">✿</span>
+                    <h3>Natürliche Onlinekurse</h3>
+                    <p>
+                        Schritt für Schritt lernen, wie du natürliche
+                        Pflegeprodukte und pflanzenbasierte Rezeptideen herstellst.
+                    </p>
+                    <span class="overview-link">Kurse entdecken →</span>
+                </a>
+
+                <a class="overview-card" href="#kontakt">
+                    <span class="overview-symbol" aria-hidden="true">∞</span>
+                    <h3>Fragen &amp; Kennenlernen</h3>
+                    <p>
+                        Du bist noch unsicher, welches Angebot passt?
+                        Lass uns gemeinsam herausfinden, was sinnvoll ist.
+                    </p>
+                    <span class="overview-link">Kontakt aufnehmen →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             1. INDIVIDUELLE LERNBEGLEITUNG
+        ======================================== -->
+
+        <section class="section offer-section" id="lernangebot" aria-labelledby="learning-title">
+
+            <article class="offer-card">
+
+                <header class="offer-header">
+                    <span class="offer-number">01 · Pädagogische Begleitung</span>
+                    <h2 id="learning-title">Raum für neugieriges und lebendiges Lernen</h2>
+                    <p>
+                        Individuelle Lernbegleitung für Kinder von 3 bis 9 Jahren
+                    </p>
+                </header>
+
+                <p>
+                    Stell dir vor, dein Kind lernt nicht über Arbeitsblättern
+                    gebeugt am Tisch – sondern mit leuchtenden Augen, Bewegung
+                    und echter Neugier.
+                </p>
+
+                <p>
+                    Es hüpft, entdeckt, fragt, lacht und probiert aus.
+                    Und ganz nebenbei sammelt es Erfahrungen, die im Kopf
+                    und im Herzen bleiben können.
+                </p>
+
+                <p>
+                    Genau dafür habe ich mein pädagogisches Angebot geschaffen.
+                </p>
+
+                <h3>Wer ich bin und wie ich arbeite</h3>
+
+                <p>
+                    Ich bin staatlich anerkannte Erzieherin mit Bachelorabschluss
+                    und habe viele Jahre in verschiedenen Kindertagesstätten gearbeitet.
+                </p>
+
+                <p>
+                    In dieser Zeit durfte ich viele Kinder begleiten.
+                    Gleichzeitig wurde mir immer klarer, dass meine Art zu arbeiten
+                    nicht vollständig in ein klassisches, starres Lernsystem passt.
+                </p>
+
+                <p>
+                    Zu oft habe ich erlebt, dass Kinder lange still sitzen,
+                    Arbeitsblätter ausfüllen und alle gleichzeitig das gleiche
+                    Thema bearbeiten sollen – auch dann, wenn ihre Neugier
+                    eigentlich ganz woanders liegt.
+                </p>
+
+                <p>
+                    Doch Kinder lernen auf vielfältige Weise:
+                    durch Bewegung, Entdecken, Ausprobieren und echtes Erleben.
+                </p>
+
+                <p>
+                    Durch meine Ausbildung und langjährige berufliche Erfahrung
+                    begleite ich Kinder fachlich fundiert und gleichzeitig mit
+                    viel Herz. Jedes Kind ist einzigartig und bringt eigene
+                    Interessen, Stärken und Lernwege mit.
+                </p>
+
+                <p>
+                    Ein Kind liebt es zu malen. Ein anderes merkt sich mühelos
+                    Lieder oder Geschichten. Wieder ein anderes lernt besonders
+                    gut durch Bewegung.
+                </p>
+
+                <p>
+                    Deshalb gibt es bei mir keine starren Programme.
+                    Jede Lernzeit wird individuell vorbereitet und an den
+                    Interessen, Stärken und der natürlichen Neugier des Kindes
+                    ausgerichtet.
+                </p>
+
+                <p>
+                    Denn Lernen darf sich leicht, lebendig und sinnvoll anfühlen.
+                    Lernen mit dem ganzen Körper.
+                </p>
+
+                <h3>Ein Beispiel aus der Praxis</h3>
+
+                <p>
+                    Viele kennen das Spiel „Himmel und Hölle“. Dieses einfache
+                    Hüpfspiel lässt sich wunderbar nutzen, um mathematische
+                    Grunderfahrungen spielerisch zu vermitteln.
+                </p>
+
+                <p>
+                    Statt Zahlen nur auf Papier zu sehen, verbinden wir
+                    Bewegung und Lernen. Kinder hüpfen über Felder mit:
+                </p>
+
+                <ul class="feature-list">
+                    <li>Farben</li>
+                    <li>Formen</li>
+                    <li>Zahlen</li>
+                </ul>
+
+                <p>
+                    Dabei sieht das Kind die Zahl nicht nur, sondern bewegt sich
+                    dazu, erkennt Formen, unterscheidet Farben und zählt.
+                    So können Wahrnehmung, Bewegung, Konzentration und Denken
+                    miteinander verbunden werden.
+                </p>
+
+                <p>
+                    Nicht durch Druck, sondern durch Freude am Entdecken.
+                </p>
+
+                <h3>Meine pädagogischen Themenbereiche</h3>
+
+                <div class="offer-columns">
+
+                    <div class="inner-card">
+                        <h3>Mathematische Grunderfahrungen</h3>
+                        <p>
+                            Zahlen, Mengen, Formen und Muster spielerisch entdecken.
+                        </p>
+                    </div>
+
+                    <div class="inner-card">
+                        <h3>Sprachliche Bildung &amp; Literacy</h3>
+                        <p>
+                            Reime, Silben klatschen, Wörter entdecken,
+                            Geschichten erleben und erste spielerische
+                            Begegnungen mit Buchstaben und Schrift.
+                        </p>
+                    </div>
+
+                    <div class="inner-card">
+                        <h3>Somatische Bildung</h3>
+                        <p>
+                            Den eigenen Körper wahrnehmen, Bewegung erleben
+                            und spielerisch etwas über Ernährung und Gesundheit lernen.
+                        </p>
+                    </div>
+
+                    <div class="inner-card">
+                        <h3>Künstlerische Bildung</h3>
+                        <p>
+                            Kreatives Gestalten mit Farben, Naturmaterialien
+                            und Fantasie.
+                        </p>
+                    </div>
+
+                    <div class="inner-card">
+                        <h3>Bewegung &amp; Sport</h3>
+                        <p>
+                            Koordination, Körpergefühl und Freude an Bewegung stärken.
+                        </p>
+                    </div>
+
+                    <div class="inner-card">
+                        <h3>Entspannung</h3>
+                        <p>
+                            Traumreisen, Atemübungen und kleine Momente der Ruhe.
+                        </p>
+                    </div>
+
+                </div>
+
+                <h3>Für wen ist das Angebot geeignet?</h3>
+
+                <ul class="feature-list">
+                    <li>Kitafreie Kinder</li>
+                    <li>Freilerner-Familien</li>
+                    <li>Familien, die sich eine individuelle Lernbegleitung wünschen</li>
+                </ul>
+
+                <p>
+                    Das Onlineangebot findet über Zoom statt und richtet sich
+                    an Kinder im Alter von 3 bis 9 Jahren. Die Einheiten werden
+                    individuell vorbereitet und auf das jeweilige Kind abgestimmt.
+                </p>
+
+                <h3>Preise für die individuelle Lernbegleitung</h3>
+
+                <div class="price-grid">
+
+                    <div class="price-card">
+                        <h3>Einzelstunde</h3>
+                        <span class="price">28 €</span>
+                        <p>60 Minuten individuelle Lernbegleitung</p>
+                        <p class="price-note">
+                            Es können maximal zwei Themen gewählt werden.
+                        </p>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>5er-Woche</h3>
+                        <span class="price">130 €</span>
+                        <p>Fünf Tage mit jeweils 60 Minuten</p>
+                        <p class="price-note">
+                            Die Themen dürfen frei gewählt und kombiniert werden.
+                        </p>
+                    </div>
+
+                </div>
+
+                <h3>Kostenloses Kennenlernen</h3>
+
+                <p>
+                    Du bist dir noch nicht ganz sicher, ob mein Angebot zu
+                    deinem Kind passt? Dann kannst du gerne ein kostenfreies
+                    15-minütiges Kennenlerngespräch über Zoom vereinbaren.
+                </p>
+
+                <p>
+                    Gerade bei jüngeren Kindern ist es mir wichtig, dass sie
+                    sich zuerst wohlfühlen. In einem kurzen Gespräch können
+                    wir uns kennenlernen und darüber sprechen, was dein Kind
+                    begeistert, welche Stärken bereits sichtbar sind und was
+                    dir als Elternteil besonders wichtig ist.
+                </p>
+
+                <p>
+                    Gemeinsam schauen wir, ob und wie ich dein Kind auf seinem
+                    individuellen Lernweg begleiten kann.
+                </p>
+
+                <p>
+                    Für Leipzig sind meine pädagogischen Angebote nach
+                    individueller Absprache auch vor Ort möglich.
+                </p>
+
+                <a class="button-link" href="mailto:Elisabeth-Ann_Wolf88@proton.me?subject=Anfrage%20Lernbegleitung">
+                    Lernbegleitung anfragen →
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- ========================================
+             2. ERLEBNISPÄDAGOGIK
+        ======================================== -->
+
+        <section class="section offer-section" id="erlebnispaedagogik" aria-labelledby="experience-title">
+
+            <article class="offer-card">
+
+                <header class="offer-header">
+                    <span class="offer-number">02 · Lernen durch Erleben</span>
+                    <h2 id="experience-title">Erlebnispädagogik – Lernen, Erleben, Wachsen</h2>
+                    <p>
+                        Gemeinsam Herausforderungen meistern, Fähigkeiten entdecken
+                        und über sich hinauswachsen.
+                    </p>
+                </header>
+
+                <p>
+                    Erlebnispädagogik ist mehr als „nur draußen spielen“.
+                    Sie nutzt praktische Erfahrungen, Spiele und kleine
+                    Herausforderungen, damit Kinder, Jugendliche und Erwachsene
+                    eigene Fähigkeiten entdecken und neue Kompetenzen entwickeln können.
+                </p>
+
+                <p>
+                    Dabei geht es nicht darum, Gewinner oder Verlierer zu bestimmen.
+                    Im Mittelpunkt stehen das gemeinsame Entdecken, die eigene
+                    Persönlichkeit und die Dynamik innerhalb einer Gruppe.
+                </p>
+
+                <p>
+                    Ich habe mich über einen Zeitraum von mehr als drei Jahren
+                    mit Erlebnispädagogik beschäftigt und sie zeitgleich zu meiner
+                    Erzieherausbildung sowie darüber hinaus gelernt und vertieft.
+                    Diese Erfahrungen prägen meine Art, Gruppen zu begleiten
+                    und Erlebnisse individuell zu gestalten.
+                </p>
+
+                <h3>Für Kinder von 3 bis 10 Jahren</h3>
+
+                <p>
+                    Meine Angebote für Kinder verbinden Bewegung, Spiel und Lernen
+                    in der Natur oder vor Ort. Aktuell liegt mein Vor-Ort-Angebot
+                    im Raum Leipzig.
+                </p>
+
+                <p>Dabei können Kinder:</p>
+
+                <ul class="feature-list">
+                    <li>Mut und Selbstvertrauen stärken</li>
+                    <li>spielerisch soziale Fähigkeiten entwickeln</li>
+                    <li>Neues ausprobieren und eigene Grenzen kennenlernen</li>
+                    <li>Kooperation, Kommunikation und Rücksichtnahme üben</li>
+                    <li>eigene Talente und kreative Lösungswege entdecken</li>
+                </ul>
+
+                <p>
+                    Jede Einheit wird individuell geplant – orientiert an den
+                    Interessen und Stärken der Kinder und daran, wo sie zusätzliche
+                    Unterstützung gebrauchen können.
+                </p>
+
+                <p>
+                    Die Erlebnispädagogik bietet einen Rahmen, in dem Kinder
+                    ohne unnötigen Leistungsdruck Erfahrungen sammeln können.
+                    Schüchterne Kinder bekommen die Möglichkeit, sich einzubringen,
+                    während andere ihre Talente und Kreativität entdecken.
+                </p>
+
+                <p>
+                    Jedes Spiel und jede Aufgabe soll dazu einladen, selbst zu
+                    erleben, zu reflektieren und voneinander zu lernen.
+                    Und das Schönste: Es darf mit Freude, Begeisterung und
+                    Gemeinschaftsgefühl geschehen.
+                </p>
+
+                <h3>Preise für Kinder</h3>
+
+                <div class="price-grid">
+
+                    <div class="price-card">
+                        <h3>Einzelstunde</h3>
+                        <span class="price">25 €</span>
+                        <p>60 Minuten pro Kind</p>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>5er-Paket</h3>
+                        <span class="price">120 €</span>
+                        <p>Fünf Einheiten à 60 Minuten pro Kind</p>
+                    </div>
+
+                </div>
+
+                <div class="inner-card">
+                    <h3>Kleine Gruppen</h3>
+                    <p>
+                        Für Gruppen mit bis zu vier Kindern gilt ein Pauschalpreis
+                        von <strong>90 € für 60 Minuten</strong>.
+                    </p>
+                </div>
+
+                <h3>Für Erwachsene – Team-Building und Gruppendynamik</h3>
+
+                <p>
+                    Auch für Erwachsene biete ich erlebnispädagogische Angebote
+                    für Gruppen, Teams oder Vereine an. Im Mittelpunkt stehen
+                    Kooperation, Kommunikation und gemeinsame Erfahrungen.
+                </p>
+
+                <p>Durch verschiedene Spiele und Aktivitäten können Gruppen:</p>
+
+                <ul class="feature-list">
+                    <li>ihre Teamdynamik erkennen und positiv verändern</li>
+                    <li>Vertrauen und gegenseitige Unterstützung aufbauen</li>
+                    <li>neue Perspektiven erleben</li>
+                    <li>gemeinsam Herausforderungen meistern</li>
+                    <li>Mut, Selbstbewusstsein und Kreativität stärken</li>
+                </ul>
+
+                <p>
+                    Erlebnispädagogische Spiele können sichtbar machen,
+                    wie Menschen miteinander kommunizieren, Entscheidungen treffen
+                    und sich gegenseitig unterstützen.
+                </p>
+
+                <h3>Preise für Erwachsene und Gruppen</h3>
+
+                <p>
+                    Die folgenden Preise gelten pro Gruppe. Die konkrete
+                    Gestaltung stimmen wir vorher gemeinsam ab.
+                </p>
+
+                <div class="price-grid">
+
+                    <div class="price-card">
+                        <h3>60 Minuten</h3>
+                        <p>Bis 6 Personen</p>
+                        <span class="price">150 €</span>
+                        <p>Bis 10 Personen</p>
+                        <span class="price">220 €</span>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>90 Minuten</h3>
+                        <p>Bis 6 Personen</p>
+                        <span class="price">210 €</span>
+                        <p>Bis 10 Personen</p>
+                        <span class="price">300 €</span>
+                    </div>
+
+                </div>
+
+                <h3>Warum ich Erlebnispädagogik liebe</h3>
+
+                <p>
+                    Für mich ist Erlebnispädagogik nicht nur eine Methode,
+                    sondern eine Leidenschaft.
+                </p>
+
+                <ul class="feature-list">
+                    <li>Es ist faszinierend zu sehen, wie Kinder und Erwachsene über sich hinauswachsen.</li>
+                    <li>Teams können enger zusammenrücken, wenn sie Herausforderungen gemeinsam meistern.</li>
+                    <li>Spielerische Aufgaben können Mut machen und Kreativität freisetzen.</li>
+                    <li>Gemeinsame Erfahrungen schaffen Gesprächsanlässe und neue Perspektiven.</li>
+                </ul>
+
+                <p>
+                    Es ist diese Kraft des gemeinsamen Erlebens, die mich
+                    immer wieder begeistert.
+                </p>
+
+                <h3>Planung und Buchung</h3>
+
+                <p>
+                    Du möchtest ein Angebot für dein Kind, eine Gruppe oder dein Team
+                    organisieren? Schreibe mir gerne. Gemeinsam besprechen wir:
+                </p>
+
+                <ul class="feature-list">
+                    <li>Dauer und Teilnehmerzahl</li>
+                    <li>Inhalte, Spiele und Schwerpunkte</li>
+                    <li>Ziele und besondere Wünsche</li>
+                    <li>Ort, Rahmenbedingungen und mögliche Termine</li>
+                </ul>
+
+                <p>
+                    So entsteht ein Erlebnis, das Freude macht und auf die
+                    Bedürfnisse der Kinder oder der Gruppe abgestimmt ist.
+                </p>
+
+                <a class="button-link" href="mailto:Elisabeth-Ann_Wolf88@proton.me?subject=Anfrage%20Erlebnisp%C3%A4dagogik">
+                    Erlebnispädagogik anfragen →
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- ========================================
+             3. KLANGARBEIT
+        ======================================== -->
+
+        <section class="section offer-section" id="klangarbeit" aria-labelledby="sound-title">
+
+            <article class="offer-card">
+
+                <header class="offer-header">
+                    <span class="offer-number">03 · Klang und Achtsamkeit</span>
+                    <h2 id="sound-title">Klangbegleitung als Fernsitzung über Zoom</h2>
+                    <p>
+                        Ein individueller Raum, um innezuhalten, Klänge bewusst
+                        wahrzunehmen und sich Zeit für sich selbst zu nehmen.
+                    </p>
+                </header>
+
+                <p>
+                    Seit vielen Jahren begleiten mich die Themen Klänge, Energien,
+                    Frequenzen und die sanfte Unterstützung persönlicher
+                    Lösungsprozesse durch Klang auf meinem eigenen Weg.
+                </p>
+
+                <p>
+                    Ich durfte mich immer intensiver mit der Frage beschäftigen,
+                    wie Menschen Klänge und Schwingungen wahrnehmen – körperlich,
+                    emotional und ganz persönlich.
+                </p>
+
+                <p>
+                    Um mein Wissen zu vertiefen und mich fachlich weiter mit
+                    Klangarbeit auseinanderzusetzen, habe ich Workshops
+                    in diesem Bereich besucht.
+                </p>
+
+                <p>
+                    Aus diesen Erfahrungen heraus biete ich dir eine Klangbegleitung
+                    als Fernsitzung über Zoom an – achtsam, individuell und
+                    mit viel Einfühlungsvermögen.
+                </p>
+
+                <div class="inner-card">
+                    <h3>Was dich erwartet</h3>
+                    <ul class="feature-list">
+                        <li>Eine individuelle Sitzung in ruhiger Atmosphäre</li>
+                        <li>Raum, um bewusst innezuhalten und Klänge wahrzunehmen</li>
+                        <li>Eine achtsame Begleitung, abgestimmt auf dein Anliegen</li>
+                        <li>Ein Online-Termin, den du in deiner vertrauten Umgebung wahrnehmen kannst</li>
+                    </ul>
+                    <p>
+                        Die konkrete Gestaltung und die technischen Voraussetzungen
+                        besprechen wir vorab gemeinsam.
+                    </p>
+                </div>
+
+                <aside class="notice" aria-labelledby="sound-notice-title">
+                    <h3 id="sound-notice-title">Wichtiger Hinweis zur Klangarbeit</h3>
+
+                    <p>
+                        Ich gebe keine Heil-, Erfolgs- oder Wunderversprechen.
+                        Klangarbeit und energetische Angebote werden von Menschen
+                        unterschiedlich wahrgenommen.
+                    </p>
+
+                    <p>
+                        Dieses Angebot versteht sich als persönliche und
+                        energetische Begleitung. Es ersetzt keine medizinische
+                        oder psychotherapeutische Untersuchung, Beratung oder Behandlung.
+                    </p>
+
+                    <p>
+                        Bei gesundheitlichen Beschwerden wende dich bitte an
+                        eine entsprechend qualifizierte Fachperson.
+                    </p>
+                </aside>
+
+                <a class="button-link" href="mailto:Elisabeth-Ann_Wolf88@proton.me?subject=Anfrage%20Klangbegleitung">
+                    Klangbegleitung anfragen →
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- ========================================
+             4. KARTENLEGEN UND PENDELN
+        ======================================== -->
+
+        <section class="section offer-section" id="kartenlegen" aria-labelledby="cards-title">
+
+            <article class="offer-card">
+
+                <header class="offer-header">
+                    <span class="offer-number">04 · Intuition und Selbstreflexion</span>
+                    <h2 id="cards-title">Kartenlegen &amp; Pendeln</h2>
+                    <p>
+                        Klarheit finden – Orientierung spüren – den eigenen Weg erkennen
+                    </p>
+                </header>
+
+                <p>
+                    Unsere Welt steckt voller Möglichkeiten, oft verborgen
+                    im Alltäglichen.
+                </p>
+
+                <p>
+                    Manchmal stehen wir an einem Punkt im Leben, an dem sich
+                    alles im Kreis zu drehen scheint. Fragen tauchen auf,
+                    Entscheidungen fühlen sich schwer an oder das eigene
+                    Bauchgefühl ist kaum noch zu hören.
+                </p>
+
+                <p><strong>Vielleicht beschäftigt dich:</strong></p>
+
+                <ol class="number-list">
+                    <li>eine Beziehung oder ein Herzensmensch</li>
+                    <li>eine Entscheidung, die sich nicht klar anfühlt</li>
+                    <li>ein inneres Gefühl von Stillstand oder Unsicherheit</li>
+                    <li>der Wunsch nach Orientierung oder Bestätigung</li>
+                </ol>
+
+                <p>
+                    Nicht immer braucht es sofort eine Antwort. Manchmal kann
+                    bereits ein neuer Blickwinkel dabei helfen, Gedanken zu ordnen
+                    und die eigenen Wünsche bewusster wahrzunehmen.
+                </p>
+
+                <h3>Was Kartenlegen und Pendeln bedeuten können</h3>
+
+                <p>
+                    Kartenlegen und Pendeln sind traditionelle Methoden,
+                    die Menschen zur intuitiven Orientierung und Selbstreflexion
+                    nutzen. In meiner Arbeit dienen sie als Impulse, um innezuhalten,
+                    eigene Gedanken zu betrachten und neue Fragen zu entdecken.
+                </p>
+
+                <div class="offer-columns">
+
+                    <div class="inner-card">
+                        <h3>1. Kartenlegen</h3>
+                        <p>
+                            Die Karten bieten einen symbolischen Zugang zu Themen,
+                            Gefühlen und möglichen Perspektiven. Sie können dazu
+                            anregen, den eigenen Fokus zu hinterfragen und
+                            verschiedene Möglichkeiten durchzudenken.
+                        </p>
+                    </div>
+
+                    <div class="inner-card">
+                        <h3>2. Pendeln</h3>
+                        <p>
+                            Das Pendel wird traditionell bei klar formulierten
+                            Fragen eingesetzt. Die Bewegung kann als Anlass dienen,
+                            eigene Ja-/Nein-Tendenzen und innere Reaktionen
+                            bewusster wahrzunehmen.
+                        </p>
+                    </div>
+
+                </div>
+
+                <p>
+                    Beide Methoden geben keine verlässlichen Vorhersagen und
+                    keine festen Zukunftsversprechen. Sie ersetzen auch keine
+                    sachliche Prüfung wichtiger Entscheidungen.
+                </p>
+
+                <h3>Warum eine Legung bei mir?</h3>
+
+                <p>
+                    Ich arbeite intuitiv, achtsam und individuell – so einzigartig
+                    wie dein Thema. Mir ist wichtig, nicht einfach starre
+                    Deutungsschemata anzuwenden, sondern Raum für deine persönliche
+                    Situation zu lassen.
+                </p>
+
+                <p><strong>Ich verbinde:</strong></p>
+
+                <ul class="feature-list">
+                    <li>feines Gespür und Intuition</li>
+                    <li>Kartenarbeit und Pendelarbeit</li>
+                    <li>ruhige Klarheit statt dramatischer Aussagen</li>
+                    <li>Tiefe und Reflexion statt vorschneller Antworten</li>
+                </ul>
+
+                <p>
+                    Mir ist wichtig, dass du dich gesehen und ernst genommen fühlst.
+                    Du sollst nicht von einer Legung abhängig werden, sondern
+                    deine eigene Wahrnehmung und Entscheidungsfähigkeit stärken.
+                </p>
+
+                <h3>Über mich und meine Arbeit</h3>
+
+                <p>
+                    Meine Intuition und meine inneren Bilder begleiten mich,
+                    solange ich denken kann. Schon als Kind nahm ich innere Bilder
+                    und Eindrücke wahr, die für mich selbstverständlich waren.
+                </p>
+
+                <p>
+                    Dieses persönliche Erleben hat mich nie ganz verlassen.
+                    Ich höre auf mein Bauchgefühl und lasse Gedanken und
+                    Assoziationen in eine Legung einfließen, die sich währenddessen
+                    zeigen dürfen – behutsam und respektvoll.
+                </p>
+
+                <p>
+                    Diese Eindrücke verstehe ich als subjektive Wahrnehmungen,
+                    nicht als objektive Beweise oder sichere Aussagen über
+                    andere Menschen oder die Zukunft.
+                </p>
+
+                <h3>Meine ausgewählten Kartendecks</h3>
+
+                <div class="offer-columns">
+
+                    <div class="inner-card">
+                        <h3>Tarotkarten von Verena Klinderr</h3>
+                        <p>
+                            Ein Kartendeck, das ich wegen seiner für mich
+                            feinen, tiefgehenden und intuitiven Bildsprache nutze.
+                        </p>
+                    </div>
+
+                    <div class="inner-card">
+                        <h3>Tarot der Hexenweisheiten</h3>
+                        <p>
+                            Das Deck von Phyllis Curott verbindet für mich
+                            kraftvolle Symbolik mit Themen rund um altes Wissen
+                            und moderne Spiritualität.
+                        </p>
+                    </div>
+
+                </div>
+
+                <aside class="notice" aria-labelledby="cards-notice-title">
+                    <h3 id="cards-notice-title">Ein achtsamer Umgang mit Entscheidungen</h3>
+
+                    <p>
+                        Kartenlegen und Pendeln sind spirituelle beziehungsweise
+                        intuitive Angebote zur Selbstreflexion. Sie können
+                        keine Zukunft sicher vorhersagen und liefern keine
+                        überprüfbaren Antworten auf medizinische, rechtliche
+                        oder finanzielle Fragen.
+                    </p>
+
+                    <p>
+                        Wichtige Entscheidungen solltest du auf Grundlage
+                        deiner eigenen Überlegungen und gegebenenfalls mit
+                        qualifizierter fachlicher Beratung treffen.
+                    </p>
+                </aside>
+
+                <h3>Eine Einladung</h3>
+
+                <p>
+                    Wenn du dir Zeit nehmen möchtest, deine Gedanken zu sortieren,
+                    neue Blickwinkel kennenzulernen oder deinem inneren Gefühl
+                    mehr Raum zu geben, begleite ich dich gern ein Stück auf
+                    diesem Weg.
+                </p>
+
+                <a class="button-link" href="mailto:Elisabeth-Ann_Wolf88@proton.me?subject=Anfrage%20Kartenlegen%20und%20Pendeln">
+                    Persönliche Anfrage senden →
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- ========================================
+             5. ONLINEKURSE
+        ======================================== -->
+
+        <section class="section offer-section" id="onlinekurse" aria-labelledby="courses-title">
+
+            <article class="offer-card">
+
+                <header class="offer-header">
+                    <span class="offer-number">05 · Natürliches Wissen zum Mitmachen</span>
+                    <h2 id="courses-title">Meine Onlinekurse</h2>
+                    <p>
+                        Entdecke die Freude daran, natürliche Pflegeideen
+                        selbst umzusetzen und Neues auszuprobieren.
+                    </p>
+                </header>
+
+                <p>
+                    Willkommen in meiner kleinen Online-Werkstatt für natürliche
+                    Pflege und pflanzenbasierte Rezeptideen!
+                </p>
+
+                <p>
+                    Hier kannst du selbst aktiv werden und lernen, wie sich aus
+                    Pflanzen, Kräutern und weiteren Zutaten eigene Pflegeprodukte
+                    wie Salben, Cremes und Lippenbalsam herstellen lassen.
+                </p>
+
+                <p>
+                    Die Kurse sind als Schritt-für-Schritt-Anleitungen gedacht,
+                    mit denen du in deinem eigenen Tempo lernen kannst.
+                    Die Videos werden über YouTube bereitgestellt.
+                </p>
+
+                <p>
+                    Zu jedem Kurs ist ein PDF mit den Anleitungen vorgesehen,
+                    das die einzelnen Schritte übersichtlich zusammenfasst.
+                    Für ausgewählte Kurse soll außerdem die Möglichkeit bestehen,
+                    ein Zutatenpaket zu bestellen. Je nach Kurs können Gefäße
+                    enthalten sein.
+                </p>
+
+                <span class="coming-soon">Bald buchbar</span>
+
+                <h3>Meine Kurse im Überblick</h3>
+
+                <div class="course-list">
+
+                    <div class="course-card">
+                        <h3>Kurs 1: Salben &amp; Cremes selbst herstellen</h3>
+
+                        <ul>
+                            <li>Ringelblumensalbe</li>
+                            <li>Rosencreme für Gesicht und Hände</li>
+                            <li>Lippenbalsam</li>
+                            <li>Avocadocreme</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-card">
+                        <h3>Kurs 2: Pflanzliche Hausmittel selbst herstellen</h3>
+
+                        <ul>
+                            <li>Pflanzenbasierte Rezeptideen in zwei Varianten</li>
+                            <li>Hustensaft-Rezeptideen in mehreren Varianten</li>
+                        </ul>
+
+                        <p class="price-note" style="margin-top: 1rem;">
+                            Die konkreten Zutaten, Anleitungen und Hinweise
+                            werden jeweils im Kurs erläutert.
+                        </p>
+                    </div>
+
+                </div>
+
+                <h3>Meine Intention</h3>
+
+                <p>
+                    Ich möchte mein Wissen und meine Erfahrungen teilen,
+                    damit mehr Menschen entdecken, wie bereichernd es sein kann,
+                    natürliche Produkte selbst herzustellen.
+                </p>
+
+                <p>
+                    In meiner Familie und meinem Umfeld haben wir eigene
+                    Erfahrungen mit solchen Ideen gesammelt. Diese Erfahrungen
+                    sind für mich ein Anstoß, mich weiter mit natürlichen
+                    Zutaten und selbst gemachten Produkten zu beschäftigen.
+                </p>
+
+                <p>
+                    Dabei ist mir wichtig, zwischen persönlichen Erfahrungen,
+                    traditionellem Wissen und wissenschaftlich belegten
+                    Wirkungen zu unterscheiden.
+                </p>
+
+                <aside class="notice" aria-labelledby="course-notice-title">
+                    <h3 id="course-notice-title">Wichtige Hinweise zu den Kursen</h3>
+
+                    <p>
+                        Die Kurse dienen dem Lernen, der Kreativität und der
+                        Herstellung eigener Produkte. Sie stellen keine
+                        medizinische Beratung dar und ersetzen keine Diagnose
+                        oder Behandlung.
+                    </p>
+
+                    <p>
+                        Es werden keine Heilversprechen abgegeben. Pflanzliche
+                        Zutaten und selbst hergestellte Produkte sind nicht
+                        automatisch risikofrei. Allergien, Hautreizungen,
+                        Verunreinigungen und unsachgemäße Lagerung können
+                        gesundheitliche Risiken mit sich bringen.
+                    </p>
+
+                    <p>
+                        Rezeptideen mit der Bezeichnung „Antibiotikum“ sind
+                        kein Ersatz für medizinisch notwendige Antibiotika
+                        oder eine ärztliche Behandlung. Bei Beschwerden oder
+                        Unsicherheit wende dich bitte an medizinisches Fachpersonal.
+                    </p>
+                </aside>
+
+                <p>
+                    Tauche ein in die Welt der Pflanzen, der Düfte und der
+                    selbst gemachten Pflegeprodukte. Ich möchte dich dabei
+                    begleiten, neue Fähigkeiten zu entdecken und Freude am
+                    eigenen Kreieren zu entwickeln.
+                </p>
+
+                <a class="button-link" href="mailto:Elisabeth-Ann_Wolf88@proton.me?subject=Interesse%20an%20den%20Onlinekursen">
+                    Über die Kurse informieren lassen →
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- ========================================
+             KONTAKT UND KENNENLERNEN
+        ======================================== -->
+
+        <section class="section closing-section" id="kontakt" aria-labelledby="contact-title">
+
+            <div class="closing-card">
+
+                <span class="eyebrow">Dein nächster Schritt</span>
+
+                <h2 id="contact-title">Was passt zu dir?</h2>
+
+                <p>
+                    Du hast Fragen zu einem Angebot, möchtest einen Termin
+                    vereinbaren oder bist dir noch nicht sicher, wo du anfangen
+                    sollst? Schreib mir gerne.
+                </p>
+
+                <p>
+                    Wir können gemeinsam besprechen, welches Angebot zu deinem
+                    Anliegen passt und welche nächsten Schritte sinnvoll sind.
+                </p>
+
+                <a class="button-link" href="mailto:Elisabeth-Ann_Wolf88@proton.me?subject=Anfrage%20zu%20Lilians%20Angeboten">
+                    E-Mail schreiben →
+                </a>
+
+                <p class="price-note" style="margin-top: 1.2rem;">
+                    E-Mail: Elisabeth-Ann_Wolf88@proton.me
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             VIER THEMENBLÖCKE
+        ======================================== -->
+
+        <section class="section discover-section" aria-labelledby="discover-title">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Noch mehr entdecken</span>
+
+                <h2 id="discover-title">Tritt ein in meine Welt</h2>
+
+                <p>
+                    Kräuter, Musik, Bücher und neue Geschichten –
+                    entdecke die verschiedenen Seiten von Lilians Kräutermagie.
+                </p>
+
+            </div>
+
+            <div class="discover-grid">
+
+                <a class="discover-card" href="kraeuter.html">
+                    <span class="discover-symbol" aria-hidden="true">✿</span>
+                    <h3>Kräuterwelt</h3>
+                    <p>
+                        Pflanzenwissen, natürliche Rezeptideen und Inspiration
+                        für einen bewussteren Alltag mit der Natur.
+                    </p>
+                    <span class="discover-link">Zur Kräuterwelt →</span>
+                </a>
+
+                <a class="discover-card" href="lieder.html">
+                    <span class="discover-symbol" aria-hidden="true">♫</span>
+                    <h3>Musik</h3>
+                    <p>
+                        Lieder voller Gefühle, Gedanken und Geschichten
+                        für viele Momente des Lebens.
+                    </p>
+                    <span class="discover-link">Musik entdecken →</span>
+                </a>
+
+                <a class="discover-card" href="buecher.html">
+                    <span class="discover-symbol" aria-hidden="true">✧</span>
+                    <h3>Bücher</h3>
+                    <p>
+                        Tauche ein in Traumreisen, achtsame Geschichten
+                        und fantasievolle Bücherwelten.
+                    </p>
+                    <span class="discover-link">Zu meinen Büchern →</span>
+                </a>
+
+                <a class="discover-card" href="index.html#neues-buch">
+                    <span class="discover-symbol" aria-hidden="true">☆</span>
+                    <h3>Neues Buch</h3>
+                    <p>
+                        Wirf einen Blick auf neue Buchideen und Geschichten,
+                        die gerade ihren Weg in die Welt finden.
+                    </p>
+                    <span class="discover-link">Mehr erfahren →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             URHEBERRECHT
+        ======================================== -->
+
+        <section class="copyright" aria-label="Urheberrechtshinweise">
+
+            <p>
+                Die Inhalte wurden von mir selbst erstellt und unterliegen
+                dem Urheberrecht.
+            </p>
+
+            <p>
+                Eine Vervielfältigung, Weitergabe oder Nutzung – auch auszugsweise –
+                ist ohne meine ausdrückliche schriftliche Zustimmung nicht gestattet.
+            </p>
+
+            <p class="copyright-brand">
+                © Lilian's Kräuter-Magie
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         FUSSZEILE
+    ======================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                © Lilians Kräutermagie ·
+                Mit Liebe, Neugier und einer Prise Magie gestaltet.
+            </div>
+
+            <div class="footer-links">
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="agb.html">AGB</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================
+         JAVASCRIPT: MOBILES MENÜ
+    ======================================== -->
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector("#main-nav");
+        const menuIcon = document.querySelector(".menu-icon");
+        const menuLabel = document.querySelector(".menu-label");
+
+        function closeMenu() {
+            mainNav.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuIcon.textContent = "☰";
+            menuLabel.textContent = "Menü";
+        }
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuIcon.textContent = isOpen ? "✕" : "☰";
+            menuLabel.textContent = isOpen ? "Schließen" : "Menü";
+        });
+
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>
