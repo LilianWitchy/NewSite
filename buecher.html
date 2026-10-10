@@ -15,43 +15,36 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* ========================================
            FARBEN UND GRUNDLAGEN
-           Mitternachtsblau · Flieder · Beerenrosa · Gold
         ======================================== */
 
         :root {
             --night: #101c3a;
             --night-light: #20385a;
             --plum: #7254b8;
-            --lilac: #a16ca3;
             --berry: #c85fba;
-            --berry-light: #e6b7d3;
             --teal: #71f2df;
+            --forest: #197f70;
             --gold: #ffe6a0;
             --cream: #f4fbff;
-            --muted: #c9d5eb;
+            --muted: #c9e5ee;
 
-            --shadow: 0 18px 45px rgba(5, 4, 20, 0.35);
+            --shadow: 0 18px 45px rgba(10, 5, 20, 0.28);
             --radius: 24px;
             --content-width: 1180px;
         }
 
-        *,
-        *::before,
-        *::after {
+        * {
             box-sizing: border-box;
         }
 
         html {
-            min-height: 100%;
             scroll-behavior: smooth;
             background: var(--night);
-            color-scheme: dark;
         }
 
         body {
@@ -62,32 +55,21 @@
 
             font-family: "Nunito Sans", sans-serif;
             font-size: 17px;
-            line-height: 1.7;
+            line-height: 1.65;
             color: var(--cream);
 
             background:
                 radial-gradient(
                     ellipse at 12% 8%,
-                    rgba(58, 226, 207, 0.12),
+                    rgba(58, 226, 207, 0.16),
                     transparent 34rem
                 ),
                 radial-gradient(
-                    ellipse at 88% 25%,
-                    rgba(200, 95, 186, 0.17),
-                    transparent 36rem
-                ),
-                radial-gradient(
-                    ellipse at 45% 80%,
-                    rgba(114, 84, 184, 0.12),
+                    ellipse at 88% 42%,
+                    rgba(113, 84, 184, 0.22),
                     transparent 36rem
                 ),
                 var(--night);
-        }
-
-        body,
-        button,
-        input {
-            font-family: "Nunito Sans", sans-serif;
         }
 
         img {
@@ -111,13 +93,13 @@
 
         ::selection {
             color: var(--night);
-            background: var(--berry-light);
+            background: var(--gold);
         }
 
         .skip-link {
             position: absolute;
-            top: 1rem;
             left: -9999px;
+            top: 1rem;
             z-index: 1000;
 
             padding: 0.75rem 1rem;
@@ -139,31 +121,13 @@
             position: fixed;
             inset: 0;
             z-index: 0;
-            width: 100%;
-            height: 100%;
             pointer-events: none;
 
             background-image:
-                radial-gradient(
-                    circle,
-                    rgba(255, 230, 160, 0.95) 1px,
-                    transparent 1.8px
-                ),
-                radial-gradient(
-                    circle,
-                    rgba(230, 183, 211, 0.9) 1.2px,
-                    transparent 2px
-                ),
-                radial-gradient(
-                    circle,
-                    rgba(161, 108, 163, 0.9) 1px,
-                    transparent 1.8px
-                ),
-                radial-gradient(
-                    circle,
-                    rgba(255, 255, 255, 0.8) 1px,
-                    transparent 1.7px
-                );
+                radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(176,255,245,.9) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(255,255,255,.72) 1px, transparent 1.7px);
 
             background-size:
                 97px 91px,
@@ -178,39 +142,35 @@
                 19px 105px;
 
             opacity: 0.45;
-            animation: stars-twinkle 6s ease-in-out infinite alternate;
+            animation: stars-twinkle 5s ease-in-out infinite alternate;
         }
 
         @keyframes stars-twinkle {
-            from {
-                opacity: 0.28;
-            }
-
-            to {
-                opacity: 0.58;
-            }
+            from { opacity: 0.35; }
+            to { opacity: 0.72; }
         }
 
 
         /* ========================================
-           KOPFZEILE UND MARKENNAME
+           KOPFZEILE UND NAVIGATION
+           An die index.html angeglichen
         ======================================== */
 
         .site-header {
             position: relative;
             z-index: 20;
 
-            background: rgba(10, 28, 53, 0.9);
-            border-bottom: 1px solid rgba(230, 183, 211, 0.3);
+            background: rgba(10, 28, 53, 0.88);
+            border-bottom: 1px solid rgba(240, 199, 119, 0.24);
 
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
         }
 
         .nav-wrap {
-            width: min(var(--content-width), calc(100% - 2rem));
+            width: min(1180px, calc(100% - 2rem));
             min-height: 82px;
-            margin: 0 auto;
+            margin: auto;
 
             display: flex;
             align-items: center;
@@ -224,7 +184,6 @@
             gap: 0.7rem;
 
             min-width: max-content;
-
             color: var(--cream);
             text-decoration: none;
 
@@ -238,150 +197,56 @@
             font-size: 1.8rem;
         }
 
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .main-nav a {
+            padding: 0.65rem 0.8rem;
+            border-radius: 999px;
+
+            color: #f6e8fa;
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 800;
+
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(84, 198, 178, 0.15);
+            color: var(--teal);
+        }
+
+        .main-nav .nav-highlight {
+            background: linear-gradient(120deg, #ffe7a0, #8ff5df);
+            color: var(--night);
+        }
+
+        .main-nav .nav-highlight:hover {
+            color: var(--night);
+            filter: brightness(1.06);
+        }
+
         .menu-toggle {
             display: none;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
 
-            min-height: 44px;
-            padding: 0.55rem 0.85rem;
-
+            padding: 0.55rem 0.8rem;
             color: var(--cream);
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(230, 183, 211, 0.45);
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.28);
             border-radius: 12px;
 
             cursor: pointer;
         }
 
         .menu-toggle:hover {
-            color: var(--gold);
-            border-color: var(--gold);
-        }
-
-        .menu-icon {
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-
-        /* ========================================
-           HAUPTNAVIGATION
-        ======================================== */
-
-        .navbar {
-            position: relative;
-            z-index: 20;
-
-            background: rgba(16, 28, 58, 0.88);
-            border-bottom: 1px solid rgba(113, 242, 223, 0.18);
-        }
-
-        .navmenu {
-            width: min(var(--content-width), calc(100% - 2rem));
-            margin: 0 auto;
-            padding: 0.6rem 0;
-
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 0.25rem;
-
-            list-style: none;
-        }
-
-        .navmenu li {
-            position: relative;
-            margin: 0;
-        }
-
-        .navmenu a {
-            display: block;
-            padding: 0.65rem 0.75rem;
-
-            color: #f6e8fa;
-            border-radius: 999px;
-
-            font-size: 0.87rem;
-            font-weight: 800;
-            text-decoration: none;
-
-            transition:
-                background 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .navmenu > li > a:hover,
-        .navmenu > li > a:focus-visible,
-        .navmenu > li.open > a {
-            color: var(--berry-light);
-            background: rgba(200, 95, 186, 0.16);
-        }
-
-        .navmenu > li > a[aria-current="page"] {
-            color: var(--night);
-            background: linear-gradient(
-                120deg,
-                var(--gold),
-                var(--berry-light)
-            );
-        }
-
-        .navmenu > li > a[href="#"]::after {
-            content: "⌄";
-            margin-left: 0.4rem;
-            color: var(--gold);
-        }
-
-        /* Dropdown-Menüs */
-
-        .dropdown-content {
-            display: none;
-
-            position: absolute;
-            top: calc(100% + 0.25rem);
-            left: 0;
-
-            min-width: 250px;
-            max-width: min(320px, 90vw);
-            margin: 0;
-            padding: 0.5rem;
-
-            list-style: none;
-            text-align: left;
-
-            background: rgba(16, 28, 58, 0.98);
-            border: 1px solid rgba(161, 108, 163, 0.55);
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-
-        .dropdown-content li a {
-            padding: 0.65rem 0.8rem;
-
-            color: var(--muted);
-            border-radius: 9px;
-
-            font-size: 0.9rem;
-            line-height: 1.45;
-        }
-
-        .dropdown-content li a:hover,
-        .dropdown-content li a:focus-visible {
-            color: var(--gold);
-            background: rgba(200, 95, 186, 0.16);
-        }
-
-        .navmenu li:hover > .dropdown-content,
-        .navmenu li:focus-within > .dropdown-content,
-        .navmenu li.open > .dropdown-content {
-            display: block;
+            color: var(--teal);
+            border-color: var(--teal);
         }
 
 
@@ -393,39 +258,34 @@
             position: absolute;
             z-index: 5;
             top: 1rem;
-            right: max(1rem, calc((100vw - var(--content-width)) / 2));
+            right: max(1rem, calc((100vw - 1180px) / 2));
 
             display: flex;
-            align-items: center;
             gap: 0.5rem;
         }
 
         .language-switcher a {
-            width: 38px;
-            height: 38px;
+            width: 35px;
+            height: 35px;
 
             display: grid;
             place-items: center;
 
-            background: rgba(16, 28, 58, 0.78);
-            border: 1px solid rgba(230, 183, 211, 0.3);
             border-radius: 50%;
+            background: rgba(10, 28, 53, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.22);
 
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease,
-                background 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .language-switcher a:hover {
             transform: translateY(-2px);
-            background: rgba(200, 95, 186, 0.2);
             border-color: var(--gold);
         }
 
         .language-switcher img {
-            width: 23px;
-            height: 23px;
+            width: 22px;
+            height: 22px;
             object-fit: contain;
         }
 
@@ -435,68 +295,39 @@
         ======================================== */
 
         .hero {
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-
             min-height: 370px;
             display: grid;
             place-items: center;
-
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
             padding: 5rem 1.25rem 4.5rem;
 
             background:
-                radial-gradient(
-                    ellipse at 18% 35%,
-                    rgba(200, 95, 186, 0.3),
-                    transparent 38%
-                ),
-                radial-gradient(
-                    ellipse at 76% 20%,
-                    rgba(114, 84, 184, 0.38),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    ellipse at 80% 80%,
-                    rgba(113, 242, 223, 0.12),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    110deg,
-                    rgba(7, 18, 43, 0.3),
-                    rgba(33, 21, 47, 0.24)
-                );
+                radial-gradient(ellipse at 18% 35%, rgba(35, 223, 205, 0.25), transparent 38%),
+                radial-gradient(ellipse at 72% 18%, rgba(125, 91, 223, 0.30), transparent 34%),
+                radial-gradient(ellipse at 82% 76%, rgba(33, 177, 144, 0.20), transparent 35%),
+                linear-gradient(110deg, rgba(7, 28, 52, 0.5), rgba(21, 24, 65, 0.32), rgba(7, 37, 54, 0.35));
 
-            border-bottom: 1px solid rgba(200, 95, 186, 0.4);
+            border-bottom: 1px solid rgba(113, 242, 223, 0.38);
         }
 
         .hero::before {
             content: "";
             position: absolute;
             z-index: -1;
-            inset: -20% -10%;
-
+            inset: -18% -10%;
             pointer-events: none;
 
             background:
-                radial-gradient(
-                    ellipse at 20% 45%,
-                    rgba(200, 95, 186, 0.25),
-                    transparent 27%
-                ),
-                radial-gradient(
-                    ellipse at 58% 30%,
-                    rgba(161, 108, 163, 0.24),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    ellipse at 78% 62%,
-                    rgba(114, 84, 184, 0.3),
-                    transparent 28%
-                );
+                radial-gradient(ellipse at 18% 42%, rgba(46, 255, 218, 0.32), transparent 25%),
+                radial-gradient(ellipse at 40% 18%, rgba(92, 229, 184, 0.22), transparent 28%),
+                radial-gradient(ellipse at 70% 35%, rgba(144, 105, 255, 0.28), transparent 30%),
+                radial-gradient(ellipse at 85% 62%, rgba(53, 190, 221, 0.20), transparent 25%);
 
             filter: blur(28px);
-            animation: aurora-drift 18s ease-in-out infinite alternate;
+            opacity: 0.88;
+            animation: aurora-drift 16s ease-in-out infinite alternate;
         }
 
         .hero::after {
@@ -504,51 +335,29 @@
             position: absolute;
             z-index: -1;
             inset: 0;
-
             pointer-events: none;
 
             background-image:
-                radial-gradient(
-                    circle,
-                    rgba(255, 255, 255, 0.9) 1px,
-                    transparent 1.8px
-                ),
-                radial-gradient(
-                    circle,
-                    rgba(255, 230, 160, 0.9) 1px,
-                    transparent 1.8px
-                ),
-                radial-gradient(
-                    circle,
-                    rgba(230, 183, 211, 0.9) 1.2px,
-                    transparent 2px
-                );
+                radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(176,255,245,.9) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px);
 
-            background-size:
-                97px 91px,
-                173px 149px,
-                223px 197px;
-
-            background-position:
-                12px 17px,
-                48px 62px,
-                91px 24px;
-
-            opacity: 0.55;
+            background-size: 97px 91px, 151px 137px, 211px 183px;
+            background-position: 12px 17px, 48px 62px, 91px 24px;
+            opacity: 0.65;
         }
 
         @keyframes aurora-drift {
             from {
-                transform: translate3d(-1%, -1%, 0) rotate(-5deg) scale(1.04);
+                transform: translate3d(-1.5%, -1%, 0) rotate(-8deg) scale(1.05);
             }
-
             to {
-                transform: translate3d(2%, 1%, 0) rotate(3deg) scale(1.12);
+                transform: translate3d(2%, 1.5%, 0) rotate(-3deg) scale(1.12);
             }
         }
 
         .hero-inner {
-            width: min(var(--content-width), 100%);
+            width: min(1180px, 100%);
             text-align: center;
         }
 
@@ -559,7 +368,6 @@
             gap: 0.55rem;
 
             color: var(--gold);
-
             font-size: 0.78rem;
             font-weight: 800;
             letter-spacing: 0.16em;
@@ -570,32 +378,28 @@
             margin: 1rem 0;
 
             color: var(--cream);
-
             font-family: "Cormorant Garamond", serif;
-            font-size: clamp(3.4rem, 8vw, 6rem);
             font-weight: 600;
-            line-height: 0.98;
+            font-size: clamp(3.3rem, 8vw, 6rem);
+            line-height: 0.96;
             letter-spacing: -0.035em;
-
-            text-shadow: 0 0 30px rgba(200, 95, 186, 0.18);
         }
 
         .hero h1 span {
             display: block;
             margin-top: 0.25em;
 
-            color: var(--berry-light);
+            color: #8bffeb;
             font-style: italic;
-
-            text-shadow: 0 0 28px rgba(200, 95, 186, 0.22);
+            text-shadow: 0 0 28px rgba(63, 245, 218, 0.22);
         }
 
         .hero p {
             max-width: 680px;
             margin: 1.25rem auto 0;
 
-            color: #e4e6f5;
-            font-size: clamp(1rem, 2vw, 1.18rem);
+            color: #f0e4f3;
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
         }
 
         .hero-divider {
@@ -606,16 +410,16 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                var(--berry),
+                var(--teal),
                 var(--gold),
-                var(--lilac),
+                var(--berry),
                 transparent
             );
         }
 
 
         /* ========================================
-           ALLGEMEINE INHALTE
+           ALLGEMEINE ABSCHNITTE
         ======================================== */
 
         main {
@@ -624,8 +428,8 @@
         }
 
         .section {
-            width: min(var(--content-width), calc(100% - 2rem));
-            margin: 0 auto;
+            width: min(1180px, calc(100% - 2rem));
+            margin: auto;
             padding: 4.5rem 0;
         }
 
@@ -638,11 +442,10 @@
         .section-heading h2 {
             margin: 0.5rem 0 0.8rem;
 
-            color: var(--berry-light);
-
+            color: var(--berry-light, #e6b7d3);
             font-family: "Cormorant Garamond", serif;
-            font-size: clamp(2.3rem, 5vw, 3.8rem);
             font-weight: 600;
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
             line-height: 1.05;
         }
 
@@ -663,19 +466,9 @@
             margin: 0 auto;
             padding: clamp(1.5rem, 4vw, 3.2rem);
 
-            text-align: left;
-
             background:
-                radial-gradient(
-                    ellipse at 100% 0%,
-                    rgba(200, 95, 186, 0.13),
-                    transparent 45%
-                ),
-                linear-gradient(
-                    135deg,
-                    rgba(32, 56, 90, 0.88),
-                    rgba(29, 29, 66, 0.94)
-                );
+                radial-gradient(ellipse at 100% 0%, rgba(200, 95, 186, 0.13), transparent 45%),
+                linear-gradient(135deg, rgba(32, 56, 90, 0.88), rgba(29, 29, 66, 0.94));
 
             border: 1px solid rgba(161, 108, 163, 0.4);
             border-radius: 28px;
@@ -690,15 +483,13 @@
 
             color: rgba(255, 230, 160, 0.5);
             font-size: 3.2rem;
-
             pointer-events: none;
         }
 
         .intro h2 {
             margin: 0 0 1.6rem;
 
-            color: var(--berry-light);
-
+            color: #e6b7d3;
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 600;
@@ -718,7 +509,7 @@
 
 
         /* ========================================
-           BÜCHERBEREICH
+           BÜCHERKARTEN
         ======================================== */
 
         .books-section {
@@ -743,30 +534,17 @@
             align-items: stretch;
 
             padding: 1.25rem;
-
             text-align: center;
 
             background:
-                radial-gradient(
-                    ellipse at 50% 0%,
-                    rgba(200, 95, 186, 0.13),
-                    transparent 55%
-                ),
-                linear-gradient(
-                    160deg,
-                    rgba(32, 56, 90, 0.94),
-                    rgba(21, 25, 55, 0.97)
-                );
+                radial-gradient(ellipse at 50% 0%, rgba(200, 95, 186, 0.13), transparent 55%),
+                linear-gradient(160deg, rgba(32, 56, 90, 0.94), rgba(21, 25, 55, 0.97));
 
             border: 1px solid rgba(161, 108, 163, 0.36);
             border-radius: 22px;
-
             box-shadow: 0 8px 28px rgba(5, 4, 20, 0.23);
 
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                box-shadow 0.25s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .book::before {
@@ -783,7 +561,7 @@
                 transparent,
                 var(--berry),
                 var(--gold),
-                var(--lilac),
+                var(--teal),
                 transparent
             );
 
@@ -793,7 +571,6 @@
 
         .book:hover {
             transform: translateY(-6px);
-
             border-color: rgba(200, 95, 186, 0.8);
 
             box-shadow:
@@ -812,9 +589,7 @@
 
             object-fit: contain;
             object-position: center;
-
             border-radius: 12px;
-
             background: rgba(8, 13, 34, 0.38);
 
             filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
@@ -822,7 +597,6 @@
 
         .book p {
             margin: 1rem 0 0;
-
             color: #e1e6f4;
             font-size: 1rem;
             line-height: 1.6;
@@ -830,27 +604,19 @@
         }
 
         .book p:first-of-type {
-            color: var(--berry-light);
+            color: #e6b7d3;
             font-weight: 800;
         }
 
-        /* Bücher ohne fertiges Cover */
+        /* Karten ohne Cover */
 
         .book:not(:has(img)) {
             min-height: 250px;
             justify-content: center;
 
             background:
-                radial-gradient(
-                    ellipse at 50% 35%,
-                    rgba(200, 95, 186, 0.2),
-                    transparent 65%
-                ),
-                linear-gradient(
-                    145deg,
-                    rgba(48, 39, 83, 0.96),
-                    rgba(21, 25, 55, 0.98)
-                );
+                radial-gradient(ellipse at 50% 35%, rgba(200, 95, 186, 0.16), transparent 65%),
+                linear-gradient(145deg, rgba(32, 56, 90, 0.96), rgba(21, 25, 55, 0.98));
 
             border-style: dashed;
             border-color: rgba(230, 183, 211, 0.55);
@@ -864,7 +630,6 @@
             color: var(--gold);
             font-size: 2.8rem;
             line-height: 1.2;
-
             text-shadow: 0 0 25px rgba(255, 230, 160, 0.2);
         }
 
@@ -881,7 +646,7 @@
 
 
         /* ========================================
-           URHEBERRECHT UND ABSCHLUSS
+           URHEBERRECHT
         ======================================== */
 
         .copyright {
@@ -920,17 +685,16 @@
         .site-footer {
             position: relative;
             z-index: 1;
-
             margin-top: 2rem;
 
             background: #160f21;
-            border-top: 1px solid rgba(230, 183, 211, 0.24);
+            border-top: 1px solid rgba(240, 199, 119, 0.25);
         }
 
         .footer-inner {
-            width: min(var(--content-width), calc(100% - 2rem));
-            margin: 0 auto;
-            padding: 1.8rem 0;
+            width: min(1180px, calc(100% - 2rem));
+            margin: auto;
+            padding: 2rem 0;
 
             display: flex;
             align-items: center;
@@ -949,8 +713,7 @@
         }
 
         .footer-links a {
-            color: var(--muted);
-            text-underline-offset: 4px;
+            text-underline-offset: 3px;
             transition: color 0.2s ease;
         }
 
@@ -960,82 +723,41 @@
 
 
         /* ========================================
-           TABLET UND MOBILES MENÜ
+           TABLET
+           Gleiches Verhalten wie index.html
         ======================================== */
 
-        @media (max-width: 1000px) {
+        @media (max-width: 980px) {
             .nav-wrap {
-                min-height: 76px;
                 flex-wrap: wrap;
                 padding: 0.8rem 0;
             }
 
             .menu-toggle {
                 display: inline-flex;
-                margin-left: auto;
             }
 
-            .navbar {
+            .main-nav {
                 display: none;
-                padding: 0.25rem 0 0.75rem;
-                border-bottom: 1px solid rgba(113, 242, 223, 0.18);
-            }
-
-            .navbar.open {
-                display: block;
-            }
-
-            .navmenu {
-                width: min(var(--content-width), calc(100% - 2rem));
-                padding: 0.25rem 0;
+                width: 100%;
 
                 flex-direction: column;
                 align-items: stretch;
-                gap: 0.2rem;
+
+                padding: 0.4rem 0 1rem;
             }
 
-            .navmenu > li {
-                width: 100%;
+            .main-nav.open {
+                display: flex;
             }
 
-            .navmenu a {
-                padding: 0.75rem 1rem;
-                border-radius: 12px;
-                font-size: 0.94rem;
-            }
-
-            .navmenu > li > a[href="#"]::after {
-                float: right;
-            }
-
-            .dropdown-content {
-                position: static;
-
-                display: none;
-                width: 100%;
-                max-width: none;
-                min-width: 0;
-
-                margin: 0.25rem 0 0.5rem;
-                padding: 0.4rem;
-
-                background: rgba(5, 14, 37, 0.72);
-                border-color: rgba(161, 108, 163, 0.3);
-                box-shadow: none;
+            .main-nav a {
                 border-radius: 12px;
             }
 
-            .navmenu li.open > .dropdown-content {
-                display: block;
-            }
-
-            /* Auf Touch-Geräten öffnet der Klick das Dropdown. */
-            .navmenu li:hover > .dropdown-content {
-                display: none;
-            }
-
-            .navmenu li.open:hover > .dropdown-content {
-                display: block;
+            .main-nav .nav-highlight {
+                margin-top: 0.35rem;
+                text-align: center;
             }
 
             .books-grid {
@@ -1068,19 +790,8 @@
             }
 
             .language-switcher {
-                top: 0.8rem;
-                right: 0.8rem;
-                gap: 0.35rem;
-            }
-
-            .language-switcher a {
-                width: 34px;
-                height: 34px;
-            }
-
-            .language-switcher img {
-                width: 21px;
-                height: 21px;
+                top: 0.7rem;
+                right: 0.7rem;
             }
 
             .hero {
@@ -1150,11 +861,6 @@
             }
         }
 
-
-        /* ========================================
-           KLEINE SMARTPHONES
-        ======================================== */
-
         @media (max-width: 380px) {
             .brand {
                 font-size: 1.15rem;
@@ -1173,11 +879,6 @@
                 padding: 1.25rem 1rem;
             }
         }
-
-
-        /* ========================================
-           WENIGER BEWEGUNG
-        ======================================== */
 
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -1199,7 +900,8 @@
 
 
     <!-- ========================================
-         KOPFZEILE
+         KOPFZEILE UND HAUPTNAVIGATION
+         Aufbau wie in index.html
     ======================================== -->
 
     <header class="site-header">
@@ -1209,20 +911,6 @@
                 <span class="brand-mark" aria-hidden="true">✦</span>
                 <span>Lilians Kräutermagie</span>
             </a>
-
-            <div class="language-switcher" aria-label="Sprache wählen">
-                <a href="index.html" aria-label="Deutsch" title="Deutsch">
-                    <img src="picture/defavicon.png" alt="">
-                </a>
-
-                <a href="/en/" aria-label="English" title="English">
-                    <img src="picture/enfavicon.png" alt="">
-                </a>
-
-                <a href="/dk/" aria-label="Dansk" title="Dansk">
-                    <img src="picture/dkfavicon.png" alt="">
-                </a>
-            </div>
 
             <button
                 class="menu-toggle"
@@ -1234,82 +922,17 @@
                 <span class="menu-label">Menü</span>
             </button>
 
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="steckbriefe.html">Kräuterwelt</a>
+                <a href="lieder.html">Musik</a>
+                <a href="buecher.html" aria-current="page">Bücher</a>
+                <a href="about.html">Über Mich</a>
+                <a class="nav-highlight" href="index.html#neues-buch">Neues Buch ✦</a>
+                <a href="angebot.html">Angebote</a>
+            </nav>
+
         </div>
     </header>
-
-
-    <!-- ========================================
-         NAVIGATION
-    ======================================== -->
-
-    <nav class="navbar" id="main-nav" aria-label="Hauptnavigation">
-        <ul class="navmenu">
-
-            <li class="dropdown">
-                <a href="#" aria-expanded="false">Startseite</a>
-                <ul class="dropdown-content">
-                    <li><a href="index.html">Zur Startseite</a></li>
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
-                    <li><a href="mission.html">Meine Mission</a></li>
-                    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" aria-expanded="false">Wort &amp; Klang</a>
-                <ul class="dropdown-content">
-                    <li><a href="schätze.html">Geschriebene Schätze</a></li>
-                    <li><a href="meinebücher.html" aria-current="page">Meine Bücher</a></li>
-                    <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
-                    <li><a href="lieder.html">Meine Lieder</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" aria-expanded="false">Begleitende Angebote</a>
-                <ul class="dropdown-content">
-                    <li><a href="angebot.html">Mein Angebot für dich</a></li>
-                    <li><a href="pädagogik.html">Pädagogische Angebote</a></li>
-                    <li><a href="ep.html">Erlebnispädagogische Angebote</a></li>
-                    <li><a href="pendel.html">Karten legen und Pendeln</a></li>
-                    <li><a href="online.html">Onlinekurse</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" aria-expanded="false">Shop</a>
-                <ul class="dropdown-content">
-                    <li><a href="shop.html">Mein Shop</a></li>
-                    <li><a href="steckbriefe.html">Meine Kräutersteckbriefe</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" aria-expanded="false">Innere Verbindung</a>
-                <ul class="dropdown-content">
-                    <li><a href="energie.html">Innere Balance</a></li>
-                    <li><a href="basics.html">Die Basics</a></li>
-                    <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
-                    <li><a href="gedanken.html">Gedanken &amp; Glaubenssätze</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#" aria-expanded="false">Rezepte</a>
-                <ul class="dropdown-content">
-                    <li><a href="rezepte.html">Warum DIY?</a></li>
-                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
-                    <li><a href="haare.html">Haarprodukte</a></li>
-                </ul>
-            </li>
-
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="agb.html">AGB</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-
-        </ul>
-    </nav>
 
 
     <!-- ========================================
@@ -1317,6 +940,21 @@
     ======================================== -->
 
     <section class="hero" aria-labelledby="hero-title">
+
+        <div class="language-switcher" aria-label="Sprache wählen">
+            <a href="index.html" aria-label="Deutsch" title="Deutsch">
+                <img src="defavicon.png" alt="">
+            </a>
+
+            <a href="/en/" aria-label="English" title="English">
+                <img src="enfavicon.png" alt="">
+            </a>
+
+            <a href="/dk/" aria-label="Dansk" title="Dansk">
+                <img src="dkfavicon.png" alt="">
+            </a>
+        </div>
+
         <div class="hero-inner">
 
             <span class="eyebrow">
@@ -1345,8 +983,6 @@
     ======================================== -->
 
     <main id="inhalt">
-
-        <!-- EINLEITUNG -->
 
         <section class="section" aria-labelledby="intro-title">
 
@@ -1406,9 +1042,7 @@
         </section>
 
 
-        <!-- ========================================
-             MEINE BÜCHER
-        ======================================== -->
+        <!-- MEINE BÜCHER -->
 
         <section class="section books-section" aria-labelledby="books-title">
 
@@ -1426,41 +1060,35 @@
 
             </div>
 
-
             <div class="books-grid">
 
                 <article class="book">
-                    <img src="picture/baldur1.png" alt="Cover von Traumreisen mit Baldur, Band 1" loading="lazy">
+                    <img src="baldur1.png" alt="Cover von Traumreisen mit Baldur, Band 1" loading="lazy">
                     <p>Buch 1: Traumreisen mit Baldur, Band 1</p>
                 </article>
 
-
                 <article class="book">
-                    <img src="picture/baldur2.png" alt="Cover von Traumreisen mit Baldur, Band 2" loading="lazy">
+                    <img src="baldur2.png" alt="Cover von Traumreisen mit Baldur, Band 2" loading="lazy">
                     <p>Buch 2: Traumreisen mit Baldur, Band 2</p>
                 </article>
-
 
                 <article class="book">
                     <p>Band 3 ist in Arbeit ...</p>
                     <p>Buch 3: Traumreisen mit Baldur</p>
                 </article>
 
-
                 <article class="book">
-                    <img src="picture/traumrerw.png" alt="Cover von Bewusste und achtsame Traumreisen für Erwachsene" loading="lazy">
+                    <img src="traumrerw.png" alt="Cover von Bewusste und achtsame Traumreisen für Erwachsene" loading="lazy">
                     <p>Buch 3: Bewusste und achtsame Traumreisen für Erwachsene</p>
                 </article>
-
 
                 <article class="book">
                     <p>Buch noch in Arbeit</p>
                     <p>Traumreisen für Erwachsene, ein Special</p>
                 </article>
 
-
                 <article class="book">
-                    <img src="picture/personalmangel.JPG" alt="Cover von Personalmangel in deutschen Kitas" loading="lazy">
+                    <img src="personalmangel.JPG" alt="Cover von Personalmangel in deutschen Kitas" loading="lazy">
                     <p>Buch 4: Personalmangel in deutschen Kitas: Warum Erzieher diesen Beruf nicht mehr ausüben können und wollen!</p>
                 </article>
 
@@ -1469,9 +1097,7 @@
         </section>
 
 
-        <!-- ========================================
-             URHEBERRECHT
-        ======================================== -->
+        <!-- URHEBERRECHT -->
 
         <section class="copyright" aria-label="Urheberrechtshinweise">
 
@@ -1519,7 +1145,8 @@
 
 
     <!-- ========================================
-         JAVASCRIPT: MENÜ UND DROPDOWNS
+         JAVASCRIPT: MOBILES MENÜ
+         Gleiches Grundverhalten wie index.html
     ======================================== -->
 
     <script>
@@ -1527,8 +1154,6 @@
         const mainNav = document.querySelector("#main-nav");
         const menuIcon = document.querySelector(".menu-icon");
         const menuLabel = document.querySelector(".menu-label");
-
-        // Mobiles Hauptmenü öffnen und schließen.
 
         menuButton.addEventListener("click", () => {
             const isOpen = mainNav.classList.toggle("open");
@@ -1538,46 +1163,8 @@
             menuLabel.textContent = isOpen ? "Schließen" : "Menü";
         });
 
-
-        // Dropdown-Menüs auf Touch-Geräten per Klick bedienen.
-
-        const dropdownToggles = document.querySelectorAll(
-            ".navmenu > li.dropdown > a"
-        );
-
-        dropdownToggles.forEach((link) => {
-            link.addEventListener("click", (event) => {
-                event.preventDefault();
-
-                const parent = link.parentElement;
-                const wasOpen = parent.classList.contains("open");
-
-                // Andere Dropdowns schließen.
-                document.querySelectorAll(".navmenu > li.dropdown").forEach((item) => {
-                    item.classList.remove("open");
-
-                    const itemLink = item.querySelector(":scope > a");
-                    if (itemLink) {
-                        itemLink.setAttribute("aria-expanded", "false");
-                    }
-                });
-
-                // Ausgewähltes Dropdown bei Bedarf öffnen.
-                if (!wasOpen) {
-                    parent.classList.add("open");
-                    link.setAttribute("aria-expanded", "true");
-                }
-            });
-        });
-
-
-        // Menü schließen, wenn ein normaler Navigationslink gewählt wird.
-
-        mainNav.querySelectorAll(".navmenu a").forEach((link) => {
-            if (link.getAttribute("href") === "#") {
-                return;
-            }
-
+        // Menü nach Auswahl eines Links schließen.
+        mainNav.querySelectorAll("a").forEach((link) => {
             link.addEventListener("click", () => {
                 mainNav.classList.remove("open");
 
@@ -1587,25 +1174,7 @@
             });
         });
 
-
-        // Dropdowns schließen, wenn außerhalb geklickt wird.
-
-        document.addEventListener("click", (event) => {
-            if (!mainNav.contains(event.target)) {
-                document.querySelectorAll(".navmenu > li.dropdown").forEach((item) => {
-                    item.classList.remove("open");
-
-                    const link = item.querySelector(":scope > a");
-                    if (link) {
-                        link.setAttribute("aria-expanded", "false");
-                    }
-                });
-            }
-        });
-
-
-        // Escape schließt geöffnete Menüs.
-
+        // Escape schließt das mobile Menü.
         document.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
                 mainNav.classList.remove("open");
@@ -1613,17 +1182,6 @@
                 menuButton.setAttribute("aria-expanded", "false");
                 menuIcon.textContent = "☰";
                 menuLabel.textContent = "Menü";
-
-                document.querySelectorAll(".navmenu > li.dropdown").forEach((item) => {
-                    item.classList.remove("open");
-
-                    const link = item.querySelector(":scope > a");
-                    if (link) {
-                        link.setAttribute("aria-expanded", "false");
-                    }
-                });
-
-                menuButton.focus();
             }
         });
     </script>
