@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#071d19">
+    <meta name="theme-color" content="#173b22">
 
     <title>Kräuter & Natur – Lilians Kräutermagie</title>
 
-    <meta name="description" content="Entdecke Lilians Kräuterwelt: natürliche Rezepte, Pflanzenwissen, selbst gemachte Pflegeideen und Inspiration für mehr Naturverbundenheit.">
-    <meta name="keywords" content="Lilians Kräutermagie, Kräuter, Naturheilkunde, Pflanzenwissen, Kräuterrezepte, natürliche Pflege, Kräutertee, Räucherungen">
+    <meta name="description" content="Entdecke Lilians Kräuterwelt: Kräuterpädagogik, Pflanzenwissen, natürliche Rezeptideen, TCM, Pilze und Inspiration für mehr Naturverbundenheit.">
+    <meta name="keywords" content="Lilians Kräutermagie, Kräuterpädagogik, Kräuter, Pflanzenwissen, Kräuterrezepte, TCM, Pilze, natürliche Pflege, Kräutertee, Räucherungen">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -19,21 +19,28 @@
     <style>
         /* ========================================
            FARBEN UND GRUNDLAGEN
+           BLATTGRÜN ALS ZENTRALE FARBWELT
         ======================================== */
 
         :root {
-            --midnight: #091b2d;
-            --midnight-light: #153b43;
-            --forest: #174b35;
-            --forest-light: #246b46;
-            --green: #91d78a;
-            --green-light: #d6f2bd;
-            --gold: #f2d58a;
-            --gold-light: #ffedb7;
-            --cream: #f5f8e9;
-            --muted: #c7ddc7;
+            --midnight: #101f2a;
+            --midnight-light: #1a3540;
 
-            --shadow: 0 18px 45px rgba(0, 8, 7, 0.32);
+            --forest: #173b22;
+            --forest-light: #286b35;
+            --leaf: #63c653;
+            --leaf-bright: #83e16b;
+            --leaf-light: #b8f59c;
+            --leaf-pale: #e1f8d4;
+            --sage: #a9cba0;
+
+            --gold: #e7ce79;
+            --gold-light: #f8e9ad;
+
+            --cream: #f4f8ed;
+            --muted: #c7ddc1;
+
+            --shadow: 0 18px 45px rgba(4, 18, 8, 0.32);
             --radius: 24px;
             --content-width: 1180px;
         }
@@ -44,7 +51,8 @@
 
         html {
             scroll-behavior: smooth;
-            background: var(--midnight);
+            scroll-padding-top: 2rem;
+            background: var(--forest);
         }
 
         body {
@@ -60,14 +68,19 @@
 
             background:
                 radial-gradient(
-                    ellipse at 12% 8%,
-                    rgba(145, 215, 138, 0.15),
+                    ellipse at 8% 10%,
+                    rgba(99, 198, 83, 0.23),
                     transparent 34rem
                 ),
                 radial-gradient(
-                    ellipse at 88% 42%,
-                    rgba(36, 107, 70, 0.24),
-                    transparent 36rem
+                    ellipse at 90% 38%,
+                    rgba(40, 107, 53, 0.35),
+                    transparent 38rem
+                ),
+                radial-gradient(
+                    ellipse at 45% 90%,
+                    rgba(131, 225, 107, 0.09),
+                    transparent 35rem
                 ),
                 var(--midnight);
         }
@@ -92,8 +105,8 @@
         }
 
         ::selection {
-            color: var(--midnight);
-            background: var(--gold);
+            color: var(--forest);
+            background: var(--leaf-light);
         }
 
         .skip-link {
@@ -103,7 +116,7 @@
             z-index: 1000;
 
             padding: 0.75rem 1rem;
-            color: var(--midnight);
+            color: var(--forest);
             background: var(--cream);
             border-radius: 10px;
         }
@@ -124,10 +137,10 @@
             pointer-events: none;
 
             background-image:
-                radial-gradient(circle, rgba(255,255,255,.88) 1px, transparent 1.8px),
-                radial-gradient(circle, rgba(214,242,189,.9) 1.2px, transparent 2px),
-                radial-gradient(circle, rgba(242,213,138,.9) 1px, transparent 1.8px),
-                radial-gradient(circle, rgba(255,255,255,.65) 1px, transparent 1.7px);
+                radial-gradient(circle, rgba(255,255,255,.78) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(131,225,107,.72) 1px, transparent 1.7px);
 
             background-size:
                 97px 91px,
@@ -141,13 +154,13 @@
                 91px 24px,
                 19px 105px;
 
-            opacity: 0.38;
+            opacity: 0.32;
             animation: stars-twinkle 6s ease-in-out infinite alternate;
         }
 
         @keyframes stars-twinkle {
-            from { opacity: 0.28; }
-            to { opacity: 0.58; }
+            from { opacity: 0.22; }
+            to { opacity: 0.46; }
         }
 
 
@@ -159,8 +172,8 @@
             position: relative;
             z-index: 20;
 
-            background: rgba(5, 25, 24, 0.9);
-            border-bottom: 1px solid rgba(242, 213, 138, 0.25);
+            background: rgba(14, 39, 24, 0.94);
+            border-bottom: 1px solid rgba(131, 225, 107, 0.32);
 
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -192,8 +205,9 @@
         }
 
         .brand-mark {
-            color: var(--gold);
+            color: var(--leaf-bright);
             font-size: 1.8rem;
+            text-shadow: 0 0 16px rgba(131, 225, 107, 0.3);
         }
 
         .main-nav {
@@ -215,23 +229,23 @@
         }
 
         .main-nav a:hover {
-            background: rgba(145, 215, 138, 0.13);
-            color: var(--green-light);
+            background: rgba(99, 198, 83, 0.17);
+            color: var(--leaf-light);
         }
 
         .main-nav a[aria-current="page"] {
-            background: rgba(145, 215, 138, 0.13);
-            color: var(--green-light);
+            background: rgba(99, 198, 83, 0.2);
+            color: var(--leaf-light);
         }
 
         .main-nav .nav-highlight {
-            background: linear-gradient(120deg, var(--gold-light), var(--green));
-            color: var(--midnight);
+            background: linear-gradient(120deg, var(--leaf-light), var(--leaf));
+            color: var(--forest);
         }
 
         .main-nav .nav-highlight:hover {
-            color: var(--midnight);
-            filter: brightness(1.06);
+            color: var(--forest);
+            filter: brightness(1.07);
         }
 
         .menu-toggle {
@@ -242,15 +256,15 @@
             padding: 0.55rem 0.8rem;
             color: var(--cream);
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.28);
+            border: 1px solid rgba(184, 245, 156, 0.35);
             border-radius: 12px;
 
             cursor: pointer;
         }
 
         .menu-toggle:hover {
-            color: var(--green-light);
-            border-color: var(--green);
+            color: var(--leaf-light);
+            border-color: var(--leaf-bright);
         }
 
 
@@ -276,15 +290,15 @@
             place-items: center;
 
             border-radius: 50%;
-            background: rgba(5, 25, 24, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: rgba(14, 39, 24, 0.88);
+            border: 1px solid rgba(184, 245, 156, 0.28);
 
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .language-switcher a:hover {
             transform: translateY(-2px);
-            border-color: var(--gold);
+            border-color: var(--leaf-bright);
         }
 
         .language-switcher img {
@@ -299,7 +313,7 @@
         ======================================== */
 
         .hero {
-            min-height: 390px;
+            min-height: 410px;
             display: grid;
             place-items: center;
             position: relative;
@@ -308,12 +322,13 @@
             padding: 5rem 1.25rem 4.5rem;
 
             background:
-                radial-gradient(ellipse at 18% 35%, rgba(145, 215, 138, 0.25), transparent 38%),
-                radial-gradient(ellipse at 72% 18%, rgba(36, 107, 70, 0.35), transparent 34%),
-                radial-gradient(ellipse at 82% 76%, rgba(242, 213, 138, 0.12), transparent 35%),
-                linear-gradient(110deg, rgba(5, 25, 24, 0.45), rgba(9, 27, 45, 0.55), rgba(17, 64, 45, 0.38));
+                radial-gradient(ellipse at 12% 38%, rgba(99, 198, 83, 0.46), transparent 39%),
+                radial-gradient(ellipse at 43% 15%, rgba(184, 245, 156, 0.2), transparent 35%),
+                radial-gradient(ellipse at 75% 55%, rgba(40, 107, 53, 0.52), transparent 38%),
+                radial-gradient(ellipse at 90% 15%, rgba(231, 206, 121, 0.1), transparent 32%),
+                linear-gradient(110deg, rgba(23, 59, 34, 0.72), rgba(16, 31, 42, 0.65), rgba(30, 83, 39, 0.65));
 
-            border-bottom: 1px solid rgba(145, 215, 138, 0.35);
+            border-bottom: 1px solid rgba(131, 225, 107, 0.48);
         }
 
         .hero::before {
@@ -324,13 +339,13 @@
             pointer-events: none;
 
             background:
-                radial-gradient(ellipse at 18% 42%, rgba(145, 215, 138, 0.3), transparent 25%),
-                radial-gradient(ellipse at 40% 18%, rgba(214, 242, 189, 0.18), transparent 28%),
-                radial-gradient(ellipse at 70% 35%, rgba(36, 107, 70, 0.35), transparent 30%),
-                radial-gradient(ellipse at 85% 62%, rgba(242, 213, 138, 0.13), transparent 25%);
+                radial-gradient(ellipse at 18% 42%, rgba(99, 198, 83, 0.42), transparent 27%),
+                radial-gradient(ellipse at 40% 18%, rgba(184, 245, 156, 0.25), transparent 28%),
+                radial-gradient(ellipse at 70% 35%, rgba(40, 107, 53, 0.4), transparent 30%),
+                radial-gradient(ellipse at 85% 62%, rgba(231, 206, 121, 0.1), transparent 25%);
 
             filter: blur(28px);
-            opacity: 0.9;
+            opacity: 0.95;
             animation: aurora-drift 16s ease-in-out infinite alternate;
         }
 
@@ -342,13 +357,13 @@
             pointer-events: none;
 
             background-image:
-                radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1.8px),
-                radial-gradient(circle, rgba(214,242,189,.9) 1.2px, transparent 2px),
-                radial-gradient(circle, rgba(242,213,138,.85) 1px, transparent 1.8px);
+                radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.75) 1px, transparent 1.8px);
 
             background-size: 97px 91px, 151px 137px, 211px 183px;
             background-position: 12px 17px, 48px 62px, 91px 24px;
-            opacity: 0.55;
+            opacity: 0.42;
         }
 
         @keyframes aurora-drift {
@@ -371,7 +386,7 @@
             justify-content: center;
             gap: 0.55rem;
 
-            color: var(--gold);
+            color: var(--leaf-light);
             font-size: 0.78rem;
             font-weight: 800;
             letter-spacing: 0.16em;
@@ -387,36 +402,37 @@
             font-size: clamp(3.3rem, 8vw, 6rem);
             line-height: 0.96;
             letter-spacing: -0.035em;
+            text-shadow: 0 4px 28px rgba(5, 23, 8, 0.25);
         }
 
         .hero h1 span {
             display: block;
             margin-top: 0.25em;
 
-            color: var(--green-light);
+            color: var(--leaf-light);
             font-style: italic;
-            text-shadow: 0 0 28px rgba(145, 215, 138, 0.22);
+            text-shadow: 0 0 30px rgba(131, 225, 107, 0.32);
         }
 
         .hero p {
             max-width: 720px;
             margin: 1.25rem auto 0;
 
-            color: #e1efdf;
+            color: #e6f5df;
             font-size: clamp(1.05rem, 2vw, 1.2rem);
         }
 
         .hero-divider {
             width: min(220px, 55%);
-            height: 1px;
+            height: 2px;
             margin: 2rem auto 0;
 
             background: linear-gradient(
                 90deg,
                 transparent,
-                var(--green),
+                var(--leaf),
                 var(--gold),
-                var(--green-light),
+                var(--leaf-light),
                 transparent
             );
         }
@@ -446,7 +462,7 @@
         .section-heading h2 {
             margin: 0.5rem 0 0.8rem;
 
-            color: var(--green-light);
+            color: var(--leaf-light);
             font-family: "Cormorant Garamond", serif;
             font-weight: 600;
             font-size: clamp(2.3rem, 5vw, 3.8rem);
@@ -471,10 +487,11 @@
             padding: clamp(1.5rem, 4vw, 3.2rem);
 
             background:
-                radial-gradient(ellipse at 100% 0%, rgba(145, 215, 138, 0.12), transparent 45%),
-                linear-gradient(135deg, rgba(21, 59, 67, 0.94), rgba(9, 27, 45, 0.96));
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.22), transparent 48%),
+                radial-gradient(ellipse at 0% 100%, rgba(40, 107, 53, 0.2), transparent 48%),
+                linear-gradient(135deg, rgba(28, 70, 39, 0.97), rgba(16, 31, 42, 0.97));
 
-            border: 1px solid rgba(145, 215, 138, 0.35);
+            border: 1px solid rgba(131, 225, 107, 0.5);
             border-radius: 28px;
             box-shadow: var(--shadow);
         }
@@ -485,7 +502,7 @@
             top: 0.6rem;
             right: 1.4rem;
 
-            color: rgba(242, 213, 138, 0.55);
+            color: rgba(184, 245, 156, 0.6);
             font-size: 3.2rem;
             pointer-events: none;
         }
@@ -493,7 +510,7 @@
         .intro h2 {
             margin: 0 0 1.6rem;
 
-            color: var(--green-light);
+            color: var(--leaf-light);
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 600;
@@ -503,12 +520,67 @@
 
         .intro p {
             margin: 0 0 1rem;
-            color: #e1efdf;
+            color: #e7f4e2;
             line-height: 1.85;
         }
 
         .intro p:last-child {
             margin-bottom: 0;
+        }
+
+        .intro strong {
+            color: var(--leaf-light);
+        }
+
+
+        /* ========================================
+           MEIN PFLANZENWISSEN
+        ======================================== */
+
+        .knowledge-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 1.5rem auto 0;
+        }
+
+        .knowledge-item {
+            padding: 1.4rem 1.25rem;
+            text-align: center;
+
+            background: linear-gradient(
+                145deg,
+                rgba(37, 91, 45, 0.78),
+                rgba(16, 31, 42, 0.94)
+            );
+
+            border: 1px solid rgba(131, 225, 107, 0.3);
+            border-radius: 18px;
+        }
+
+        .knowledge-item .knowledge-symbol {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .knowledge-item h3 {
+            margin: 0 0 0.5rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.55rem;
+            line-height: 1.15;
+        }
+
+        .knowledge-item p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
         }
 
 
@@ -544,12 +616,12 @@
             text-decoration: none;
 
             background:
-                radial-gradient(ellipse at 50% 0%, rgba(145, 215, 138, 0.12), transparent 58%),
-                linear-gradient(155deg, rgba(21, 59, 67, 0.96), rgba(9, 27, 45, 0.98));
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(155deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
 
-            border: 1px solid rgba(145, 215, 138, 0.3);
+            border: 1px solid rgba(131, 225, 107, 0.38);
             border-radius: 22px;
-            box-shadow: 0 8px 28px rgba(0, 8, 7, 0.22);
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
 
             transition:
                 transform 0.25s ease,
@@ -564,28 +636,28 @@
             top: 0;
             left: 12%;
             right: 12%;
-            height: 2px;
+            height: 3px;
 
             background: linear-gradient(
                 90deg,
                 transparent,
-                var(--green),
-                var(--gold),
+                var(--leaf),
+                var(--leaf-light),
                 transparent
             );
 
-            opacity: 0.7;
+            opacity: 0.85;
         }
 
         .category-card:hover {
             transform: translateY(-5px);
-            border-color: var(--green);
-            box-shadow: 0 15px 35px rgba(0, 8, 7, 0.3);
+            border-color: var(--leaf-bright);
+            box-shadow: 0 15px 35px rgba(4, 18, 8, 0.32);
         }
 
         .category-symbol {
             margin-bottom: 0.55rem;
-            color: var(--gold);
+            color: var(--leaf-bright);
             font-family: "Cormorant Garamond", serif;
             font-size: 2.4rem;
             line-height: 1;
@@ -594,7 +666,7 @@
         .category-card h3 {
             margin: 0 0 0.5rem;
 
-            color: var(--green-light);
+            color: var(--leaf-light);
             font-family: "Cormorant Garamond", serif;
             font-size: 1.8rem;
             font-weight: 600;
@@ -612,7 +684,7 @@
             display: inline-block;
             margin-top: 0.8rem;
 
-            color: var(--gold);
+            color: var(--gold-light);
             font-size: 0.9rem;
             font-weight: 800;
         }
@@ -632,10 +704,11 @@
             padding: clamp(1.5rem, 4vw, 3rem);
 
             background:
-                radial-gradient(ellipse at 0% 100%, rgba(36, 107, 70, 0.17), transparent 48%),
-                linear-gradient(135deg, rgba(21, 59, 67, 0.9), rgba(9, 27, 45, 0.97));
+                radial-gradient(ellipse at 0% 100%, rgba(40, 107, 53, 0.28), transparent 48%),
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.13), transparent 40%),
+                linear-gradient(135deg, rgba(27, 62, 37, 0.94), rgba(16, 31, 42, 0.98));
 
-            border: 1px solid rgba(242, 213, 138, 0.28);
+            border: 1px solid rgba(131, 225, 107, 0.36);
             border-radius: 28px;
             box-shadow: var(--shadow);
         }
@@ -643,7 +716,7 @@
         .story-card h2 {
             margin: 0 0 1.2rem;
 
-            color: var(--gold-light);
+            color: var(--leaf-light);
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(2.1rem, 4vw, 3.2rem);
             font-weight: 600;
@@ -654,7 +727,7 @@
         .story-card h3 {
             margin: 2rem 0 0.8rem;
 
-            color: var(--green-light);
+            color: var(--leaf-light);
             font-family: "Cormorant Garamond", serif;
             font-size: clamp(1.7rem, 3vw, 2.2rem);
             font-weight: 600;
@@ -663,7 +736,7 @@
 
         .story-card p {
             margin: 0 0 1rem;
-            color: #e1efdf;
+            color: #e7f4e2;
             line-height: 1.85;
         }
 
@@ -672,6 +745,15 @@
         }
 
         .story-card strong {
+            color: var(--leaf-light);
+        }
+
+        .story-card a {
+            color: var(--leaf-light);
+            text-underline-offset: 4px;
+        }
+
+        .story-card a:hover {
             color: var(--gold-light);
         }
 
@@ -686,9 +768,10 @@
             padding: clamp(1.3rem, 3vw, 2rem);
 
             background:
-                linear-gradient(135deg, rgba(65, 73, 39, 0.5), rgba(9, 27, 45, 0.96));
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.12), transparent 55%),
+                linear-gradient(135deg, rgba(47, 68, 34, 0.72), rgba(16, 31, 42, 0.97));
 
-            border: 1px solid rgba(242, 213, 138, 0.55);
+            border: 1px solid rgba(231, 206, 121, 0.52);
             border-left: 4px solid var(--gold);
             border-radius: 20px;
         }
@@ -705,7 +788,7 @@
 
         .notice p {
             margin: 0 0 0.9rem;
-            color: #e8e9d9;
+            color: #e8efdf;
             line-height: 1.8;
         }
 
@@ -746,12 +829,12 @@
             text-decoration: none;
 
             background:
-                radial-gradient(ellipse at 50% 0%, rgba(145, 215, 138, 0.12), transparent 60%),
-                linear-gradient(150deg, rgba(21, 59, 67, 0.95), rgba(9, 27, 45, 0.98));
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(150deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
 
-            border: 1px solid rgba(145, 215, 138, 0.3);
+            border: 1px solid rgba(131, 225, 107, 0.38);
             border-radius: 22px;
-            box-shadow: 0 8px 28px rgba(0, 8, 7, 0.22);
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
 
             transition:
                 transform 0.25s ease,
@@ -766,26 +849,26 @@
             top: 0;
             left: 12%;
             right: 12%;
-            height: 2px;
+            height: 3px;
 
             background: linear-gradient(
                 90deg,
                 transparent,
-                var(--green),
-                var(--gold),
+                var(--leaf),
+                var(--leaf-light),
                 transparent
             );
 
-            opacity: 0.75;
+            opacity: 0.85;
             transition: opacity 0.25s ease;
         }
 
         .discover-card:hover {
             transform: translateY(-6px);
-            border-color: var(--green);
+            border-color: var(--leaf-bright);
             box-shadow:
-                0 16px 35px rgba(0, 8, 7, 0.32),
-                0 0 22px rgba(145, 215, 138, 0.08);
+                0 16px 35px rgba(4, 18, 8, 0.32),
+                0 0 22px rgba(99, 198, 83, 0.12);
         }
 
         .discover-card:hover::before {
@@ -796,7 +879,7 @@
             display: block;
             margin-bottom: 0.65rem;
 
-            color: var(--gold);
+            color: var(--leaf-bright);
             font-family: "Cormorant Garamond", serif;
             font-size: 2.2rem;
             line-height: 1;
@@ -805,7 +888,7 @@
         .discover-card h3 {
             margin: 0 0 0.55rem;
 
-            color: var(--green-light);
+            color: var(--leaf-light);
             font-family: "Cormorant Garamond", serif;
             font-size: 1.7rem;
             font-weight: 600;
@@ -824,7 +907,7 @@
             display: inline-block;
             margin-top: 0.9rem;
 
-            color: var(--gold);
+            color: var(--gold-light);
             font-size: 0.9rem;
             font-weight: 800;
         }
@@ -856,7 +939,7 @@
             margin-top: 1.5rem;
             padding-bottom: 2.5rem;
 
-            color: var(--gold);
+            color: var(--leaf-light);
             font-family: "Cormorant Garamond", serif;
             font-size: 1.5rem;
             font-weight: 700;
@@ -872,8 +955,8 @@
             z-index: 1;
             margin-top: 2rem;
 
-            background: #071713;
-            border-top: 1px solid rgba(242, 213, 138, 0.25);
+            background: #0d2417;
+            border-top: 1px solid rgba(131, 225, 107, 0.3);
         }
 
         .footer-inner {
@@ -903,7 +986,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--gold);
+            color: var(--leaf-light);
         }
 
 
@@ -950,6 +1033,10 @@
 
             .discover-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .knowledge-strip {
+                grid-template-columns: 1fr;
             }
 
             .hero {
@@ -1009,6 +1096,14 @@
 
             .intro p {
                 line-height: 1.75;
+            }
+
+            .knowledge-strip {
+                gap: 0.8rem;
+            }
+
+            .knowledge-item {
+                padding: 1.2rem 1rem;
             }
 
             .category-section {
@@ -1136,7 +1231,7 @@
             </button>
 
             <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-                <a href="kraeuter.html" aria-current="page">Kräuterwelt</a>
+                <a href="kräuter.html" aria-current="page">Kräuterwelt</a>
                 <a href="lieder.html">Musik</a>
                 <a href="buecher.html">Bücher</a>
                 <a href="about.html">Über Mich</a>
@@ -1171,7 +1266,7 @@
         <div class="hero-inner">
 
             <span class="eyebrow">
-                ✧ Pflanzenwissen · Natürliche Pflege · Wohlbefinden ✧
+                Pflanzenwissen · Kräuterpädagogik · Naturverbundenheit
             </span>
 
             <h1 id="hero-title">
@@ -1180,9 +1275,10 @@
             </h1>
 
             <p>
-                Die Natur steckt voller kleiner Schätze.
-                Entdecke mit mir Kräuter, Pflanzenwissen und natürliche Rezeptideen
-                für deinen Alltag – mit Neugier, Achtsamkeit und einer Prise Magie.
+                Die Natur steckt voller kleiner Schätze. Entdecke mit mir die
+                faszinierende Welt der Kräuter, Pflanzen und Pilze – mit
+                Pflanzenwissen, natürlichen Rezeptideen und einer großen
+                Portion Neugier auf die Vielfalt unserer Natur.
             </p>
 
             <div class="hero-divider" aria-hidden="true"></div>
@@ -1208,9 +1304,9 @@
                 <p>
                     Die Natur bietet uns unzählige Schätze, die uns auf unserer
                     Reise zu Gesundheit und Wohlbefinden begleiten können.
-                    Ich arbeite mit Kräutern und Pflanzen, um dir natürliche
-                    Ideen zur Unterstützung deines Wohlbefindens und deiner
-                    Körperpflege näherzubringen.
+                    Ich beschäftige mich intensiv mit Kräutern und Pflanzen
+                    und möchte dir natürliche Ideen zur Unterstützung deines
+                    Wohlbefindens und deiner Körperpflege näherbringen.
                 </p>
 
                 <p>
@@ -1226,6 +1322,51 @@
                     wie viel es draußen zu entdecken gibt und wie wohltuend
                     bewusste kleine Rituale im Alltag sein können.
                 </p>
+
+                <p>
+                    <strong>
+                        Mein Wissen wächst mit jeder Pflanze, jeder neuen
+                        Erkenntnis und jeder Frage, die ich noch nicht
+                        beantworten kann.
+                    </strong>
+                    Denn die Natur ist unglaublich vielfältig – und es gibt
+                    immer etwas Neues zu lernen.
+                </p>
+
+            </div>
+
+            <div class="knowledge-strip" aria-label="Mein Weg mit der Natur">
+
+                <article class="knowledge-item">
+                    <span class="knowledge-symbol" aria-hidden="true">✿</span>
+                    <h3>Kräuterpädagogik</h3>
+                    <p>
+                        Ich habe Kräuterpädagogik studiert und vertiefe
+                        mein Wissen über Pflanzen, ihre Merkmale und ihre
+                        vielfältigen Verwendungsmöglichkeiten stetig weiter.
+                    </p>
+                </article>
+
+                <article class="knowledge-item">
+                    <span class="knowledge-symbol" aria-hidden="true">❧</span>
+                    <h3>Immer weiterlernen</h3>
+                    <p>
+                        Ich beschäftige mich weiterhin intensiv mit Kräutern
+                        und Pflanzen, bilde mich fortlaufend weiter und bleibe
+                        offen für neue Erkenntnisse. Denn man lernt nie aus.
+                    </p>
+                </article>
+
+                <article class="knowledge-item">
+                    <span class="knowledge-symbol" aria-hidden="true">◌</span>
+                    <h3>TCM &amp; Pilze</h3>
+                    <p>
+                        Seit zwei Jahren beschäftige ich mich außerdem mit
+                        der Traditionellen Chinesischen Medizin (TCM) und
+                        mit Pilzen – zwei spannende Themenfelder, in die
+                        ich mich Schritt für Schritt weiter vertiefe.
+                    </p>
+                </article>
 
             </div>
 
@@ -1302,7 +1443,18 @@
 
                 <p>
                     Diese Rezepte sind aus meinem Wissen über Kräuter und Gewürze
-                    sowie meiner Freude am Experimentieren entstanden.
+                    sowie meiner Freude am Experimentieren entstanden. Durch
+                    mein Studium der Kräuterpädagogik und meine fortlaufende
+                    Beschäftigung mit Pflanzen ist meine Neugier immer weiter
+                    gewachsen.
+                </p>
+
+                <p>
+                    Ich möchte mein Wissen nicht als etwas Abgeschlossenes
+                    betrachten. Pflanzenkunde ist ein großes und vielseitiges
+                    Feld. Neue Erkenntnisse, andere Blickwinkel und der Austausch
+                    mit Menschen helfen mir, dazuzulernen und mein Wissen
+                    verantwortungsvoll zu erweitern.
                 </p>
 
                 <p>
@@ -1339,6 +1491,15 @@
                 </p>
 
                 <p>
+                    Seit zwei Jahren beschäftige ich mich außerdem mit der
+                    Traditionellen Chinesischen Medizin (TCM) und mit Pilzen.
+                    Mich fasziniert, wie unterschiedlich Menschen Pflanzen,
+                    Naturstoffe und traditionelle Wissenssysteme betrachten.
+                    Auch hier gilt für mich: neugierig bleiben, kritisch
+                    hinterfragen und immer weiterlernen.
+                </p>
+
+                <p>
                     Hier möchte ich meine Erfahrungen, Ideen und meine Begeisterung
                     für die Pflanzenwelt mit dir teilen – damit du selbst entdecken
                     kannst, was zu dir und deinem Alltag passt.
@@ -1355,9 +1516,10 @@
 
                 <p>
                     Wenn du dich mit einer Pflanze beschäftigst, lohnt es sich,
-                    ihren Namen, die verwendeten Pflanzenteile und die richtige
-                    Zubereitung genau kennenzulernen. Nicht jede Pflanze eignet
-                    sich für jede Anwendung.
+                    ihren Namen, ihre Erkennungsmerkmale, die verwendeten
+                    Pflanzenteile und die richtige Zubereitung genau kennenzulernen.
+                    Nicht jede Pflanze eignet sich für jede Anwendung.
+                    Eine sichere Bestimmung ist besonders wichtig.
                 </p>
 
                 <h3 id="pflege">Natürliche Pflege selbst ausprobieren</h3>
@@ -1457,11 +1619,11 @@
 
             <div class="discover-grid">
 
-                <a class="discover-card" href="kraeuter.html" aria-current="page">
+                <a class="discover-card" href="kräuter.html" aria-current="page">
                     <span class="discover-symbol" aria-hidden="true">✿</span>
                     <h3>Kräuterwelt</h3>
                     <p>
-                        Entdecke Pflanzenwissen, Kräuterideen und Inspiration
+                        Entdecke Pflanzenwissen, Kräuterpädagogik und Inspiration
                         für einen bewussteren Alltag mit der Natur.
                     </p>
                     <span class="discover-link">Zur Kräuterwelt →</span>
