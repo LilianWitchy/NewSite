@@ -1029,37 +1029,94 @@
         <span>Lilians Kräutermagie</span>
       </a>
 
-    
-    <!-- ========================================
-         NAVIGATION
-    ======================================== -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span class="menu-icon" aria-hidden="true">☰</span>
+        <span class="menu-label">Menü</span>
+      </button>
 
-    <header class="site-header">
-        <div class="nav-wrap">
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
 
-            <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
-                <span class="brand-mark" aria-hidden="true">✦</span>
-                <span>Lilians Kräutermagie</span>
-            </a>
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Startseite
+          </button>
+          <div class="nav-dropdown">
+            <a href="index.html">Zur Startseite</a>
+            <a href="about.html">Über mich</a>
+            <a href="weiterbildung.html">Weiterbildungen</a>
+            <a href="mission.html">Meine Mission</a>
+            <a href="empfehlen.html">Bücher, die ich empfehle</a>
+          </div>
+        </div>
 
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="main-nav"
-            >
-                <span aria-hidden="true">☰</span>
-                Menü
-            </button>
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Wort &amp; Klang
+          </button>
+          <div class="nav-dropdown">
+            <a href="schätze.html">Geschriebene Schätze</a>
+            <a href="meinebücher.html">Meine Bücher</a>
+            <a href="hörbuch.html">Meine Bücher als Hörbuch</a>
+            <a href="music.html" aria-current="page">Meine Lieder</a>
+          </div>
+        </div>
 
-            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-                <a href="steckbriefe.html">Kräuterwelt</a>
-                <a href="musik.html">Musik</a>
-                <a href="buecher.html">Bücher</a>
-                <a href="about.html">Über Mich</a>
-                <a class="nav-highlight" href="#neues-buch">Neues Buch ✦</a>
-                <a href="angebot.html">Angebote</a>
-            </nav>
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Begleitende Angebote
+          </button>
+          <div class="nav-dropdown">
+            <a href="angebot.html">Mein Angebot für dich</a>
+            <a href="pädagogik.html">Pädagogische Angebote</a>
+            <a href="ep.html">Erlebnispädagogische Angebote</a>
+            <a href="pendel.html">Karten legen und Pendeln</a>
+            <a href="online.html">Online-Kurse</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Shop
+          </button>
+          <div class="nav-dropdown">
+            <a href="shop.html">Mein Shop</a>
+            <a href="steckbriefe.html">Meine Kräutersteckbriefe</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Innere Verbindung
+          </button>
+          <div class="nav-dropdown">
+            <a href="energie.html">Innere Balance</a>
+            <a href="basics.html">Die Basics</a>
+            <a href="reinigung.html">Körper und Geist im Einklang</a>
+            <a href="gedanken.html">Gedanken &amp; Glaubenssätze</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Rezepte
+          </button>
+          <div class="nav-dropdown">
+            <a href="rezepte.html">Warum DIY?</a>
+            <a href="seife.html">Körperseifen und Duschjelly</a>
+            <a href="haare.html">Haarprodukte</a>
+          </div>
+        </div>
+
+        <a href="kontakt.html">Kontakt</a>
+        <a href="agb.html">AGB</a>
+        <a href="impressum.html">Impressum</a>
+
+      </nav>
     </div>
   </header>
 
