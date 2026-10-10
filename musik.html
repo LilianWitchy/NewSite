@@ -16,10 +16,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ========================================
-       FARBEN UND GRUNDLAGEN
-    ======================================== */
-
     :root {
       --night: #26365d;
       --night-light: #394c78;
@@ -32,7 +28,6 @@
       --cream: #fffaff;
       --muted: #e5e5f7;
       --card: rgba(77, 76, 132, 0.78);
-
       --shadow: 0 16px 40px rgba(30, 27, 67, 0.18);
       --radius: 24px;
       --content-width: 1180px;
@@ -52,12 +47,10 @@
       min-height: 100vh;
       margin: 0;
       overflow-x: hidden;
-
       font-family: "Nunito Sans", sans-serif;
       font-size: 17px;
       line-height: 1.7;
       color: var(--cream);
-
       background:
         radial-gradient(ellipse at 10% 8%, rgba(255, 190, 226, 0.25), transparent 35rem),
         radial-gradient(ellipse at 88% 35%, rgba(174, 151, 255, 0.27), transparent 38rem),
@@ -104,23 +97,18 @@
       left: 1rem;
     }
 
-
-    /* ========================================
-       STERNENHIMMEL
-    ======================================== */
+    /* STERNENHIMMEL */
 
     .stars {
       position: fixed;
       inset: 0;
       z-index: 0;
       pointer-events: none;
-
       background-image:
         radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1.8px),
         radial-gradient(circle, rgba(255,222,244,.9) 1px, transparent 2px),
         radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px),
         radial-gradient(circle, rgba(203,226,255,.9) 1px, transparent 1.8px);
-
       background-size: 97px 91px, 151px 137px, 211px 183px, 263px 227px;
       background-position: 12px 17px, 48px 62px, 91px 24px, 19px 105px;
       opacity: 0.35;
@@ -132,10 +120,7 @@
       to { opacity: 0.48; }
     }
 
-
-    /* ========================================
-       KOPFZEILE UND NAVIGATION
-    ======================================== */
+    /* KOPFZEILE UND NAVIGATION */
 
     .site-header {
       position: relative;
@@ -151,7 +136,6 @@
       width: min(var(--content-width), calc(100% - 2rem));
       min-height: 82px;
       margin: auto;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -163,7 +147,6 @@
       align-items: center;
       gap: 0.65rem;
       min-width: max-content;
-
       color: var(--cream);
       text-decoration: none;
       font-family: "Cormorant Garamond", serif;
@@ -179,20 +162,16 @@
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 0.2rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 0.25rem;
     }
 
-    .nav-item {
-      position: relative;
-    }
-
-    .main-nav a,
-    .nav-dropdown-toggle {
+    .main-nav a {
       display: block;
       padding: 0.62rem 0.75rem;
       border: 0;
       border-radius: 999px;
-
       color: #fff4fc;
       background: transparent;
       text-decoration: none;
@@ -200,56 +179,12 @@
       font-size: 0.88rem;
       font-weight: 800;
       white-space: nowrap;
-      cursor: pointer;
-
       transition: background 0.2s ease, color 0.2s ease;
     }
 
     .main-nav a:hover,
-    .nav-dropdown-toggle:hover,
-    .nav-item:focus-within > .nav-dropdown-toggle {
+    .main-nav a[aria-current="page"] {
       background: rgba(247, 202, 235, 0.17);
-      color: var(--gold);
-    }
-
-    .nav-dropdown-toggle::after {
-      content: "⌄";
-      margin-left: 0.35rem;
-      font-size: 0.9em;
-    }
-
-    .nav-dropdown {
-      position: absolute;
-      top: calc(100% + 0.35rem);
-      left: 0;
-      z-index: 30;
-
-      display: none;
-      min-width: 245px;
-      padding: 0.55rem;
-
-      background: #4b4b7d;
-      border: 1px solid rgba(245, 204, 229, 0.5);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    .nav-item:hover > .nav-dropdown,
-    .nav-item:focus-within > .nav-dropdown,
-    .nav-item.open > .nav-dropdown {
-      display: block;
-    }
-
-    .main-nav .nav-dropdown a {
-      padding: 0.65rem 0.8rem;
-      border-radius: 10px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      white-space: normal;
-    }
-
-    .main-nav .nav-dropdown a:hover {
-      background: rgba(247, 202, 235, 0.18);
       color: var(--gold);
     }
 
@@ -268,7 +203,6 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.6rem 0.85rem;
-
       color: var(--cream);
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -281,17 +215,13 @@
       color: var(--pink-light);
     }
 
-
-    /* ========================================
-       SPRACHWAHL
-    ======================================== */
+    /* SPRACHWAHL */
 
     .language-switcher {
       position: absolute;
       z-index: 5;
       top: 1rem;
       right: max(1rem, calc((100vw - var(--content-width)) / 2));
-
       display: flex;
       gap: 0.5rem;
     }
@@ -301,7 +231,6 @@
       place-items: center;
       width: 36px;
       height: 36px;
-
       background: rgba(57, 54, 101, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.45);
       border-radius: 50%;
@@ -319,27 +248,21 @@
       object-fit: contain;
     }
 
-
-    /* ========================================
-       HERO / TITELBEREICH
-    ======================================== */
+    /* HERO */
 
     .hero {
       position: relative;
       isolation: isolate;
       overflow: hidden;
-
       min-height: 390px;
       display: grid;
       place-items: center;
       padding: 5rem 1.25rem 4rem;
-
       background:
         radial-gradient(ellipse at 18% 35%, rgba(255, 192, 227, 0.38), transparent 38%),
         radial-gradient(ellipse at 75% 18%, rgba(187, 164, 255, 0.40), transparent 35%),
         radial-gradient(ellipse at 83% 76%, rgba(133, 238, 221, 0.22), transparent 34%),
         linear-gradient(115deg, rgba(61, 70, 119, 0.65), rgba(74, 56, 112, 0.55));
-
       border-bottom: 1px solid rgba(245, 204, 229, 0.55);
     }
 
@@ -349,13 +272,11 @@
       z-index: -1;
       inset: -18% -10%;
       pointer-events: none;
-
       background:
         radial-gradient(ellipse at 18% 42%, rgba(255, 190, 226, 0.40), transparent 27%),
         radial-gradient(ellipse at 42% 18%, rgba(192, 174, 255, 0.30), transparent 28%),
         radial-gradient(ellipse at 72% 35%, rgba(235, 160, 220, 0.30), transparent 30%),
         radial-gradient(ellipse at 85% 62%, rgba(125, 220, 228, 0.25), transparent 26%);
-
       filter: blur(28px);
       animation: aurora-drift 16s ease-in-out infinite alternate;
     }
@@ -366,12 +287,10 @@
       z-index: -1;
       inset: 0;
       pointer-events: none;
-
       background-image:
         radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.8px),
         radial-gradient(circle, rgba(255,225,244,.9) 1px, transparent 2px),
         radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px);
-
       background-size: 97px 91px, 151px 137px, 211px 183px;
       background-position: 12px 17px, 48px 62px, 91px 24px;
       opacity: 0.55;
@@ -392,7 +311,6 @@
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-
       color: var(--gold);
       font-size: 0.8rem;
       font-weight: 800;
@@ -432,10 +350,7 @@
       background: linear-gradient(90deg, transparent, var(--pink-light), var(--gold), var(--teal), transparent);
     }
 
-
-    /* ========================================
-       ALLGEMEINE ABSCHNITTE
-    ======================================== */
+    /* ALLGEMEINE ABSCHNITTE */
 
     main {
       position: relative;
@@ -472,23 +387,17 @@
       color: var(--gold);
     }
 
-
-    /* ========================================
-       EINLEITUNGSKARTE
-    ======================================== */
+    /* EINLEITUNGSKARTE */
 
     .intro {
       position: relative;
       overflow: hidden;
-
       width: min(1000px, calc(100% - 2rem));
       margin: 2.5rem auto;
       padding: clamp(1.5rem, 4vw, 3rem);
-
       background:
         radial-gradient(ellipse at 100% 0%, rgba(255, 191, 226, 0.22), transparent 48%),
         linear-gradient(135deg, rgba(91, 83, 143, 0.94), rgba(77, 72, 129, 0.94));
-
       border: 1px solid rgba(247, 202, 235, 0.55);
       border-radius: 28px;
       box-shadow: var(--shadow);
@@ -525,10 +434,7 @@
       margin-bottom: 0;
     }
 
-
-    /* ========================================
-       ALBEN UND VERÖFFENTLICHUNGEN
-    ======================================== */
+    /* VERÖFFENTLICHUNGEN */
 
     .releases {
       width: min(var(--content-width), calc(100% - 2rem));
@@ -565,7 +471,6 @@
       border-collapse: separate;
       border-spacing: 0;
       overflow: hidden;
-
       background: rgba(79, 75, 131, 0.88);
       border: 1px solid rgba(247, 202, 235, 0.42);
       border-radius: 20px;
@@ -576,7 +481,6 @@
     .album-table caption {
       caption-side: top;
       padding: 1rem 1.3rem;
-
       color: #3a355f;
       background: linear-gradient(110deg, #f6c9e5, #e0d1ff 65%, #c9f2e9);
       font-family: "Cormorant Garamond", serif;
@@ -614,27 +518,17 @@
       border-bottom: none;
     }
 
-    .album-table td:last-child,
-    .album-table th:last-child {
-      width: 125px;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-
-    /* ========================================
-       LIEDERKARTEN
-    ======================================== */
+    /* FLYER – GRÖSSER UND ZENTRIERT */
 
     .songs-section {
       padding-top: 2rem;
     }
 
-    .song-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      align-items: stretch;
+    .flyer-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .song {
@@ -642,20 +536,15 @@
       isolation: isolate;
       overflow: hidden;
       min-width: 0;
-
       display: flex;
       flex-direction: column;
-      padding: 1rem;
-
+      padding: 1.25rem;
       background:
         radial-gradient(ellipse at 50% 0%, rgba(255, 190, 226, 0.22), transparent 55%),
         linear-gradient(155deg, rgba(95, 82, 145, 0.95), rgba(71, 68, 119, 0.96));
-
       border: 1px solid rgba(247, 202, 235, 0.45);
       border-radius: 22px;
       box-shadow: 0 9px 25px rgba(31, 26, 68, 0.16);
-
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
     .song::before {
@@ -670,41 +559,27 @@
       opacity: 0.75;
     }
 
-    .song:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255, 211, 239, 0.9);
-      box-shadow: 0 15px 32px rgba(31, 26, 68, 0.24);
-    }
-
-    .song a {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
+    .flyer-card {
+      width: min(100%, 700px);
       align-items: center;
-      color: inherit;
-      text-decoration: none;
+      padding: clamp(1rem, 3vw, 1.5rem);
     }
 
-    .song img {
+    .flyer-card img {
+      display: block;
       width: 100%;
-      max-width: 340px;
-      aspect-ratio: 4 / 3;
+      max-width: 640px;
       height: auto;
+      aspect-ratio: auto;
       object-fit: contain;
       margin: 0 auto;
-
-      background: rgba(43, 44, 82, 0.35);
       border-radius: 14px;
       filter: drop-shadow(0 7px 10px rgba(0, 0, 0, 0.14));
-      transition: transform 0.25s ease;
     }
 
-    .song:hover img {
-      transform: scale(1.025);
-    }
-
-    .song p {
-      margin: 1rem 0 0.2rem;
+    .flyer-card p {
+      max-width: 540px;
+      margin: 1.25rem auto 0.25rem;
       color: #fff1fb;
       font-size: 1.05rem;
       font-weight: 800;
@@ -713,37 +588,81 @@
       overflow-wrap: anywhere;
     }
 
-    .song a::after {
-      content: "Auf YouTube anhören ↗";
-      display: inline-block;
-      margin: 0.8rem 0 0.25rem;
-      padding: 0.45rem 0.85rem;
+    /* THEMENKARTEN */
 
-      color: #40365f;
-      background: linear-gradient(110deg, #f7cbe7, #e3d4ff);
-      border-radius: 999px;
-      font-size: 0.85rem;
+    .worlds-section {
+      position: relative;
+      z-index: 1;
+      width: min(var(--content-width), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    .worlds-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .world-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+      padding: 1.6rem 1.2rem;
+      color: var(--cream);
+      text-align: center;
+      text-decoration: none;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 190, 226, 0.2), transparent 60%),
+        linear-gradient(155deg, rgba(95, 82, 145, 0.95), rgba(71, 68, 119, 0.96));
+      border: 1px solid rgba(247, 202, 235, 0.45);
+      border-radius: 22px;
+      box-shadow: 0 9px 25px rgba(31, 26, 68, 0.16);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .world-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 211, 239, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .world-symbol {
+      color: var(--gold);
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    .world-card h3 {
+      margin: 0.8rem 0 0.4rem;
+      color: var(--pink-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.8rem;
+      line-height: 1.15;
+    }
+
+    .world-card p {
+      flex: 1;
+      margin: 0.5rem 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .world-link {
+      color: var(--gold);
+      font-size: 0.9rem;
       font-weight: 800;
-      transition: filter 0.2s ease;
     }
 
-    .song a:hover::after {
-      filter: brightness(1.08);
-    }
-
-
-    /* ========================================
-       URHEBERRECHT
-    ======================================== */
+    /* URHEBERRECHT */
 
     .copyright {
       position: relative;
       z-index: 1;
-
       width: min(900px, calc(100% - 2rem));
       margin: 0 auto;
       padding: 2rem 0 1rem;
-
       color: var(--muted);
       font-size: 0.92rem;
       line-height: 1.75;
@@ -757,23 +676,18 @@
     .copyright .copyright-brand {
       margin-top: 1.5rem;
       padding-bottom: 2rem;
-
       color: var(--gold);
       font-family: "Cormorant Garamond", serif;
       font-size: 1.5rem;
       font-weight: 700;
     }
 
-
-    /* ========================================
-       FUSSZEILE
-    ======================================== */
+    /* FUSSZEILE */
 
     .site-footer {
       position: relative;
       z-index: 1;
       margin-top: 2rem;
-
       background: rgba(43, 45, 82, 0.94);
       border-top: 1px solid rgba(247, 202, 235, 0.4);
     }
@@ -782,13 +696,11 @@
       width: min(var(--content-width), calc(100% - 2rem));
       margin: auto;
       padding: 1.8rem 0;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
-
       color: var(--muted);
       font-size: 0.9rem;
     }
@@ -808,10 +720,7 @@
       color: var(--gold);
     }
 
-
-    /* ========================================
-       TABLET UND MOBILE NAVIGATION
-    ======================================== */
+    /* TABLET UND MOBILE */
 
     @media (max-width: 1100px) {
       .nav-wrap {
@@ -836,8 +745,7 @@
         display: flex;
       }
 
-      .main-nav a,
-      .nav-dropdown-toggle {
+      .main-nav a {
         width: 100%;
         padding: 0.75rem 0.85rem;
         border-radius: 12px;
@@ -845,30 +753,12 @@
         white-space: normal;
       }
 
-      .nav-item {
-        width: 100%;
-      }
-
-      .nav-dropdown {
-        position: static;
-        min-width: 0;
-        margin: 0.2rem 0 0.5rem;
-        padding: 0.4rem;
-        background: rgba(36, 42, 83, 0.5);
-        border-radius: 12px;
-        box-shadow: none;
-      }
-
-      .nav-item.open > .nav-dropdown {
-        display: block;
-      }
-
       .main-nav .nav-highlight {
         margin-top: 0.3rem;
         text-align: center;
       }
 
-      .song-grid {
+      .worlds-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -950,25 +840,30 @@
         font-size: 0.91rem;
       }
 
-      .album-table td:last-child,
-      .album-table th:last-child {
-        width: 85px;
-      }
-
-      .song-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        max-width: 430px;
-        margin: auto;
-      }
-
-      .song {
+      .flyer-card {
+        width: 100%;
         padding: 1rem;
         border-radius: 18px;
       }
 
-      .song img {
+      .flyer-card img {
         max-width: 100%;
+      }
+
+      .worlds-section {
+        padding: 2rem 0 3rem;
+      }
+
+      .worlds-grid {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+        margin: 0 auto;
+        gap: 1rem;
+      }
+
+      .world-card {
+        padding: 1.4rem 1.2rem;
+        border-radius: 18px;
       }
 
       .copyright {
@@ -1015,7 +910,6 @@
 </head>
 
 <body>
-
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
   <div class="stars" aria-hidden="true"></div>
 
@@ -1023,7 +917,6 @@
 
   <header class="site-header">
     <div class="nav-wrap">
-
       <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
         <span class="brand-mark" aria-hidden="true">✦</span>
         <span>Lilians Kräutermagie</span>
@@ -1040,91 +933,19 @@
       </button>
 
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-
-        <div class="nav-item">
-          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
-            Startseite
-          </button>
-          <div class="nav-dropdown">
-            <a href="index.html">Zur Startseite</a>
-            <a href="about.html">Über mich</a>
-            <a href="weiterbildung.html">Weiterbildungen</a>
-            <a href="mission.html">Meine Mission</a>
-            <a href="empfehlen.html">Bücher, die ich empfehle</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
-            Wort &amp; Klang
-          </button>
-          <div class="nav-dropdown">
-            <a href="schätze.html">Geschriebene Schätze</a>
-            <a href="meinebücher.html">Meine Bücher</a>
-            <a href="hörbuch.html">Meine Bücher als Hörbuch</a>
-            <a href="music.html" aria-current="page">Meine Lieder</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
-            Begleitende Angebote
-          </button>
-          <div class="nav-dropdown">
-            <a href="angebot.html">Mein Angebot für dich</a>
-            <a href="pädagogik.html">Pädagogische Angebote</a>
-            <a href="ep.html">Erlebnispädagogische Angebote</a>
-            <a href="pendel.html">Karten legen und Pendeln</a>
-            <a href="online.html">Online-Kurse</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
-            Shop
-          </button>
-          <div class="nav-dropdown">
-            <a href="shop.html">Mein Shop</a>
-            <a href="steckbriefe.html">Meine Kräutersteckbriefe</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
-            Innere Verbindung
-          </button>
-          <div class="nav-dropdown">
-            <a href="energie.html">Innere Balance</a>
-            <a href="basics.html">Die Basics</a>
-            <a href="reinigung.html">Körper und Geist im Einklang</a>
-            <a href="gedanken.html">Gedanken &amp; Glaubenssätze</a>
-          </div>
-        </div>
-
-        <div class="nav-item">
-          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
-            Rezepte
-          </button>
-          <div class="nav-dropdown">
-            <a href="rezepte.html">Warum DIY?</a>
-            <a href="seife.html">Körperseifen und Duschjelly</a>
-            <a href="haare.html">Haarprodukte</a>
-          </div>
-        </div>
-
-        <a href="kontakt.html">Kontakt</a>
-        <a href="agb.html">AGB</a>
-        <a href="impressum.html">Impressum</a>
-
+        <a href="steckbriefe.html">Kräuterwelt</a>
+        <a href="musik.html" aria-current="page">Musik</a>
+        <a href="buecher.html">Bücher</a>
+        <a href="about.html">Über Mich</a>
+        <a class="nav-highlight" href="#neues-buch">Neues Buch ✦</a>
+        <a href="angebot.html">Angebote</a>
       </nav>
     </div>
   </header>
 
-
   <!-- TITELBEREICH -->
 
   <section class="hero" aria-labelledby="hero-title">
-
     <div class="language-switcher" aria-label="Sprache wählen">
       <a href="/index.html" aria-label="Deutsch" title="Deutsch">
         <img src="defavicon.png" alt="">
@@ -1155,10 +976,11 @@
     </div>
   </section>
 
-
   <main id="inhalt">
 
-       <section class="section songs-section" aria-labelledby="songs-title">
+    <!-- FLYER -->
+
+    <section class="section songs-section" aria-labelledby="songs-title">
       <div class="section-heading">
         <span class="eyebrow">✧ Hör hinein ✧</span>
         <h2 id="songs-title">Meine Lieder zum Anhören</h2>
@@ -1167,20 +989,21 @@
         </p>
       </div>
 
-             <div class="song-grid">
-
-        <article class="song">
-         <img src="Flyer.png" alt="Flyer zu meinen Werken" loading="lazy">
-            <p>Meine Musik findest du überall, wo man Musik streamen kann.</p>
-          </a>
-        </article>  
-             </div>
+      <div class="flyer-wrap">
+        <article class="song flyer-card">
+          <img
+            src="Flyer.png"
+            alt="Flyer zu meinen Werken"
+            loading="lazy"
+          >
+          <p>Meine Musik findest du überall, wo man Musik streamen kann.</p>
+        </article>
+      </div>
     </section>
 
     <!-- VERÖFFENTLICHUNGEN -->
 
     <section class="releases" aria-labelledby="veroeffentlichungen-titel">
-
       <div class="releases-heading">
         <span class="eyebrow">✧ Meine musikalischen Schätze ✧</span>
         <h2 id="veroeffentlichungen-titel">Meine Veröffentlichungen</h2>
@@ -1191,7 +1014,7 @@
 
       <table class="album-table">
         <caption>Spürst du das auch – 18.3.2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Spürst du das auch?</td></tr>
           <tr><td>Wie ein Murmeltier</td></tr>
@@ -1203,7 +1026,7 @@
 
       <table class="album-table">
         <caption>Fülle und Glück – 18.3.2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Alles wird Gold</td></tr>
           <tr><td>Alles da</td></tr>
@@ -1216,7 +1039,7 @@
 
       <table class="album-table">
         <caption>Mutig und Stark – 19.3.2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Mutig und Stark</td></tr>
           <tr><td>Ich hab alles, was ich brauch.</td></tr>
@@ -1230,7 +1053,7 @@
 
       <table class="album-table">
         <caption>Erinnern.Wandeln.Sein – 26.3.2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Im Takt des Mondes</td></tr>
           <tr><td>Frei, weil ich Frau bin</td></tr>
@@ -1247,7 +1070,7 @@
 
       <table class="album-table">
         <caption>Gefühle von Innen nach Außen – 28.3.2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>LUFT FREI MACHEN</td></tr>
           <tr><td>ES IST ZU VIEL</td></tr>
@@ -1265,7 +1088,7 @@
 
       <table class="album-table">
         <caption>Risse im Gehorsam – 9.4.2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Im Namen des Kindes</td></tr>
           <tr><td>Zwischen Pflicht und Herz</td></tr>
@@ -1279,7 +1102,7 @@
 
       <table class="album-table">
         <caption>Seit der Wiege an – Ins System gepresst – 9.4.2027</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Zu früh im System</td></tr>
           <tr><td>Funktionieren Müssen</td></tr>
@@ -1291,11 +1114,9 @@
         </tbody>
       </table>
 
-  
-
       <table class="album-table">
         <caption>Geboren werden – 17. Mai 2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Mutterpass</td></tr>
           <tr><td>Gehalten – vergangene Hände</td></tr>
@@ -1315,7 +1136,7 @@
 
       <table class="album-table">
         <caption>Würde: unantastbar in mir – 20. Mai 2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Es war zu eng</td></tr>
           <tr><td>Ich gang einfach an</td></tr>
@@ -1328,7 +1149,7 @@
 
       <table class="album-table">
         <caption>Weil es dich gibt – 6. Juni 2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Ein Tag voller Wunder</td></tr>
           <tr><td>Du bringst etwas in die Welt</td></tr>
@@ -1340,7 +1161,7 @@
 
       <table class="album-table">
         <caption>Der Weg nach Hause – Vägen Hem – 16. Juli 2026</caption>
-        <thead><tr><th>Liedtitel</th></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Im Herzen des Waldes</td></tr>
           <tr><td>Der Pfad des Tomte</td></tr>
@@ -1349,7 +1170,7 @@
 
       <table class="album-table">
         <caption>Zeit voller Wunder – 22. Juli 2026</caption>
-        <thead><tr><th>Liedtitel</th></tr></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Sonne</td></tr>
           <tr><td>Wochenrucksack</td></tr>
@@ -1360,7 +1181,7 @@
 
       <table class="album-table">
         <caption>Von Kopf bis Fuß – 6. August 2026</caption>
-        <thead><tr><th>Liedtitel</th></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Voller Gefühl</td></tr>
           <tr><td>Wasser in den Augen</td></tr>
@@ -1373,15 +1194,13 @@
 
       <table class="album-table">
         <caption>Zu Hause – 11. September 2026</caption>
-        <thead><tr><th>Liedtitel</th></thead>
+        <thead><tr><th scope="col">Liedtitel</th></tr></thead>
         <tbody>
           <tr><td>Du bist mein zu Hause</td></tr>
           <tr><td>Zu Hause</td></tr>
         </tbody>
       </table>
-
     </section>
-
 
     <!-- EINLEITUNG ZU DEN EINZELNEN LIEDERN -->
 
@@ -1423,8 +1242,58 @@
       </p>
     </section>
 
+    <!-- WEITERE WELTEN VON LILIANS KRÄUTERMAGIE -->
 
-     <!-- URHEBERRECHT -->
+    <section class="worlds-section" aria-labelledby="worlds-title">
+      <div class="section-heading">
+        <span class="eyebrow">✧ Entdecke mehr ✧</span>
+        <h2 id="worlds-title">Vier Türen in eine bunte Welt</h2>
+        <p>
+          Kräuter, Musik, Bücher und neue Ideen – entdecke die verschiedenen
+          Seiten von Lilians Kräutermagie.
+        </p>
+      </div>
+
+      <div class="worlds-grid">
+        <a class="world-card" href="steckbriefe.html">
+          <span class="world-symbol" aria-hidden="true">✿</span>
+          <h3>Kräuterwelt</h3>
+          <p>
+            Entdecke die Welt der Kräuter und lerne ihre Besonderheiten kennen.
+          </p>
+          <span class="world-link">Zur Kräuterwelt ↗</span>
+        </a>
+
+        <a class="world-card" href="musik.html" aria-current="page">
+          <span class="world-symbol" aria-hidden="true">♫</span>
+          <h3>Musik</h3>
+          <p>
+            Lausche meinen Liedern und lass dich von Melodien und Gefühlen begleiten.
+          </p>
+          <span class="world-link">Zu meinen Liedern ↗</span>
+        </a>
+
+        <a class="world-card" href="buecher.html">
+          <span class="world-symbol" aria-hidden="true">✧</span>
+          <h3>Bücher</h3>
+          <p>
+            Tauche ein in Geschichten, Gedanken und geschriebene Schätze.
+          </p>
+          <span class="world-link">Zu den Büchern ↗</span>
+        </a>
+
+        <a class="world-card" id="neues-buch" href="buecher.html">
+          <span class="world-symbol" aria-hidden="true">❋</span>
+          <h3>Neues Buch</h3>
+          <p>
+            Entdecke neue Ideen und erfahre mehr über meine Bücher.
+          </p>
+          <span class="world-link">Mehr erfahren ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- URHEBERRECHT -->
 
     <section class="copyright" aria-label="Urheberrechtshinweise">
       <p>
@@ -1438,7 +1307,6 @@
     </section>
 
   </main>
-
 
   <!-- FUSSZEILE -->
 
@@ -1456,29 +1324,19 @@
     </div>
   </footer>
 
-
-  <!-- JAVASCRIPT: MOBILES MENÜ UND DROPDOWNS -->
+  <!-- JAVASCRIPT: MOBILES MENÜ -->
 
   <script>
     const menuButton = document.querySelector(".menu-toggle");
     const mainNav = document.querySelector("#main-nav");
     const menuIcon = document.querySelector(".menu-icon");
     const menuLabel = document.querySelector(".menu-label");
-    const dropdownButtons = document.querySelectorAll(".nav-dropdown-toggle");
 
     function closeMenu() {
       mainNav.classList.remove("open");
       menuButton.setAttribute("aria-expanded", "false");
       menuIcon.textContent = "☰";
       menuLabel.textContent = "Menü";
-
-      document.querySelectorAll(".nav-item.open").forEach((item) => {
-        item.classList.remove("open");
-      });
-
-      dropdownButtons.forEach((button) => {
-        button.setAttribute("aria-expanded", "false");
-      });
     }
 
     menuButton.addEventListener("click", () => {
@@ -1487,39 +1345,9 @@
       menuButton.setAttribute("aria-expanded", String(isOpen));
       menuIcon.textContent = isOpen ? "✕" : "☰";
       menuLabel.textContent = isOpen ? "Schließen" : "Menü";
-
-      if (!isOpen) {
-        document.querySelectorAll(".nav-item.open").forEach((item) => {
-          item.classList.remove("open");
-        });
-
-        dropdownButtons.forEach((button) => {
-          button.setAttribute("aria-expanded", "false");
-        });
-      }
     });
 
-    dropdownButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const parent = button.closest(".nav-item");
-        const isOpen = parent.classList.toggle("open");
-
-        button.setAttribute("aria-expanded", String(isOpen));
-
-        // Immer nur ein Dropdown gleichzeitig öffnen.
-        document.querySelectorAll(".nav-item").forEach((item) => {
-          if (item !== parent) {
-            item.classList.remove("open");
-            const otherButton = item.querySelector(".nav-dropdown-toggle");
-            if (otherButton) {
-              otherButton.setAttribute("aria-expanded", "false");
-            }
-          }
-        });
-      });
-    });
-
-    mainNav.querySelectorAll(".nav-dropdown a, a:not(.nav-dropdown-toggle)").forEach((link) => {
+    mainNav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         if (window.matchMedia("(max-width: 1100px)").matches) {
           closeMenu();
@@ -1528,13 +1356,12 @@
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && mainNav.classList.contains("open")) {
         closeMenu();
         menuButton.focus();
       }
     });
 
-    // Bei Wechsel von mobiler zu großer Bildschirmansicht zurücksetzen.
     window.addEventListener("resize", () => {
       if (window.matchMedia("(min-width: 1101px)").matches) {
         closeMenu();
