@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#26365d">
+
+  <title>Meine Lieder – Lilians Kräutermagie</title>
+
+  <meta name="description" content="Entdecke Lilians Lieder: Musik aus dem Herzen, Lieder über Gefühle, Natur, Mut, Lebensfreude und innere Verbindung.">
+  <meta name="keywords" content="Lilians Kräutermagie, Lieder, Musik, Traumreisen, Gefühle, Natur, YouTube">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========================================
+       FARBEN UND GRUNDLAGEN
+    ======================================== */
+
+    :root {
+      --night: #26365d;
+      --night-light: #394c78;
+      --plum: #9274c8;
+      --berry: #d77dbb;
+      --pink-light: #f5cce5;
+      --lilac-light: #e4d8ff;
+      --teal: #a3eee1;
+      --gold: #ffe6a0;
+      --cream: #fffaff;
+      --muted: #e5e5f7;
+      --card: rgba(77, 76, 132, 0.78);
+
+      --shadow: 0 16px 40px rgba(30, 27, 67, 0.18);
+      --radius: 24px;
+      --content-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--night);
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--cream);
+
+      background:
+        radial-gradient(ellipse at 10% 8%, rgba(255, 190, 226, 0.25), transparent 35rem),
+        radial-gradient(ellipse at 88% 35%, rgba(174, 151, 255, 0.27), transparent 38rem),
+        radial-gradient(ellipse at 48% 85%, rgba(133, 211, 222, 0.14), transparent 34rem),
+        linear-gradient(145deg, #34466f, #30345f 52%, #43355f);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    ::selection {
+      color: #30345f;
+      background: var(--gold);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 1rem;
+      left: -9999px;
+      z-index: 1000;
+      padding: 0.75rem 1rem;
+      color: var(--night);
+      background: white;
+      border-radius: 10px;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+    }
+
+
+    /* ========================================
+       STERNENHIMMEL
+    ======================================== */
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255,222,244,.9) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(203,226,255,.9) 1px, transparent 1.8px);
+
+      background-size: 97px 91px, 151px 137px, 211px 183px, 263px 227px;
+      background-position: 12px 17px, 48px 62px, 91px 24px, 19px 105px;
+      opacity: 0.35;
+      animation: stars-twinkle 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes stars-twinkle {
+      from { opacity: 0.22; }
+      to { opacity: 0.48; }
+    }
+
+
+    /* ========================================
+       KOPFZEILE UND NAVIGATION
+    ======================================== */
+
+    .site-header {
+      position: relative;
+      z-index: 20;
+      background: rgba(43, 54, 94, 0.94);
+      border-bottom: 1px solid rgba(255, 230, 160, 0.42);
+      box-shadow: 0 5px 22px rgba(25, 23, 55, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap {
+      width: min(var(--content-width), calc(100% - 2rem));
+      min-height: 82px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-width: max-content;
+
+      color: var(--cream);
+      text-decoration: none;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      color: var(--gold);
+      font-size: 1.8rem;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .main-nav a,
+    .nav-dropdown-toggle {
+      display: block;
+      padding: 0.62rem 0.75rem;
+      border: 0;
+      border-radius: 999px;
+
+      color: #fff4fc;
+      background: transparent;
+      text-decoration: none;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 0.88rem;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .main-nav a:hover,
+    .nav-dropdown-toggle:hover,
+    .nav-item:focus-within > .nav-dropdown-toggle {
+      background: rgba(247, 202, 235, 0.17);
+      color: var(--gold);
+    }
+
+    .nav-dropdown-toggle::after {
+      content: "⌄";
+      margin-left: 0.35rem;
+      font-size: 0.9em;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 0.35rem);
+      left: 0;
+      z-index: 30;
+
+      display: none;
+      min-width: 245px;
+      padding: 0.55rem;
+
+      background: #4b4b7d;
+      border: 1px solid rgba(245, 204, 229, 0.5);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-item:hover > .nav-dropdown,
+    .nav-item:focus-within > .nav-dropdown,
+    .nav-item.open > .nav-dropdown {
+      display: block;
+    }
+
+    .main-nav .nav-dropdown a {
+      padding: 0.65rem 0.8rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      white-space: normal;
+    }
+
+    .main-nav .nav-dropdown a:hover {
+      background: rgba(247, 202, 235, 0.18);
+      color: var(--gold);
+    }
+
+    .main-nav .nav-highlight {
+      color: #30345f;
+      background: linear-gradient(120deg, var(--gold), var(--teal));
+    }
+
+    .main-nav .nav-highlight:hover {
+      color: #30345f;
+      filter: brightness(1.05);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0.85rem;
+
+      color: var(--cream);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+      border-color: var(--pink-light);
+      color: var(--pink-light);
+    }
+
+
+    /* ========================================
+       SPRACHWAHL
+    ======================================== */
+
+    .language-switcher {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      right: max(1rem, calc((100vw - var(--content-width)) / 2));
+
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .language-switcher a {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+
+      background: rgba(57, 54, 101, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 50%;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .language-switcher a:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+
+    .language-switcher img {
+      width: 23px;
+      height: 23px;
+      object-fit: contain;
+    }
+
+
+    /* ========================================
+       HERO / TITELBEREICH
+    ======================================== */
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+      padding: 5rem 1.25rem 4rem;
+
+      background:
+        radial-gradient(ellipse at 18% 35%, rgba(255, 192, 227, 0.38), transparent 38%),
+        radial-gradient(ellipse at 75% 18%, rgba(187, 164, 255, 0.40), transparent 35%),
+        radial-gradient(ellipse at 83% 76%, rgba(133, 238, 221, 0.22), transparent 34%),
+        linear-gradient(115deg, rgba(61, 70, 119, 0.65), rgba(74, 56, 112, 0.55));
+
+      border-bottom: 1px solid rgba(245, 204, 229, 0.55);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -18% -10%;
+      pointer-events: none;
+
+      background:
+        radial-gradient(ellipse at 18% 42%, rgba(255, 190, 226, 0.40), transparent 27%),
+        radial-gradient(ellipse at 42% 18%, rgba(192, 174, 255, 0.30), transparent 28%),
+        radial-gradient(ellipse at 72% 35%, rgba(235, 160, 220, 0.30), transparent 30%),
+        radial-gradient(ellipse at 85% 62%, rgba(125, 220, 228, 0.25), transparent 26%);
+
+      filter: blur(28px);
+      animation: aurora-drift 16s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      pointer-events: none;
+
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255,225,244,.9) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px);
+
+      background-size: 97px 91px, 151px 137px, 211px 183px;
+      background-position: 12px 17px, 48px 62px, 91px 24px;
+      opacity: 0.55;
+    }
+
+    @keyframes aurora-drift {
+      from { transform: translate3d(-1.5%, -1%, 0) rotate(-6deg) scale(1.05); }
+      to { transform: translate3d(2%, 1.5%, 0) rotate(-2deg) scale(1.12); }
+    }
+
+    .hero-inner {
+      width: min(950px, 100%);
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 1rem 0;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.4rem, 8vw, 6.2rem);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 0.2em;
+      color: #ffd1ed;
+      font-style: italic;
+      text-shadow: 0 0 28px rgba(255, 192, 227, 0.25);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 1.25rem auto 0;
+      color: #fff0fa;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .hero-divider {
+      width: min(220px, 55%);
+      height: 2px;
+      margin: 2rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--pink-light), var(--gold), var(--teal), transparent);
+    }
+
+
+    /* ========================================
+       ALLGEMEINE ABSCHNITTE
+    ======================================== */
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      width: min(var(--content-width), calc(100% - 2rem));
+      margin: auto;
+      padding: 3.5rem 0;
+    }
+
+    .section-heading {
+      max-width: 800px;
+      margin: 0 auto 2.25rem;
+      text-align: center;
+    }
+
+    .section-heading h2,
+    .releases h2 {
+      margin: 0.55rem 0 0.8rem;
+      color: var(--pink-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.08;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .section-heading .eyebrow {
+      color: var(--gold);
+    }
+
+
+    /* ========================================
+       EINLEITUNGSKARTE
+    ======================================== */
+
+    .intro {
+      position: relative;
+      overflow: hidden;
+
+      width: min(1000px, calc(100% - 2rem));
+      margin: 2.5rem auto;
+      padding: clamp(1.5rem, 4vw, 3rem);
+
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(255, 191, 226, 0.22), transparent 48%),
+        linear-gradient(135deg, rgba(91, 83, 143, 0.94), rgba(77, 72, 129, 0.94));
+
+      border: 1px solid rgba(247, 202, 235, 0.55);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro::before {
+      content: "✧";
+      position: absolute;
+      top: 0.4rem;
+      right: 1.3rem;
+      color: rgba(255, 230, 160, 0.65);
+      font-size: 3.2rem;
+      pointer-events: none;
+    }
+
+    .intro h2,
+    .intro h3 {
+      margin: 0 0 1.2rem;
+      color: var(--pink-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    .intro p {
+      margin: 0 0 1rem;
+      color: #fff5fc;
+      line-height: 1.8;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* ========================================
+       ALBEN UND VERÖFFENTLICHUNGEN
+    ======================================== */
+
+    .releases {
+      width: min(var(--content-width), calc(100% - 2rem));
+      margin: auto;
+      padding: 3rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .releases-heading {
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+
+    .releases-heading h2 {
+      margin: 0.5rem 0 0.8rem;
+      color: var(--pink-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.08;
+    }
+
+    .releases-intro {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .album-table {
+      width: 100%;
+      margin: 0 auto 1.6rem;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+
+      background: rgba(79, 75, 131, 0.88);
+      border: 1px solid rgba(247, 202, 235, 0.42);
+      border-radius: 20px;
+      box-shadow: 0 9px 25px rgba(31, 26, 68, 0.12);
+      text-align: left;
+    }
+
+    .album-table caption {
+      caption-side: top;
+      padding: 1rem 1.3rem;
+
+      color: #3a355f;
+      background: linear-gradient(110deg, #f6c9e5, #e0d1ff 65%, #c9f2e9);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .album-table th,
+    .album-table td {
+      padding: 0.75rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      vertical-align: top;
+    }
+
+    .album-table th {
+      color: var(--gold);
+      background: rgba(42, 49, 91, 0.22);
+      font-weight: 800;
+    }
+
+    .album-table td {
+      color: #fff5fc;
+    }
+
+    .album-table tbody tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .album-table tbody tr:hover td {
+      background: rgba(247, 202, 235, 0.09);
+    }
+
+    .album-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .album-table td:last-child,
+    .album-table th:last-child {
+      width: 125px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+
+    /* ========================================
+       LIEDERKARTEN
+    ======================================== */
+
+    .songs-section {
+      padding-top: 2rem;
+    }
+
+    .song-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .song {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-width: 0;
+
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 190, 226, 0.22), transparent 55%),
+        linear-gradient(155deg, rgba(95, 82, 145, 0.95), rgba(71, 68, 119, 0.96));
+
+      border: 1px solid rgba(247, 202, 235, 0.45);
+      border-radius: 22px;
+      box-shadow: 0 9px 25px rgba(31, 26, 68, 0.16);
+
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .song::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--pink-light), var(--gold), var(--teal), transparent);
+      opacity: 0.75;
+    }
+
+    .song:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 211, 239, 0.9);
+      box-shadow: 0 15px 32px rgba(31, 26, 68, 0.24);
+    }
+
+    .song a {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .song img {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+
+      background: rgba(43, 44, 82, 0.35);
+      border-radius: 14px;
+      filter: drop-shadow(0 7px 10px rgba(0, 0, 0, 0.14));
+      transition: transform 0.25s ease;
+    }
+
+    .song:hover img {
+      transform: scale(1.025);
+    }
+
+    .song p {
+      margin: 1rem 0 0.2rem;
+      color: #fff1fb;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .song a::after {
+      content: "Auf YouTube anhören ↗";
+      display: inline-block;
+      margin: 0.8rem 0 0.25rem;
+      padding: 0.45rem 0.85rem;
+
+      color: #40365f;
+      background: linear-gradient(110deg, #f7cbe7, #e3d4ff);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      transition: filter 0.2s ease;
+    }
+
+    .song a:hover::after {
+      filter: brightness(1.08);
+    }
+
+
+    /* ========================================
+       URHEBERRECHT
+    ======================================== */
+
+    .copyright {
+      position: relative;
+      z-index: 1;
+
+      width: min(900px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 1rem;
+
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .copyright p {
+      margin: 0 0 0.7rem;
+    }
+
+    .copyright .copyright-brand {
+      margin-top: 1.5rem;
+      padding-bottom: 2rem;
+
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+
+    /* ========================================
+       FUSSZEILE
+    ======================================== */
+
+    .site-footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+
+      background: rgba(43, 45, 82, 0.94);
+      border-top: 1px solid rgba(247, 202, 235, 0.4);
+    }
+
+    .footer-inner {
+      width: min(var(--content-width), calc(100% - 2rem));
+      margin: auto;
+      padding: 1.8rem 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+
+    /* ========================================
+       TABLET UND MOBILE NAVIGATION
+    ======================================== */
+
+    @media (max-width: 1100px) {
+      .nav-wrap {
+        flex-wrap: wrap;
+        padding: 0.8rem 0;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        margin-left: auto;
+      }
+
+      .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 0 0.8rem;
+      }
+
+      .main-nav.open {
+        display: flex;
+      }
+
+      .main-nav a,
+      .nav-dropdown-toggle {
+        width: 100%;
+        padding: 0.75rem 0.85rem;
+        border-radius: 12px;
+        text-align: left;
+        white-space: normal;
+      }
+
+      .nav-item {
+        width: 100%;
+      }
+
+      .nav-dropdown {
+        position: static;
+        min-width: 0;
+        margin: 0.2rem 0 0.5rem;
+        padding: 0.4rem;
+        background: rgba(36, 42, 83, 0.5);
+        border-radius: 12px;
+        box-shadow: none;
+      }
+
+      .nav-item.open > .nav-dropdown {
+        display: block;
+      }
+
+      .main-nav .nav-highlight {
+        margin-top: 0.3rem;
+        text-align: center;
+      }
+
+      .song-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      body {
+        font-size: 16px;
+      }
+
+      .brand {
+        gap: 0.45rem;
+        font-size: 1.3rem;
+      }
+
+      .brand-mark {
+        font-size: 1.5rem;
+      }
+
+      .language-switcher {
+        top: 0.65rem;
+        right: 0.65rem;
+      }
+
+      .hero {
+        min-height: 340px;
+        padding: 5.2rem 1rem 3.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 13vw, 4.5rem);
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section,
+      .releases {
+        padding: 2.5rem 0;
+      }
+
+      .intro {
+        width: calc(100% - 1.5rem);
+        margin: 1.5rem auto;
+        padding: 1.5rem 1.25rem;
+        border-radius: 20px;
+      }
+
+      .intro h2,
+      .intro h3 {
+        font-size: 2.1rem;
+      }
+
+      .releases {
+        width: calc(100% - 1.5rem);
+      }
+
+      .album-table {
+        display: block;
+        width: 100%;
+        margin-bottom: 1.25rem;
+        border-radius: 15px;
+      }
+
+      .album-table caption {
+        display: block;
+        padding: 0.85rem 1rem;
+        font-size: 1.3rem;
+      }
+
+      .album-table thead,
+      .album-table tbody {
+        width: 100%;
+      }
+
+      .album-table th,
+      .album-table td {
+        padding: 0.65rem 0.7rem;
+        font-size: 0.91rem;
+      }
+
+      .album-table td:last-child,
+      .album-table th:last-child {
+        width: 85px;
+      }
+
+      .song-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 430px;
+        margin: auto;
+      }
+
+      .song {
+        padding: 1rem;
+        border-radius: 18px;
+      }
+
+      .song img {
+        max-width: 100%;
+      }
+
+      .copyright {
+        font-size: 0.88rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .brand {
+        font-size: 1.15rem;
+      }
+
+      .menu-toggle {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .album-table th,
+      .album-table td {
+        padding: 0.55rem;
+        font-size: 0.86rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+  <div class="stars" aria-hidden="true"></div>
+
+  <!-- KOPFZEILE UND HAUPTNAVIGATION -->
+
+  <header class="site-header">
+    <div class="nav-wrap">
+
+      <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Lilians Kräutermagie</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span class="menu-icon" aria-hidden="true">☰</span>
+        <span class="menu-label">Menü</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Startseite
+          </button>
+          <div class="nav-dropdown">
+            <a href="index.html">Zur Startseite</a>
+            <a href="about.html">Über mich</a>
+            <a href="weiterbildung.html">Weiterbildungen</a>
+            <a href="mission.html">Meine Mission</a>
+            <a href="empfehlen.html">Bücher, die ich empfehle</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Wort &amp; Klang
+          </button>
+          <div class="nav-dropdown">
+            <a href="schätze.html">Geschriebene Schätze</a>
+            <a href="meinebücher.html">Meine Bücher</a>
+            <a href="hörbuch.html">Meine Bücher als Hörbuch</a>
+            <a href="music.html" aria-current="page">Meine Lieder</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Begleitende Angebote
+          </button>
+          <div class="nav-dropdown">
+            <a href="angebot.html">Mein Angebot für dich</a>
+            <a href="pädagogik.html">Pädagogische Angebote</a>
+            <a href="ep.html">Erlebnispädagogische Angebote</a>
+            <a href="pendel.html">Karten legen und Pendeln</a>
+            <a href="online.html">Online-Kurse</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Shop
+          </button>
+          <div class="nav-dropdown">
+            <a href="shop.html">Mein Shop</a>
+            <a href="steckbriefe.html">Meine Kräutersteckbriefe</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Innere Verbindung
+          </button>
+          <div class="nav-dropdown">
+            <a href="energie.html">Innere Balance</a>
+            <a href="basics.html">Die Basics</a>
+            <a href="reinigung.html">Körper und Geist im Einklang</a>
+            <a href="gedanken.html">Gedanken &amp; Glaubenssätze</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+            Rezepte
+          </button>
+          <div class="nav-dropdown">
+            <a href="rezepte.html">Warum DIY?</a>
+            <a href="seife.html">Körperseifen und Duschjelly</a>
+            <a href="haare.html">Haarprodukte</a>
+          </div>
+        </div>
+
+        <a href="kontakt.html">Kontakt</a>
+        <a href="agb.html">AGB</a>
+        <a href="impressum.html">Impressum</a>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- TITELBEREICH -->
+
+  <section class="hero" aria-labelledby="hero-title">
+
+    <div class="language-switcher" aria-label="Sprache wählen">
+      <a href="/index.html" aria-label="Deutsch" title="Deutsch">
+        <img src="defavicon.png" alt="">
+      </a>
+      <a href="/en/index.html" aria-label="English" title="English">
+        <img src="enfavicon.png" alt="">
+      </a>
+      <a href="/dk/index.html" aria-label="Dansk" title="Dansk">
+        <img src="dkfavicon.png" alt="">
+      </a>
+    </div>
+
+    <div class="hero-inner">
+      <span class="eyebrow">✧ Melodien · Gefühle · Herzensklänge ✧</span>
+
+      <h1 id="hero-title">
+        Musik aus
+        <span>dem Herzen</span>
+      </h1>
+
+      <p>
+        Manchmal findet das, was wir fühlen, seinen Weg nicht über Worte,
+        sondern über eine Melodie. Entdecke meine Lieder und die Geschichten,
+        die in ihnen klingen.
+      </p>
+
+      <div class="hero-divider" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <main id="inhalt">
+
+    <!-- VERÖFFENTLICHUNGEN -->
+
+    <section class="releases" aria-labelledby="veroeffentlichungen-titel">
+
+      <div class="releases-heading">
+        <span class="eyebrow">✧ Meine musikalischen Schätze ✧</span>
+        <h2 id="veroeffentlichungen-titel">Meine Veröffentlichungen</h2>
+        <p class="releases-intro">
+          Eine Übersicht meiner bisher veröffentlichten Alben mit den jeweiligen Liedern.
+        </p>
+      </div>
+
+      <table class="album-table">
+        <caption>Spürst du das auch – 18.3.2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Spürst du das auch?</td><td>3:49</td></tr>
+          <tr><td>Wie ein Murmeltier</td><td>3:24</td></tr>
+          <tr><td>Die Sonne lacht.</td><td>3:38</td></tr>
+          <tr><td>Wenn die Erde wieder atmet</td><td>3:22</td></tr>
+          <tr><td>Frühling auf allen Plätzen</td><td>2:12</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Fülle und Glück – 18.3.2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Alles wird Gold</td><td>2:44</td></tr>
+          <tr><td>Alles da</td><td>4:00</td></tr>
+          <tr><td>Glückstag</td><td>3:07</td></tr>
+          <tr><td>Ich tanze Weiter</td><td>2:28</td></tr>
+          <tr><td>Weil wir wissen</td><td>2:46</td></tr>
+          <tr><td>Wie Wellen</td><td>2:58</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Mutig und Stark – 19.3.2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Mutig und Stark</td><td>2:35</td></tr>
+          <tr><td>Ich hab alles, was ich brauch.</td><td>4:00</td></tr>
+          <tr><td>Titelsong – Traumreisen mit Baldur</td><td>1:37</td></tr>
+          <tr><td>Pfützenhüpfer Superheld</td><td>3:19</td></tr>
+          <tr><td>Ich bin richtig, wie ich bin!</td><td>2:59</td></tr>
+          <tr><td>Durch die Pfützen, über Bäume.</td><td>2:57</td></tr>
+          <tr><td>Heut ist unser Glückstag.</td><td>2:55</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Erinnern.Wandeln.Sein – 26.3.2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Im Takt des Mondes</td><td>–</td></tr>
+          <tr><td>Frei, weil ich Frau bin</td><td>–</td></tr>
+          <tr><td>Die Kraft des Weibes</td><td>–</td></tr>
+          <tr><td>Aus der Glut geboren</td><td>–</td></tr>
+          <tr><td>Endlich FREI sein</td><td>–</td></tr>
+          <tr><td>Zurück zur Erde</td><td>–</td></tr>
+          <tr><td>Ergreife dein Feuer</td><td>–</td></tr>
+          <tr><td>Ich bin Licht</td><td>–</td></tr>
+          <tr><td>Mein Herz schlägt weit.</td><td>–</td></tr>
+          <tr><td>Königin im Licht</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Gefühle von Innen nach Außen – 28.3.2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>LUFT FREI MACHEN</td><td>–</td></tr>
+          <tr><td>ES IST ZU VIEL</td><td>–</td></tr>
+          <tr><td>Es überrollt mich</td><td>–</td></tr>
+          <tr><td>Alles darf jetzt gehn</td><td>–</td></tr>
+          <tr><td>Einer, dieser Tage</td><td>–</td></tr>
+          <tr><td>Wenn es überläuft</td><td>–</td></tr>
+          <tr><td>Zu lang gehalten</td><td>–</td></tr>
+          <tr><td>Angekommen in Mir</td><td>–</td></tr>
+          <tr><td>In meiner Mitte</td><td>–</td></tr>
+          <tr><td>Leicht und Frei</td><td>–</td></tr>
+          <tr><td>Alles fügt sich – zu Glück</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Risse im Gehorsam – 9.4.2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Im Namen des Kindes</td><td>–</td></tr>
+          <tr><td>Zwischen Pflicht und Herz</td><td>–</td></tr>
+          <tr><td>Im eigenem Tempo</td><td>–</td></tr>
+          <tr><td>Risse im Kindesrecht</td><td>–</td></tr>
+          <tr><td>Wacht EDNLICH auf!</td><td>–</td></tr>
+          <tr><td>24 Stunden</td><td>–</td></tr>
+          <tr><td>Lichterloh</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Seit der Wiege an – Ins System gepresst – 9.4.2027</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Zu früh im System</td><td>–</td></tr>
+          <tr><td>Funktionieren Müssen</td><td>–</td></tr>
+          <tr><td>Verloren im Lärm</td><td>–</td></tr>
+          <tr><td>Nicht laut genug</td><td>–</td></tr>
+          <tr><td>In Reihen gestellt</td><td>–</td></tr>
+          <tr><td>Du passt hier nicht rein</td><td>–</td></tr>
+          <tr><td>Das Haus der Reihen</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Rythm of Earth – 17. Mai 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Distant Heartbeat</td><td>–</td></tr>
+          <tr><td>Earth Pulse</td><td>–</td></tr>
+          <tr><td>Earthbound Stillness</td><td>–</td></tr>
+          <tr><td>Inner Water</td><td>–</td></tr>
+          <tr><td>Inner Weight</td><td>–</td></tr>
+          <tr><td>Temple Gong Drift</td><td>–</td></tr>
+          <tr><td>Temple Gong Drift 2</td><td>–</td></tr>
+          <tr><td>Womb Drift</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Geboren werden – 17. Mai 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Mutterpass</td><td>–</td></tr>
+          <tr><td>Gehalten – vergangene Hände</td><td>–</td></tr>
+          <tr><td>Hebamme</td><td>–</td></tr>
+          <tr><td>Vielleicht bin ich falsch</td><td>–</td></tr>
+          <tr><td>Ich höre mich nicht mehr</td><td>–</td></tr>
+          <tr><td>Zwischen uns</td><td>–</td></tr>
+          <tr><td>Die Ärztin</td><td>–</td></tr>
+          <tr><td>Der Korridor</td><td>–</td></tr>
+          <tr><td>Ich wollte feiern</td><td>–</td></tr>
+          <tr><td>Nach dem Schrei</td><td>–</td></tr>
+          <tr><td>Die Rückkehr der Stimme</td><td>–</td></tr>
+          <tr><td>Wir halten wieder</td><td>–</td></tr>
+          <tr><td>In UNSEREN Händen</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Breath Ocean – 21. Mai 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody><tr><td>Keine Liedtitel angegeben</td><td>–</td></tr></tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Würde: unantastbar in mir – 20. Mai 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Es war zu eng</td><td>–</td></tr>
+          <tr><td>Ich gang einfach an</td><td>–</td></tr>
+          <tr><td>Zwischen ihren Blicken</td><td>–</td></tr>
+          <tr><td>Im Alltag leuchten, im Ganzen sehen</td><td>–</td></tr>
+          <tr><td>Würde, schon immer da</td><td>–</td></tr>
+          <tr><td>Würde kennt keinen Preis</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Weil es dich gibt – 6. Juni 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Ein Tag voller Wunder</td><td>–</td></tr>
+          <tr><td>Du bringst etwas in die Welt</td><td>–</td></tr>
+          <tr><td>Heute geht es um Dich</td><td>–</td></tr>
+          <tr><td>Alles, was DU bist</td><td>–</td></tr>
+          <tr><td>Jeden Tag wertvoll</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Der Weg nach Hause – Vägen Hem – 16. Juli 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Im Herzen des Waldes</td><td>–</td></tr>
+          <tr><td>Der Pfad des Tomte</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Zeit voller Wunder – 22. Juli 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Sonne</td><td>–</td></tr>
+          <tr><td>Wochenrucksack</td><td>–</td></tr>
+          <tr><td>Jahresrad</td><td>–</td></tr>
+          <tr><td>Jahreskarussell</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Von Kopf bis Fuß – 6. August 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Voller Gefühl</td><td>–</td></tr>
+          <tr><td>Wasser in den Augen</td><td>–</td></tr>
+          <tr><td>Wut im Bauch</td><td>–</td></tr>
+          <tr><td>Mein Herz klopft ganz laut</td><td>–</td></tr>
+          <tr><td>Freude in den Füßen</td><td>–</td></tr>
+          <tr><td>Alles darf einfach sein</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <table class="album-table">
+        <caption>Zu Hause – 11. September 2026</caption>
+        <thead><tr><th>Liedtitel</th><th>Spielzeit</th></tr></thead>
+        <tbody>
+          <tr><td>Du bist mein zu Hause</td><td>–</td></tr>
+          <tr><td>Zu Hause</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+    </section>
+
+
+    <!-- EINLEITUNG ZU DEN EINZELNEN LIEDERN -->
+
+    <section class="intro" aria-labelledby="lieder-intro-title">
+      <h3 id="lieder-intro-title">Wenn Worte zu Musik werden</h3>
+
+      <p>
+        Manchmal sind es Worte, manchmal eine Melodie – und manchmal entsteht beides gleichzeitig.
+      </p>
+
+      <p>
+        Wenn mich die Muse inspiriert, beginne ich zu schreiben.
+        Aus Gedanken werden Worte, aus Worten werden Lieder.
+      </p>
+
+      <p>
+        Meine Lieder erzählen von Momenten des Lebens: von Freude, Ruhe und Hoffnung,
+        aber auch von den vielen kleinen und großen Gefühlen, die uns im Alltag begleiten.
+      </p>
+
+      <p>
+        Worte sind für mich eine besondere Form von Magie. Sie können Gedanken bewegen,
+        Gefühle ausdrücken und manchmal sogar kleine Prozesse im Inneren anstoßen.
+      </p>
+
+      <p>
+        Genau diese Kraft versuche ich auch in meinen Liedern spürbar zu machen.
+      </p>
+
+      <p>
+        Wenn du neugierig geworden bist, klicke einfach auf ein Bild.
+        Du wirst direkt zu meinem YouTube-Kanal weitergeleitet und kannst dir
+        das jeweilige Lied anhören.
+      </p>
+
+      <p>
+        Vielleicht berührt dich eines meiner Lieder, bringt dich zum Lächeln
+        oder begleitet dich ein kleines Stück auf deinem Weg.
+      </p>
+    </section>
+
+
+    <!-- LIEDERKARTEN -->
+
+    <section class="section songs-section" aria-labelledby="songs-title">
+      <div class="section-heading">
+        <span class="eyebrow">✧ Hör hinein ✧</span>
+        <h2 id="songs-title">Meine Lieder zum Anhören</h2>
+        <p>
+          Wähle ein Lied aus und lass dich von seiner Melodie begleiten.
+        </p>
+      </div>
+
+      <div class="song-grid">
+
+        <article class="song">
+          <a href="https://www.youtube.com/shorts/nPEipR1v2Ss" target="_blank" rel="noopener noreferrer">
+            <img src="/picture/baldur1.png" alt="Bild zum Titelsong Traumreisen mit Baldur" loading="lazy">
+            <p>Lied 1: Titelsong – Traumreisen mit Baldur</p>
+          </a>
+        </article>
+
+        <article class="song">
+          <a href="https://www.youtube.com/watch?v=tDuykZE1LsQ" target="_blank" rel="noopener noreferrer">
+            <img src="/picture/frühling.jpg" alt="Bild zum Lied Spürst du das auch?" loading="lazy">
+            <p>Lied 2: Spürst du das auch?</p>
+          </a>
+        </article>
+
+        <article class="song">
+          <a href="https://www.youtube.com/watch?v=vAdMQrZpUNU" target="_blank" rel="noopener noreferrer">
+            <img src="/picture/Perfektion.png" alt="Bild zum Lied Schritt für Schritt" loading="lazy">
+            <p>Lied 3: Schritt für Schritt</p>
+          </a>
+        </article>
+
+        <article class="song">
+          <a href="https://www.youtube.com/watch?v=fJKTXWZ1kSI" target="_blank" rel="noopener noreferrer">
+            <img src="/picture/richtig.png" alt="Bild zum Lied Ich bin richtig, wie ich bin" loading="lazy">
+            <p>Lied 4: Ich bin richtig, wie ich bin.</p>
+          </a>
+        </article>
+
+        <article class="song">
+          <a href="https://www.youtube.com/watch?v=tJAZQAuZNKw" target="_blank" rel="noopener noreferrer">
+            <img src="/picture/traumrerw.png" alt="Bild zum Titelsong Traumreisen für Erwachsene" loading="lazy">
+            <p>Lied 5: Titelsong – Traumreisen für Erwachsene</p>
+          </a>
+        </article>
+
+        <article class="song">
+          <a href="https://www.youtube.com/watch?v=zkZJnIwr0gk" target="_blank" rel="noopener noreferrer">
+            <img src="/picture/Perfektion.png" alt="Bild zum Lied Mein Herz schlägt weit" loading="lazy">
+            <p>Lied 6: Mein Herz schlägt weit.</p>
+          </a>
+        </article>
+
+        <article class="song">
+          <a href="https://www.youtube.com/watch?v=fzLy7OzyKFI" target="_blank" rel="noopener noreferrer">
+            <img src="/picture/logoap.png" alt="Logo des Autorenpärchens" loading="lazy">
+            <p>Lied 7: DAS Autorenpärchen</p>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- URHEBERRECHT -->
+
+    <section class="copyright" aria-label="Urheberrechtshinweise">
+      <p>
+        Die Inhalte wurden von mir selbst erstellt und unterliegen dem Urheberrecht.
+      </p>
+      <p>
+        Eine Vervielfältigung, Weitergabe oder Nutzung – auch auszugsweise –
+        ist ohne meine ausdrückliche schriftliche Zustimmung nicht gestattet.
+      </p>
+      <p class="copyright-brand">© Lilian's Kräuter-Magie</p>
+    </section>
+
+  </main>
+
+
+  <!-- FUSSZEILE -->
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        © Lilians Kräutermagie · Mit Liebe, Neugier und einer Prise Magie gestaltet.
+      </div>
+
+      <div class="footer-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JAVASCRIPT: MOBILES MENÜ UND DROPDOWNS -->
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector("#main-nav");
+    const menuIcon = document.querySelector(".menu-icon");
+    const menuLabel = document.querySelector(".menu-label");
+    const dropdownButtons = document.querySelectorAll(".nav-dropdown-toggle");
+
+    function closeMenu() {
+      mainNav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuIcon.textContent = "☰";
+      menuLabel.textContent = "Menü";
+
+      document.querySelectorAll(".nav-item.open").forEach((item) => {
+        item.classList.remove("open");
+      });
+
+      dropdownButtons.forEach((button) => {
+        button.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuIcon.textContent = isOpen ? "✕" : "☰";
+      menuLabel.textContent = isOpen ? "Schließen" : "Menü";
+
+      if (!isOpen) {
+        document.querySelectorAll(".nav-item.open").forEach((item) => {
+          item.classList.remove("open");
+        });
+
+        dropdownButtons.forEach((button) => {
+          button.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
+    dropdownButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const parent = button.closest(".nav-item");
+        const isOpen = parent.classList.toggle("open");
+
+        button.setAttribute("aria-expanded", String(isOpen));
+
+        // Immer nur ein Dropdown gleichzeitig öffnen.
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          if (item !== parent) {
+            item.classList.remove("open");
+            const otherButton = item.querySelector(".nav-dropdown-toggle");
+            if (otherButton) {
+              otherButton.setAttribute("aria-expanded", "false");
+            }
+          }
+        });
+      });
+    });
+
+    mainNav.querySelectorAll(".nav-dropdown a, a:not(.nav-dropdown-toggle)").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.matchMedia("(max-width: 1100px)").matches) {
+          closeMenu();
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+
+    // Bei Wechsel von mobiler zu großer Bildschirmansicht zurücksetzen.
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 1101px)").matches) {
+        closeMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>
