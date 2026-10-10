@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,7 +9,6 @@
     <title>Meine Bücher – Lilians Kräutermagie</title>
 
     <meta name="description" content="Entdecke Lilians Bücher: Traumreisen für Kinder und Erwachsene, achtsame Geschichten und weitere geschriebene Schätze.">
-
     <meta name="keywords" content="Lilians Kräutermagie, Bücher, Traumreisen, Baldur, Traumreisen für Kinder, Traumreisen für Erwachsene, Personalmangel Kitas">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -153,7 +153,6 @@
 
         /* ========================================
            KOPFZEILE UND NAVIGATION
-           An die index.html angeglichen
         ======================================== */
 
         .site-header {
@@ -217,6 +216,11 @@
 
         .main-nav a:hover {
             background: rgba(84, 198, 178, 0.15);
+            color: var(--teal);
+        }
+
+        .main-nav a[aria-current="page"] {
+            background: rgba(113, 242, 223, 0.12);
             color: var(--teal);
         }
 
@@ -442,7 +446,7 @@
         .section-heading h2 {
             margin: 0.5rem 0 0.8rem;
 
-            color: var(--berry-light, #e6b7d3);
+            color: #e6b7d3;
             font-family: "Cormorant Garamond", serif;
             font-weight: 600;
             font-size: clamp(2.3rem, 5vw, 3.8rem);
@@ -505,6 +509,87 @@
 
         .intro p:last-child {
             margin-bottom: 0;
+        }
+
+
+        /* ========================================
+           FLYER
+        ======================================== */
+
+        .flyer-section {
+            padding-top: 1rem;
+            padding-bottom: 3rem;
+        }
+
+        .flyer-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .flyer-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            width: min(100%, 780px);
+            margin: 0 auto;
+            padding: clamp(1rem, 3vw, 1.75rem);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(113, 242, 223, 0.12), transparent 58%),
+                linear-gradient(145deg, rgba(32, 56, 90, 0.96), rgba(21, 25, 55, 0.98));
+
+            border: 1px solid rgba(113, 242, 223, 0.34);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .flyer-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--teal),
+                var(--gold),
+                var(--berry),
+                transparent
+            );
+        }
+
+        .flyer-card img {
+            width: 100%;
+            max-width: 680px;
+            height: auto;
+            margin: 0 auto;
+
+            object-fit: contain;
+            object-position: center;
+            border-radius: 12px;
+
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+        }
+
+        .flyer-card p {
+            max-width: 600px;
+            margin: 1.25rem auto 0;
+
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
 
@@ -646,6 +731,123 @@
 
 
         /* ========================================
+           VIER THEMENBLÖCKE
+        ======================================== */
+
+        .discover-section {
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .discover-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 190px;
+            padding: 1.5rem 1.2rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            text-decoration: none;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(113, 242, 223, 0.12), transparent 60%),
+                linear-gradient(150deg, rgba(32, 56, 90, 0.95), rgba(21, 25, 55, 0.98));
+
+            border: 1px solid rgba(161, 108, 163, 0.4);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(5, 4, 20, 0.22);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .discover-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--teal),
+                var(--gold),
+                var(--berry),
+                transparent
+            );
+
+            opacity: 0.7;
+            transition: opacity 0.25s ease;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--teal);
+            box-shadow:
+                0 16px 35px rgba(5, 4, 20, 0.32),
+                0 0 22px rgba(113, 242, 223, 0.08);
+        }
+
+        .discover-card:hover::before {
+            opacity: 1;
+        }
+
+        .discover-symbol {
+            display: block;
+            margin-bottom: 0.65rem;
+
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .discover-card h3 {
+            margin: 0 0 0.55rem;
+
+            color: #e6b7d3;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .discover-card p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .discover-card .discover-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+
+            color: var(--teal);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
            URHEBERRECHT
         ======================================== */
 
@@ -724,7 +926,6 @@
 
         /* ========================================
            TABLET
-           Gleiches Verhalten wie index.html
         ======================================== */
 
         @media (max-width: 980px) {
@@ -763,6 +964,10 @@
             .books-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 1.2rem;
+            }
+
+            .discover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .hero {
@@ -824,6 +1029,20 @@
                 line-height: 1.75;
             }
 
+            .flyer-section {
+                padding-top: 0.5rem;
+                padding-bottom: 2rem;
+            }
+
+            .flyer-card {
+                padding: 0.85rem;
+                border-radius: 18px;
+            }
+
+            .flyer-card img {
+                width: 100%;
+            }
+
             .books-section {
                 padding-top: 1.5rem;
             }
@@ -849,6 +1068,23 @@
 
             .book:not(:has(img)) {
                 min-height: 200px;
+            }
+
+            .discover-section {
+                padding-top: 1rem;
+                padding-bottom: 3rem;
+            }
+
+            .discover-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .discover-card {
+                min-height: 160px;
+                padding: 1.4rem 1rem;
             }
 
             .copyright {
@@ -901,7 +1137,6 @@
 
     <!-- ========================================
          KOPFZEILE UND HAUPTNAVIGATION
-         Aufbau wie in index.html
     ======================================== -->
 
     <header class="site-header">
@@ -924,7 +1159,7 @@
 
             <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
                 <a href="steckbriefe.html">Kräuterwelt</a>
-                <a href="lieder.html">Musik</a>
+                <a href="musik.html">Musik</a>
                 <a href="buecher.html" aria-current="page">Bücher</a>
                 <a href="about.html">Über Mich</a>
                 <a class="nav-highlight" href="index.html#neues-buch">Neues Buch ✦</a>
@@ -984,6 +1219,8 @@
 
     <main id="inhalt">
 
+        <!-- EINLEITUNG -->
+
         <section class="section" aria-labelledby="intro-title">
 
             <div class="intro">
@@ -1042,7 +1279,37 @@
         </section>
 
 
-        <!-- MEINE BÜCHER -->
+        <!-- ========================================
+             FLYER DIREKT NACH DER EINLEITUNG
+        ======================================== -->
+
+        <section class="section flyer-section" aria-label="Flyer zu meinen Werken">
+
+            <div class="flyer-wrap">
+
+                <article class="flyer-card">
+
+                    <img
+                        src="Flyer.png"
+                        alt="Flyer zu Lilians Büchern und Werken"
+                        loading="lazy"
+                    >
+
+                    <p>
+                        Entdecke meine Bücher und Geschichten – vielleicht ist
+                        genau das Richtige für dich oder einen lieben Menschen dabei.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             MEINE BÜCHER
+        ======================================== -->
 
         <section class="section books-section" aria-labelledby="books-title">
 
@@ -1063,12 +1330,20 @@
             <div class="books-grid">
 
                 <article class="book">
-                    <img src="baldur1.png" alt="Cover von Traumreisen mit Baldur, Band 1" loading="lazy">
+                    <img
+                        src="baldur1.png"
+                        alt="Cover von Traumreisen mit Baldur, Band 1"
+                        loading="lazy"
+                    >
                     <p>Buch 1: Traumreisen mit Baldur, Band 1</p>
                 </article>
 
                 <article class="book">
-                    <img src="baldur2.png" alt="Cover von Traumreisen mit Baldur, Band 2" loading="lazy">
+                    <img
+                        src="baldur2.png"
+                        alt="Cover von Traumreisen mit Baldur, Band 2"
+                        loading="lazy"
+                    >
                     <p>Buch 2: Traumreisen mit Baldur, Band 2</p>
                 </article>
 
@@ -1078,7 +1353,11 @@
                 </article>
 
                 <article class="book">
-                    <img src="traumrerw.png" alt="Cover von Bewusste und achtsame Traumreisen für Erwachsene" loading="lazy">
+                    <img
+                        src="traumrerw.png"
+                        alt="Cover von Bewusste und achtsame Traumreisen für Erwachsene"
+                        loading="lazy"
+                    >
                     <p>Buch 3: Bewusste und achtsame Traumreisen für Erwachsene</p>
                 </article>
 
@@ -1088,8 +1367,15 @@
                 </article>
 
                 <article class="book">
-                    <img src="personalmangel.JPG" alt="Cover von Personalmangel in deutschen Kitas" loading="lazy">
-                    <p>Buch 4: Personalmangel in deutschen Kitas: Warum Erzieher diesen Beruf nicht mehr ausüben können und wollen!</p>
+                    <img
+                        src="personalmangel.JPG"
+                        alt="Cover von Personalmangel in deutschen Kitas"
+                        loading="lazy"
+                    >
+                    <p>
+                        Buch 4: Personalmangel in deutschen Kitas:
+                        Warum Erzieher diesen Beruf nicht mehr ausüben können und wollen!
+                    </p>
                 </article>
 
             </div>
@@ -1097,7 +1383,75 @@
         </section>
 
 
-        <!-- URHEBERRECHT -->
+        <!-- ========================================
+             VIER THEMENBLÖCKE
+        ======================================== -->
+
+        <section class="section discover-section" aria-labelledby="discover-title">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Noch mehr entdecken</span>
+
+                <h2 id="discover-title">Tritt ein in meine Welt</h2>
+
+                <p>
+                    Kräuter, Musik, Bücher und neue Geschichten –
+                    entdecke die verschiedenen Seiten von Lilians Kräutermagie.
+                </p>
+
+            </div>
+
+            <div class="discover-grid">
+
+                <a class="discover-card" href="steckbriefe.html">
+                    <span class="discover-symbol" aria-hidden="true">✿</span>
+                    <h3>Kräuterwelt</h3>
+                    <p>
+                        Entdecke die Welt der Kräuter, ihre Besonderheiten
+                        und ihre kleinen Geheimnisse.
+                    </p>
+                    <span class="discover-link">Zur Kräuterwelt →</span>
+                </a>
+
+                <a class="discover-card" href="musik.html">
+                    <span class="discover-symbol" aria-hidden="true">♫</span>
+                    <h3>Musik</h3>
+                    <p>
+                        Lieder voller Gefühle, Gedanken und Geschichten
+                        für viele Momente des Lebens.
+                    </p>
+                    <span class="discover-link">Musik entdecken →</span>
+                </a>
+
+                <a class="discover-card" href="buecher.html" aria-current="page">
+                    <span class="discover-symbol" aria-hidden="true">✧</span>
+                    <h3>Bücher</h3>
+                    <p>
+                        Tauche ein in Traumreisen, achtsame Geschichten
+                        und fantasievolle Bücherwelten.
+                    </p>
+                    <span class="discover-link">Zu meinen Büchern →</span>
+                </a>
+
+                <a class="discover-card" href="index.html#neues-buch">
+                    <span class="discover-symbol" aria-hidden="true">☆</span>
+                    <h3>Neues Buch</h3>
+                    <p>
+                        Wirf einen Blick auf neue Buchideen und Geschichten,
+                        die gerade ihren Weg in die Welt finden.
+                    </p>
+                    <span class="discover-link">Mehr erfahren →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             URHEBERRECHT
+        ======================================== -->
 
         <section class="copyright" aria-label="Urheberrechtshinweise">
 
@@ -1146,7 +1500,6 @@
 
     <!-- ========================================
          JAVASCRIPT: MOBILES MENÜ
-         Gleiches Grundverhalten wie index.html
     ======================================== -->
 
     <script>
@@ -1154,6 +1507,13 @@
         const mainNav = document.querySelector("#main-nav");
         const menuIcon = document.querySelector(".menu-icon");
         const menuLabel = document.querySelector(".menu-label");
+
+        function closeMenu() {
+            mainNav.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuIcon.textContent = "☰";
+            menuLabel.textContent = "Menü";
+        }
 
         menuButton.addEventListener("click", () => {
             const isOpen = mainNav.classList.toggle("open");
@@ -1165,23 +1525,13 @@
 
         // Menü nach Auswahl eines Links schließen.
         mainNav.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", () => {
-                mainNav.classList.remove("open");
-
-                menuButton.setAttribute("aria-expanded", "false");
-                menuIcon.textContent = "☰";
-                menuLabel.textContent = "Menü";
-            });
+            link.addEventListener("click", closeMenu);
         });
 
         // Escape schließt das mobile Menü.
         document.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
-                mainNav.classList.remove("open");
-
-                menuButton.setAttribute("aria-expanded", "false");
-                menuIcon.textContent = "☰";
-                menuLabel.textContent = "Menü";
+                closeMenu();
             }
         });
     </script>
