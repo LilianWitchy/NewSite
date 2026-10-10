@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Lilians Kräuter Magie –  Kräuter, Räuchern, Tee, Natur- und Energiearbeit, Klangheilung, Kräuterwissen & Inspiration für ein bewusstes Leben. Entdecke deine eigene Magie." />
+  <meta name="keywords" content="Kräutermagie, Kräuter, Natur, Energiearbeit, Klangheilung, Lilian, Heilkräuter, Workshops, Kräuterwissen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilians Kräutermagie</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+/* ========================================
+   LILIANS BÜCHERWELT
+   Creme · Flieder · Rosé · Gold
+======================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #fffdf8;
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  text-align: center;
+  color: #554754;
+  background:
+    radial-gradient(ellipse at 8% 8%, rgba(248, 218, 230, .35), transparent 32%),
+    radial-gradient(ellipse at 92% 18%, rgba(220, 207, 246, .35), transparent 35%),
+    radial-gradient(ellipse at 12% 75%, rgba(248, 226, 210, .24), transparent 32%),
+    #fffdf8;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sanfter Sternenhimmel */
+
+.stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .65;
+  background-image:
+    radial-gradient(2px 2px at 8% 15%, #d9b86a 98%, transparent),
+    radial-gradient(2px 2px at 22% 38%, #d7a9c6 98%, transparent),
+    radial-gradient(2px 2px at 40% 12%, #c6b0e8 98%, transparent),
+    radial-gradient(2px 2px at 58% 28%, #d9b86a 98%, transparent),
+    radial-gradient(2px 2px at 74% 18%, #d7a9c6 98%, transparent),
+    radial-gradient(2px 2px at 91% 42%, #c6b0e8 98%, transparent),
+    radial-gradient(2px 2px at 15% 66%, #c6b0e8 98%, transparent),
+    radial-gradient(2px 2px at 48% 78%, #d9b86a 98%, transparent),
+    radial-gradient(2px 2px at 83% 72%, #d7a9c6 98%, transparent),
+    radial-gradient(1px 1px at 30% 85%, #d9b86a 98%, transparent),
+    radial-gradient(1px 1px at 67% 57%, #c6b0e8 98%, transparent);
+  animation: starGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes starGlow {
+  from { opacity: .35; }
+  to { opacity: .8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stars {
+    animation: none;
+  }
+}
+
+/* Hauptüberschrift */
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 8px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.2;
+  margin: 20px 0;
+  color: #8c6b9f;
+  font-weight: 700;
+  text-shadow: 0 2px 18px rgba(207, 176, 225, .25);
+}
+
+h1::before {
+  content: "✧";
+  display: block;
+  margin-bottom: 4px;
+  color: #c7a65b;
+  font-size: .55em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.3;
+  margin: 0 0 24px;
+  color: #916f9e;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.08em;
+  color: #554754;
+}
+
+/* Sprachauswahl */
+
+#language-switcher {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 12px 18px;
+}
+
+#language-switcher a {
+  display: inline-flex;
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform .2s ease, background .2s ease;
+}
+
+#language-switcher a:hover {
+  transform: translateY(-2px);
+  background: #f3e8f6;
+}
+
+#language-switcher img {
+  display: block;
+  width: 26px;
+  height: auto;
+}
+
+/* Navigation */
+
+.navbar {
+  background: rgba(246, 237, 249, .96);
+  border-top: 1px solid #eadced;
+  border-bottom: 1px solid #eadced;
+  padding: 8px 18px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid #d8c5df;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #795e87;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+.navmenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.navmenu li {
+  position: relative;
+  margin: 0;
+}
+
+.navmenu a {
+  text-decoration: none;
+  color: #594b60;
+  font-size: 17px;
+  padding: 9px 11px;
+  display: block;
+  border-radius: 8px;
+  transition: background .2s ease, color .2s ease;
+}
+
+.navmenu a:hover,
+.navmenu a:focus-visible {
+  background: #eadcf0;
+  color: #79518c;
+  outline: none;
+}
+
+/* Dropdown-Menüs */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fffafd;
+  min-width: 230px;
+  box-shadow: 0 8px 24px rgba(91, 65, 100, .13);
+  border: 1px solid #eadced;
+  border-radius: 10px;
+  z-index: 1000;
+  list-style: none;
+  padding: 7px;
+  text-align: left;
+}
+
+.dropdown-content li a {
+  color: #594b60;
+  padding: 9px 12px;
+  font-size: 17px;
+}
+
+.dropdown-content li a:hover {
+  background: #f5e7f1;
+  color: #79518c;
+}
+
+.navmenu li:hover > .dropdown-content,
+.navmenu li:focus-within > .dropdown-content,
+.navmenu li.open > .dropdown-content {
+  display: block;
+}
+
+/* Einleitung */
+
+.intro {
+  max-width: 1050px;
+  width: calc(100% - 36px);
+  margin: 38px auto 34px;
+  padding: clamp(24px, 5vw, 48px);
+  background: linear-gradient(135deg, #fff7fa, #f5effb 65%, #fffaf2);
+  border: 1px solid #ead9ed;
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(113, 81, 126, .09);
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.intro h2 {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.intro p {
+  margin: 0 0 15px;
+  line-height: 1.8;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* Buchkarten */
+
+.book {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top;
+  width: 250px;
+  max-width: calc(100% - 24px);
+  margin: 12px;
+  padding: 16px;
+  background: linear-gradient(160deg, #fffafd, #f8f0fa);
+  border: 1px solid #e8d8eb;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(105, 76, 117, .09);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(105, 76, 117, .16);
+}
+
+.book img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.book p {
+  margin: 14px 0 0;
+  font-size: 1em;
+  line-height: 1.55;
+  color: #59485e;
+}
+
+.book p:first-of-type {
+  font-weight: 700;
+}
+
+/* Bücher ohne fertiges Cover */
+
+.book:not(:has(img)) {
+  min-height: 180px;
+  justify-content: center;
+  background: linear-gradient(145deg, #f7eaf4, #eee6fa);
+  border: 1px dashed #cbb3d6;
+}
+
+.book:not(:has(img)) p:first-child {
+  color: #8c6b9f;
+  font-size: 1.2em;
+}
+
+/* Urheberrecht und Abschluss */
+
+body > p {
+  max-width: 900px;
+  margin: 12px auto;
+  padding: 0 20px;
+  font-size: .95em;
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+
+body > p:last-of-type {
+  margin-bottom: 35px;
+  color: #8c6b9f;
+}
+
+/* Handy und Tablet */
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .navmenu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navmenu.show {
+    display: flex;
+  }
+
+  .navmenu li {
+    width: 100%;
+  }
+
+  .navmenu a {
+    padding: 10px 12px;
+  }
+
+  .dropdown-content {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    margin: 4px 0 8px;
+    box-shadow: none;
+    border-radius: 8px;
+    background: #fffafd;
+  }
+
+  .navmenu li:hover > .dropdown-content {
+    display: none;
+  }
+
+  .navmenu li.open > .dropdown-content {
+    display: block;
+  }
+
+  .intro {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 17px;
+  }
+
+  .content {
+    padding-top: 16px;
+  }
+
+  .book {
+    width: min(290px, calc(100% - 24px));
+    margin: 10px auto;
+  }
+
+  .intro {
+    width: calc(100% - 24px);
+    padding: 22px 20px;
+    border-radius: 18px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <div class="content">
+    <h1>Meine Bücher</h1>
+  </div>
+
+  <div id="language-switcher">
+    <a href="index.html"><img src="picture/defavicon.png" alt="Deutsch" title="Deutsch" width="24"></a>
+    <a href="/en/"><img src="picture/enfavicon.png" alt="English" title="English" width="24"></a>
+    <a href="/dk/"><img src="picture/dkfavicon.png" alt="Dansk" title="Dansk" width="24"></a>
+  </div>
+
+ <!-- Navigationsleiste mit Dropdown-Menüs -->
+    <div class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="navmenu" id="navmenu">
+            <li class="dropdown">
+                <a href="index.html">Startseite</a>
+                <ul class="dropdown-content">
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                    <li><a href="mission.html">Meine Mission</a></li>
+                    <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                </ul>
+            </li>
+                 <li class="dropdown">
+                <a href="#">Wort&Klang</a>
+                <ul class="dropdown-content">
+                     <li><a href="schätze.html">geschriebene Schätze</a></li>
+                    <li><a href="meinebücher.html">Meine Bücher</a></li>
+                    <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                   <li><a href="lieder.html">Meine Lieder</a></li>  
+                </ul>
+            </li>
+       <li class="dropdown">
+                <a href="#">begleitende Angebote</a>
+                <ul class="dropdown-content">
+                    <li><a href="angebot.html">Mein Angebot für dich</a></li>
+                  <li><a href="pädagogik.html"> pädagogische Angebote </a></li>
+                  <li><a href="ep.html">erlebnispädagog. Angebote</a></li>
+                    <li><a href="pendel.html">Karten legen und Pendeln</a></li>
+                   <li><a href="online.html">Online Kurse</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Shop</a>
+                <ul class="dropdown-content">
+                    <li><a href="shop.html">Mein Shop</a></li>
+                     <li><a href="steckbriefe.html">Meine Kräutersteckbriefe</a></li>
+     
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Mit sich selbst in Verbindung kommen</a>
+                <ul class="dropdown-content">
+                    <li><a href="energie.html">Innere Balance</a></li>
+                    <li><a href="basics.html">Die Basics</a></li>
+                    <li><a href="reinigung.html">Körper und Geist im Einklang</a></li>
+                    <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Rezepte</a>
+                <ul class="dropdown-content">
+                    <li><a href="rezepte.html">Warum DIY?</a></li>
+                    <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                    <li><a href="haare.html">Haarprodukte</a></li>
+                </ul>
+            </li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="agb.html">AGB</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
+
+
+
+  <!-- Bücher -->
+   <div class="intro">
+    <h2> Wenn aus Worten, Welten entstehen. </h2>
+ <p>Manche Geschichten entstehen ganz leise. </p>
+ <p>Als ich noch als Erzieherin in der Kita gearbeitet habe, kamen mir immer wieder Ideen für kleine Traumreisen und Geschichten für Kinder.  </p>
+ <p>Oft mitten im Alltag – manchmal während eines Spaziergangs, manchmal einfach aus einem Gedanken heraus. </p>
+ <p>Damit keine dieser Ideen verloren geht, hatte ich fast immer Zettel und Stift dabei.  </p>
+ <p>Jede Inspiration wurde sofort aufgeschrieben – manchmal nur ein einzelner Satz, manchmal ein kleiner Schnipsel einer Geschichte. </p>
+ <p>Aus diesen vielen kleinen Momenten sind nach und nach immer mehr Traumreisen und Geschichten entstanden. </p>
+ <p>Heute sind daraus Bücher geworden, die Kinder in fantasievolle Welten begleiten, ihnen Ruhe schenken und ihre Vorstellungskraft wachsen lassen. </p>
+ <p>Meine Bücher kannst du mittlerweile überall dort kaufen, wo es Bücher gibt. </p>
+ <p>Vielleicht wartet darin schon die nächste Lieblingsgeschichte auf dich. </p>
+     </div>
+
+  <div class="book">
+    <img src="picture/baldur1.png" alt="Baldur 1">
+    <p>Buch 1: Traumreisen mit Baldur, Band 1</p>
+  </div>
+
+  <div class="book">
+    <img src="picture/baldur2.png" alt="Baldur 2">
+    <p>Buch 2: Traumreisen mit Baldur, Band 2</p>
+  </div>
+
+  <div class="book">
+    <p>Band 3 ist in Arbeit ...</p>
+    <p>Buch 3 Traumreisen mit Baldur</p>
+  </div>
+
+  <div class="book">
+    <img src="picture/traumrerw.png" alt="Traumreisen Erwachsene">
+    <p>Buch 3: Bewusste und achtsame Traumreisen für Erwachsene</p>
+  </div>
+
+  <div class="book">
+    <p>Buch noch in Arbeit</p>
+    <p>Traumreisen für Erwachsene, ein Special</p>
+  </div>
+
+  <div class="book">
+    <img src="picture/personalmangel.JPG" alt="Personalmangel Kitas">
+    <p>Buch 4: Personalmangel in deutschen Kitas: Warum Erzieher diesen Beruf nicht mehr ausüben können und wollen!</p>
+  </div>
+
+<p>Die Inhalte wurden von mir selbst erstellt und unterliegen dem Urheberrecht. </p>
+<p> Eine Vervielfältigung, Weitergabe oder Nutzung – auch auszugsweise – ist ohne meine ausdrückliche schriftliche Zustimmung nicht gestattet. </p>
+<p>© Lilian's Kräuter-Magie </p>
+  
+<script>
+    function toggleMenu() {
+      document.getElementById("navmenu").classList.toggle("show");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdowns = document.querySelectorAll('.navmenu > li.dropdown > a');
+      dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const parentLi = this.parentElement;
+          parentLi.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
