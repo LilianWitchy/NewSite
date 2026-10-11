@@ -1,0 +1,1451 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101c3a">
+
+    <title>Meine Kräutersteckbriefe – Lilians Kräutermagie</title>
+
+    <meta name="description" content="Entdecke Lilians Bücher: Traumreisen für Kinder und Erwachsene, achtsame Geschichten und weitere geschriebene Schätze.">
+    <meta name="keywords" content="Lilians Kräutermagie, Bücher, Traumreisen, Baldur, Traumreisen für Kinder, Traumreisen für Erwachsene, Personalmangel Kitas">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           FARBEN UND GRUNDLAGEN
+        ======================================== */
+
+        :root {
+            --night: #101c3a;
+            --night-light: #20385a;
+            --plum: #7254b8;
+            --berry: #c85fba;
+            --teal: #71f2df;
+            --forest: #197f70;
+            --gold: #ffe6a0;
+            --cream: #f4fbff;
+            --muted: #c9e5ee;
+
+            --shadow: 0 18px 45px rgba(10, 5, 20, 0.28);
+            --radius: 24px;
+            --content-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--night);
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--cream);
+
+            background:
+                radial-gradient(
+                    ellipse at 12% 8%,
+                    rgba(58, 226, 207, 0.16),
+                    transparent 34rem
+                ),
+                radial-gradient(
+                    ellipse at 88% 42%,
+                    rgba(113, 84, 184, 0.22),
+                    transparent 36rem
+                ),
+                var(--night);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        ::selection {
+            color: var(--night);
+            background: var(--gold);
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 1rem;
+            z-index: 1000;
+
+            padding: 0.75rem 1rem;
+            color: var(--night);
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .skip-link:focus {
+            left: 1rem;
+        }
+
+
+        /* ========================================
+           STERNENHIMMEL
+        ======================================== */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(176,255,245,.9) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(255,255,255,.72) 1px, transparent 1.7px);
+
+            background-size:
+                97px 91px,
+                151px 137px,
+                211px 183px,
+                263px 227px;
+
+            background-position:
+                12px 17px,
+                48px 62px,
+                91px 24px,
+                19px 105px;
+
+            opacity: 0.45;
+            animation: stars-twinkle 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes stars-twinkle {
+            from { opacity: 0.35; }
+            to { opacity: 0.72; }
+        }
+
+
+        /* ========================================
+           KOPFZEILE UND NAVIGATION
+        ======================================== */
+
+        .site-header {
+            position: relative;
+            z-index: 20;
+
+            background: rgba(10, 28, 53, 0.88);
+            border-bottom: 1px solid rgba(240, 199, 119, 0.24);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .nav-wrap {
+            width: min(1180px, calc(100% - 2rem));
+            min-height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+
+            min-width: max-content;
+            color: var(--cream);
+            text-decoration: none;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .main-nav a {
+            padding: 0.65rem 0.8rem;
+            border-radius: 999px;
+
+            color: #f6e8fa;
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 800;
+
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(84, 198, 178, 0.15);
+            color: var(--teal);
+        }
+
+        .main-nav a[aria-current="page"] {
+            background: rgba(113, 242, 223, 0.12);
+            color: var(--teal);
+        }
+
+        .main-nav .nav-highlight {
+            background: linear-gradient(120deg, #ffe7a0, #8ff5df);
+            color: var(--night);
+        }
+
+        .main-nav .nav-highlight:hover {
+            color: var(--night);
+            filter: brightness(1.06);
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+
+            padding: 0.55rem 0.8rem;
+            color: var(--cream);
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 12px;
+
+            cursor: pointer;
+        }
+
+        .menu-toggle:hover {
+            color: var(--teal);
+            border-color: var(--teal);
+        }
+
+
+        /* ========================================
+           SPRACHWAHL
+        ======================================== */
+
+        .language-switcher {
+            position: absolute;
+            z-index: 5;
+            top: 1rem;
+            right: max(1rem, calc((100vw - 1180px) / 2));
+
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-switcher a {
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+            background: rgba(10, 28, 53, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold);
+        }
+
+        .language-switcher img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+
+        /* ========================================
+           TITELBEREICH
+        ======================================== */
+
+        .hero {
+            min-height: 370px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 5rem 1.25rem 4.5rem;
+
+            background:
+                radial-gradient(ellipse at 18% 35%, rgba(35, 223, 205, 0.25), transparent 38%),
+                radial-gradient(ellipse at 72% 18%, rgba(125, 91, 223, 0.30), transparent 34%),
+                radial-gradient(ellipse at 82% 76%, rgba(33, 177, 144, 0.20), transparent 35%),
+                linear-gradient(110deg, rgba(7, 28, 52, 0.5), rgba(21, 24, 65, 0.32), rgba(7, 37, 54, 0.35));
+
+            border-bottom: 1px solid rgba(113, 242, 223, 0.38);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: -18% -10%;
+            pointer-events: none;
+
+            background:
+                radial-gradient(ellipse at 18% 42%, rgba(46, 255, 218, 0.32), transparent 25%),
+                radial-gradient(ellipse at 40% 18%, rgba(92, 229, 184, 0.22), transparent 28%),
+                radial-gradient(ellipse at 70% 35%, rgba(144, 105, 255, 0.28), transparent 30%),
+                radial-gradient(ellipse at 85% 62%, rgba(53, 190, 221, 0.20), transparent 25%);
+
+            filter: blur(28px);
+            opacity: 0.88;
+            animation: aurora-drift 16s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(176,255,245,.9) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(255,230,160,.9) 1px, transparent 1.8px);
+
+            background-size: 97px 91px, 151px 137px, 211px 183px;
+            background-position: 12px 17px, 48px 62px, 91px 24px;
+            opacity: 0.65;
+        }
+
+        @keyframes aurora-drift {
+            from {
+                transform: translate3d(-1.5%, -1%, 0) rotate(-8deg) scale(1.05);
+            }
+            to {
+                transform: translate3d(2%, 1.5%, 0) rotate(-3deg) scale(1.12);
+            }
+        }
+
+        .hero-inner {
+            width: min(1180px, 100%);
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 1rem 0;
+
+            color: var(--cream);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(3.3rem, 8vw, 6rem);
+            line-height: 0.96;
+            letter-spacing: -0.035em;
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-top: 0.25em;
+
+            color: #8bffeb;
+            font-style: italic;
+            text-shadow: 0 0 28px rgba(63, 245, 218, 0.22);
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 1.25rem auto 0;
+
+            color: #f0e4f3;
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+        }
+
+        .hero-divider {
+            width: min(220px, 55%);
+            height: 1px;
+            margin: 2rem auto 0;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--teal),
+                var(--gold),
+                var(--berry),
+                transparent
+            );
+        }
+
+
+        /* ========================================
+           ALLGEMEINE ABSCHNITTE
+        ======================================== */
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            width: min(1180px, calc(100% - 2rem));
+            margin: auto;
+            padding: 4.5rem 0;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0.5rem 0 0.8rem;
+
+            color: #e6b7d3;
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            line-height: 1.05;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+
+        /* ========================================
+           EINLEITUNG
+        ======================================== */
+
+        .intro {
+            position: relative;
+            overflow: hidden;
+
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 3.2rem);
+
+            background:
+                radial-gradient(ellipse at 100% 0%, rgba(200, 95, 186, 0.13), transparent 45%),
+                linear-gradient(135deg, rgba(32, 56, 90, 0.88), rgba(29, 29, 66, 0.94));
+
+            border: 1px solid rgba(161, 108, 163, 0.4);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro::before {
+            content: "✧";
+            position: absolute;
+            top: 0.6rem;
+            right: 1.4rem;
+
+            color: rgba(255, 230, 160, 0.5);
+            font-size: 3.2rem;
+            pointer-events: none;
+        }
+
+        .intro h2 {
+            margin: 0 0 1.6rem;
+
+            color: #e6b7d3;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .intro p {
+            margin: 0 0 1rem;
+            color: #e1e6f4;
+            line-height: 1.85;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* ========================================
+           FLYER
+        ======================================== */
+
+        .flyer-section {
+            padding-top: 1rem;
+            padding-bottom: 3rem;
+        }
+
+        .flyer-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .flyer-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            width: min(100%, 780px);
+            margin: 0 auto;
+            padding: clamp(1rem, 3vw, 1.75rem);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(113, 242, 223, 0.12), transparent 58%),
+                linear-gradient(145deg, rgba(32, 56, 90, 0.96), rgba(21, 25, 55, 0.98));
+
+            border: 1px solid rgba(113, 242, 223, 0.34);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .flyer-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--teal),
+                var(--gold),
+                var(--berry),
+                transparent
+            );
+        }
+
+        .flyer-card img {
+            width: 100%;
+            max-width: 680px;
+            height: auto;
+            margin: 0 auto;
+
+            object-fit: contain;
+            object-position: center;
+            border-radius: 12px;
+
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+        }
+
+        .flyer-card p {
+            max-width: 600px;
+            margin: 1.25rem auto 0;
+
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+
+        /* ========================================
+           BÜCHERKARTEN
+        ======================================== */
+
+        .books-section {
+            padding-top: 3rem;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .book {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+
+            padding: 1.25rem;
+            text-align: center;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(200, 95, 186, 0.13), transparent 55%),
+                linear-gradient(160deg, rgba(32, 56, 90, 0.94), rgba(21, 25, 55, 0.97));
+
+            border: 1px solid rgba(161, 108, 163, 0.36);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(5, 4, 20, 0.23);
+
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .book::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--berry),
+                var(--gold),
+                var(--teal),
+                transparent
+            );
+
+            opacity: 0.65;
+            transition: opacity 0.25s ease;
+        }
+
+        .book:hover {
+            transform: translateY(-6px);
+            border-color: rgba(200, 95, 186, 0.8);
+
+            box-shadow:
+                0 16px 38px rgba(5, 4, 20, 0.34),
+                0 0 24px rgba(200, 95, 186, 0.08);
+        }
+
+        .book:hover::before {
+            opacity: 1;
+        }
+
+        .book img {
+            width: 100%;
+            height: 330px;
+            margin: 0 auto;
+
+            object-fit: contain;
+            object-position: center;
+            border-radius: 12px;
+            background: rgba(8, 13, 34, 0.38);
+
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
+        }
+
+        .book p {
+            margin: 1rem 0 0;
+            color: #e1e6f4;
+            font-size: 1rem;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .book p:first-of-type {
+            color: #e6b7d3;
+            font-weight: 800;
+        }
+
+        /* Karten ohne Cover */
+
+        .book:not(:has(img)) {
+            min-height: 250px;
+            justify-content: center;
+
+            background:
+                radial-gradient(ellipse at 50% 35%, rgba(200, 95, 186, 0.16), transparent 65%),
+                linear-gradient(145deg, rgba(32, 56, 90, 0.96), rgba(21, 25, 55, 0.98));
+
+            border-style: dashed;
+            border-color: rgba(230, 183, 211, 0.55);
+        }
+
+        .book:not(:has(img))::after {
+            content: "✧";
+            order: -1;
+            margin-bottom: 0.6rem;
+
+            color: var(--gold);
+            font-size: 2.8rem;
+            line-height: 1.2;
+            text-shadow: 0 0 25px rgba(255, 230, 160, 0.2);
+        }
+
+        .book:not(:has(img)) p:first-child {
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.55rem;
+            line-height: 1.2;
+        }
+
+        .book:not(:has(img)) p:last-child {
+            color: var(--muted);
+        }
+
+
+        /* ========================================
+           VIER THEMENBLÖCKE
+        ======================================== */
+
+        .discover-section {
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .discover-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 190px;
+            padding: 1.5rem 1.2rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            text-decoration: none;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(113, 242, 223, 0.12), transparent 60%),
+                linear-gradient(150deg, rgba(32, 56, 90, 0.95), rgba(21, 25, 55, 0.98));
+
+            border: 1px solid rgba(161, 108, 163, 0.4);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(5, 4, 20, 0.22);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .discover-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--teal),
+                var(--gold),
+                var(--berry),
+                transparent
+            );
+
+            opacity: 0.7;
+            transition: opacity 0.25s ease;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--teal);
+            box-shadow:
+                0 16px 35px rgba(5, 4, 20, 0.32),
+                0 0 22px rgba(113, 242, 223, 0.08);
+        }
+
+        .discover-card:hover::before {
+            opacity: 1;
+        }
+
+        .discover-symbol {
+            display: block;
+            margin-bottom: 0.65rem;
+
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .discover-card h3 {
+            margin: 0 0 0.55rem;
+
+            color: #e6b7d3;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .discover-card p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .discover-card .discover-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+
+            color: var(--teal);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           URHEBERRECHT
+        ======================================== */
+
+        .copyright {
+            position: relative;
+            z-index: 1;
+
+            width: min(900px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 0 0 1rem;
+
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            text-align: center;
+        }
+
+        .copyright p {
+            margin: 0 0 0.7rem;
+        }
+
+        .copyright .copyright-brand {
+            margin-top: 1.5rem;
+            padding-bottom: 2.5rem;
+
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+
+        /* ========================================
+           FUSSZEILE
+        ======================================== */
+
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+
+            background: #160f21;
+            border-top: 1px solid rgba(240, 199, 119, 0.25);
+        }
+
+        .footer-inner {
+            width: min(1180px, calc(100% - 2rem));
+            margin: auto;
+            padding: 2rem 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 980px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                padding: 0.4rem 0 1rem;
+            }
+
+            .main-nav.open {
+                display: flex;
+            }
+
+            .main-nav a {
+                border-radius: 12px;
+            }
+
+            .main-nav .nav-highlight {
+                margin-top: 0.35rem;
+                text-align: center;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.2rem;
+            }
+
+            .discover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                min-height: 340px;
+            }
+        }
+
+
+        /* ========================================
+           SMARTPHONES
+        ======================================== */
+
+        @media (max-width: 650px) {
+            body {
+                font-size: 16px;
+            }
+
+            .brand {
+                gap: 0.5rem;
+                font-size: 1.35rem;
+            }
+
+            .brand-mark {
+                font-size: 1.55rem;
+            }
+
+            .language-switcher {
+                top: 0.7rem;
+                right: 0.7rem;
+            }
+
+            .hero {
+                min-height: 330px;
+                padding: 5rem 1rem 3.5rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 14vw, 4.6rem);
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .intro {
+                padding: 1.5rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .intro h2 {
+                font-size: 2.1rem;
+            }
+
+            .intro p {
+                line-height: 1.75;
+            }
+
+            .flyer-section {
+                padding-top: 0.5rem;
+                padding-bottom: 2rem;
+            }
+
+            .flyer-card {
+                padding: 0.85rem;
+                border-radius: 18px;
+            }
+
+            .flyer-card img {
+                width: 100%;
+            }
+
+            .books-section {
+                padding-top: 1.5rem;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .book {
+                padding: 1rem;
+                border-radius: 18px;
+            }
+
+            .book img {
+                height: auto;
+                max-height: 420px;
+                aspect-ratio: 3 / 4;
+                object-fit: contain;
+            }
+
+            .book:not(:has(img)) {
+                min-height: 200px;
+            }
+
+            .discover-section {
+                padding-top: 1rem;
+                padding-bottom: 3rem;
+            }
+
+            .discover-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .discover-card {
+                min-height: 160px;
+                padding: 1.4rem 1rem;
+            }
+
+            .copyright {
+                font-size: 0.88rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand {
+                font-size: 1.15rem;
+            }
+
+            .menu-toggle {
+                padding: 0.5rem 0.65rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .intro {
+                padding: 1.25rem 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <div class="stars" aria-hidden="true"></div>
+
+
+    <!-- ========================================
+         KOPFZEILE UND HAUPTNAVIGATION
+    ======================================== -->
+
+    <header class="site-header">
+        <div class="nav-wrap">
+
+            <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>Lilians Kräutermagie</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span class="menu-icon" aria-hidden="true">☰</span>
+                <span class="menu-label">Menü</span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="kräuter.html">Kräuterwelt</a>
+                <a href="musik.html">Musik</a>
+                <a href="buecher.html" aria-current="page">Bücher</a>
+                <a href="about.html">Über Mich</a>
+                <a class="nav-highlight" href="index.html#neues-buch">Neues Buch ✦</a>
+                <a href="angebote.html">Angebote für Dich</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================
+         TITELBEREICH
+    ======================================== -->
+
+    <section class="hero" aria-labelledby="hero-title">
+
+        <div class="language-switcher" aria-label="Sprache wählen">
+            <a href="index.html" aria-label="Deutsch" title="Deutsch">
+                <img src="defavicon.png" alt="">
+            </a>
+
+            <a href="/en/" aria-label="English" title="English">
+                <img src="enfavicon.png" alt="">
+            </a>
+
+            <a href="/dk/" aria-label="Dansk" title="Dansk">
+                <img src="dkfavicon.png" alt="">
+            </a>
+        </div>
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                ✧ Geschriebene Schätze · Traumreisen · Geschichten ✧
+            </span>
+
+            <h1 id="hero-title">
+                Meine
+                <span>Kräutersteckbriefe</span>
+            </h1>
+
+            <p>
+            Mein geballtes Kräuterwissen jetzt auch für zu Hause.
+            Aus meinem gesammelten Kräuterwissen ist bewusst kein umfangreiches Buch entstanden.
+           Stattdessen habe ich die Essenz jedes Krauts in einzelne Steckbriefe gefasst – kompakt, klar und dennoch mit dem kleinen Funken Magie, den jede Pflanze in sich trägt.
+            So kannst du genau die Sets wählen, die dich ansprechen, ohne dich durch unzählige Seiten arbeiten zu müssen.
+            Ein Bündel Wissen, fein sortiert und leicht zugänglich – damit du die Kräuterwelt so entdeckst, wie sie zu dir passt.
+                </p>
+
+            <div class="hero-divider" aria-hidden="true"></div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         HAUPTINHALT
+    ======================================== -->
+
+    <main id="inhalt">
+
+        <!-- EINLEITUNG -->
+
+        <section class="section" aria-labelledby="intro-title">
+
+            <div class="intro">
+
+                <h2 id="intro-title">
+                    Wenn altes Wissen wieder Leben darf...
+                </h2>
+
+                <p>Und hier ist es. Das Erste Kräuter-Steckbriefe-Set von mir.</p>
+<p><strong>In diesem Set findest du 12 meiner liebsten Heilkräuter:</strong> Eisenkraut, Schafgarbe, Lavendel, Brennnessel, Rosmarin, Salbei, Beifuß, Waldmeister, Minze, Spitzwegerich, Thymian und Oregano.</p>
+                <p>Ursprünglich sollte daraus ein Buch entstehen – doch ich habe gemerkt, dass die Fülle an Wissen und Informationen viel besser in kompakten <em>Steckbrief-Sets</em> aufgehoben ist.</p>
+                <p>So kannst du dir gezielt Kräuterwissen aneignen, ohne dich durch dicke Bücher wühlen zu müssen.</p>
+                <p>Jeder Steckbrief umfasst 5–7 Seiten pro Heilkraut und voller wertvoller Informationen zu einem einzelnen Kraut, unter anderem zu:</p>
+                <ul>
+                    <li>Aussehen & Bestimmungsmerkmale</li>
+                    <li>Standort, Anbau & Pflege</li>
+                    <li>Inhaltsstoffe & Nährstoffe</li>
+                    <li>Wirkungen & Anwendungsgebiete</li>
+                    <li>Spirituelle Bedeutungen</li>
+                    <li>Wechselwirkungen & mögliche Risiken</li>
+                    <li>Rezepte & praktische Tipps aus meiner Erfahrung</li>
+                </ul>
+                <p>Dieses Set enthält <strong>geballtes Kräuterwissen</strong> aus vielen Jahren intensiver Recherche, bereits angefangener Kräuterpädagogik-Ausbildung und eigener Praxis im Anpflanzen und Sammeln. Ich habe außerdem all das hineingepackt, was ich persönlich in vielen Büchern oft vermisst habe – damit du direkt und praktisch mit den Kräutern arbeiten kannst.</p>
+                <p>Es besteht aus drei PDF-Dateien, damit es trotz der Fülle an Wissen übersichtlich bleibt.</p>
+                <p><strong>Preis:</strong> Du erhältst das komplette Set „Meine liebsten Heilkräuter“ (ca. 80–90 Seiten PDF) für nur <strong>30,- €</strong>.</p>
+                <p>Tauche ein in die Welt der Kräuter und sichere dir dein Steckbrief-Set noch heute!</p>
+               
+                </p>
+
+            </div>
+
+        </section>
+
+
+       
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             MEINE BÜCHER
+        ======================================== -->
+
+        <section class="section books-section" aria-labelledby="books-title">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Zwischen Traum und Wirklichkeit</span>
+
+                <h2 id="books-title">Entdecke die volle Kraft und das Wissen über Heilkräuter. Keine halben Sachen und tausend Bücher mehr.</h2>
+
+              
+                     <p>Das nächste Steckbrief-Set mit 13 weiteren Pflanzen folgt in Kürze.
+                Auch das wird voller vieler wichtiger Informationen und Rezepten.
+                Bleibt gespannt.
+                </p>
+
+            </div>
+
+          
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             VIER THEMENBLÖCKE
+        ======================================== -->
+
+        <section class="section discover-section" aria-labelledby="discover-title">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Noch mehr entdecken</span>
+
+                <h2 id="discover-title">Tritt ein in meine Welt</h2>
+
+                <p>
+                    Kräuter, Musik, Bücher und neue Geschichten –
+                    entdecke die verschiedenen Seiten von Lilians Kräutermagie.
+                </p>
+
+            </div>
+
+            <div class="discover-grid">
+
+                <a class="discover-card" href="steckbriefe.html">
+                    <span class="discover-symbol" aria-hidden="true">✿</span>
+                    <h3>Kräuterwelt</h3>
+                    <p>
+                        Entdecke die Welt der Kräuter, ihre Besonderheiten
+                        und ihre kleinen Geheimnisse.
+                    </p>
+                    <span class="discover-link">Zur Kräuterwelt →</span>
+                </a>
+
+                <a class="discover-card" href="musik.html">
+                    <span class="discover-symbol" aria-hidden="true">♫</span>
+                    <h3>Musik</h3>
+                    <p>
+                        Lieder voller Gefühle, Gedanken und Geschichten
+                        für viele Momente des Lebens.
+                    </p>
+                    <span class="discover-link">Musik entdecken →</span>
+                </a>
+
+                <a class="discover-card" href="buecher.html" aria-current="page">
+                    <span class="discover-symbol" aria-hidden="true">✧</span>
+                    <h3>Bücher</h3>
+                    <p>
+                        Tauche ein in Traumreisen, achtsame Geschichten
+                        und fantasievolle Bücherwelten.
+                    </p>
+                    <span class="discover-link">Zu meinen Büchern →</span>
+                </a>
+
+                <a class="discover-card" href="index.html#neues-buch">
+                    <span class="discover-symbol" aria-hidden="true">☆</span>
+                    <h3>Neues Buch</h3>
+                    <p>
+                        Wirf einen Blick auf neue Buchideen und Geschichten,
+                        die gerade ihren Weg in die Welt finden.
+                    </p>
+                    <span class="discover-link">Mehr erfahren →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             URHEBERRECHT
+        ======================================== -->
+
+        <section class="copyright" aria-label="Urheberrechtshinweise">
+
+            <p>
+                Die Inhalte wurden von mir selbst erstellt und unterliegen
+                dem Urheberrecht.
+            </p>
+
+            <p>
+                Eine Vervielfältigung, Weitergabe oder Nutzung – auch auszugsweise –
+                ist ohne meine ausdrückliche schriftliche Zustimmung nicht gestattet.
+            </p>
+
+            <p class="copyright-brand">
+                © Lilian's Kräuter-Magie
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         FUSSZEILE
+    ======================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                © Lilians Kräutermagie ·
+                Mit Liebe, Neugier und einer Prise Magie gestaltet.
+            </div>
+
+            <div class="footer-links">
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="agb.html">AGB</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================
+         JAVASCRIPT: MOBILES MENÜ
+    ======================================== -->
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector("#main-nav");
+        const menuIcon = document.querySelector(".menu-icon");
+        const menuLabel = document.querySelector(".menu-label");
+
+        function closeMenu() {
+            mainNav.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuIcon.textContent = "☰";
+            menuLabel.textContent = "Menü";
+        }
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuIcon.textContent = isOpen ? "✕" : "☰";
+            menuLabel.textContent = isOpen ? "Schließen" : "Menü";
+        });
+
+        // Menü nach Auswahl eines Links schließen.
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Escape schließt das mobile Menü.
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>
