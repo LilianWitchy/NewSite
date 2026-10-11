@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Impressum und rechtliche Angaben zu Lilian Lübkes Webseite.">
+  <title>Impressum | Lilians Kräuter Magie</title>
+
+  <link rel="icon" type="image/png" href="defavicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --midnight: #251b29;
+      --midnight-light: #392737;
+      --accent: #c77b91;
+      --accent-light: #e8a8b7;
+      --gold: #e4c5a2;
+      --gold-light: #f5e3d1;
+      --cream: #fff6f2;
+      --muted: #e0cdd4;
+      --panel: #352632;
+      --panel-light: #44303e;
+      --border: rgba(232, 168, 183, 0.23);
+      --shadow: 0 16px 45px rgba(12, 7, 15, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Nunito Sans", sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(ellipse at 15% 12%, rgba(199, 123, 145, 0.12), transparent 34%),
+        radial-gradient(ellipse at 88% 45%, rgba(228, 197, 162, 0.07), transparent 32%),
+        var(--midnight);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.38;
+      background-image:
+        radial-gradient(1px 1px at 10% 18%, rgba(255, 246, 242, 0.75) 50%, transparent 100%),
+        radial-gradient(1px 1px at 32% 72%, rgba(255, 246, 242, 0.55) 50%, transparent 100%),
+        radial-gradient(2px 2px at 68% 22%, rgba(232, 168, 183, 0.65) 50%, transparent 100%),
+        radial-gradient(1px 1px at 84% 66%, rgba(255, 246, 242, 0.65) 50%, transparent 100%),
+        radial-gradient(1px 1px at 51% 43%, rgba(228, 197, 162, 0.6) 50%, transparent 100%),
+        radial-gradient(1px 1px at 91% 90%, rgba(255, 246, 242, 0.55) 50%, transparent 100%);
+      background-size: 320px 320px;
+    }
+
+    a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    a:hover {
+      color: var(--gold-light);
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(37, 27, 41, 0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(1200px, calc(100% - 44px));
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      color: var(--cream);
+      line-height: 1.15;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: 0.035em;
+    }
+
+    .brand-subtitle {
+      margin-top: 5px;
+      color: var(--accent-light);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2vw, 27px);
+    }
+
+    .main-nav a {
+      position: relative;
+      padding: 9px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .main-nav a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 1px;
+      left: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .main-nav .new-book-link {
+      color: var(--gold-light);
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 5px;
+      padding-left: 16px;
+      border-left: 1px solid var(--border);
+    }
+
+    .language-switcher a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      opacity: 0.75;
+    }
+
+    .language-switcher a:hover,
+    .language-switcher a[aria-current="page"] {
+      border-color: var(--accent-light);
+      opacity: 1;
+    }
+
+    .language-switcher img {
+      display: block;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      color: var(--cream);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 340px;
+      padding: 80px 24px 76px;
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: min(750px, 90vw);
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(199, 123, 145, 0.22), rgba(199, 123, 145, 0.04) 48%, transparent 72%);
+      filter: blur(12px);
+    }
+
+    .hero-content {
+      width: min(850px, 100%);
+      animation: fade-up 0.9s ease both;
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    h1 {
+      color: var(--cream);
+      font-size: clamp(3.1rem, 7vw, 5.5rem);
+      letter-spacing: -0.025em;
+    }
+
+    .hero-description {
+      max-width: 630px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 27px;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .hero-ornament::before,
+    .hero-ornament::after {
+      content: "";
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-light));
+    }
+
+    .hero-ornament::after {
+      transform: rotate(180deg);
+    }
+
+    main {
+      width: min(1000px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 0 0 100px;
+    }
+
+    .legal-card {
+      position: relative;
+      padding: clamp(28px, 5vw, 60px);
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(68, 48, 62, 0.95), rgba(42, 31, 45, 0.97));
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      animation: fade-up 0.8s ease both;
+    }
+
+    .legal-card::before {
+      content: "";
+      position: absolute;
+      top: -110px;
+      right: -90px;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(232, 168, 183, 0.12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 24px rgba(232, 168, 183, 0.025),
+        0 0 0 48px rgba(232, 168, 183, 0.02);
+      pointer-events: none;
+    }
+
+    .legal-intro {
+      max-width: 720px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .legal-section {
+      position: relative;
+      padding: 27px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .legal-section:first-of-type {
+      border-top: 0;
+    }
+
+    .legal-section h2 {
+      margin-bottom: 14px;
+      color: var(--accent-light);
+      font-size: clamp(1.7rem, 3.5vw, 2.15rem);
+    }
+
+    .legal-section p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section strong {
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .contact-box {
+      margin-top: 15px;
+      padding: 18px 22px;
+      background: rgba(199, 123, 145, 0.09);
+      border: 1px solid rgba(232, 168, 183, 0.2);
+      border-radius: 14px;
+    }
+
+    .contact-box a {
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .site-footer {
+      padding: 35px 22px 28px;
+      background: rgba(20, 14, 24, 0.55);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 10px;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.7rem;
+    }
+
+    .footer-note {
+      max-width: 600px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 24px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-links a:hover,
+    .footer-links a[aria-current="page"] {
+      color: var(--gold-light);
+    }
+
+    .copyright {
+      color: rgba(224, 205, 212, 0.62);
+      font-size: 0.78rem;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .header-inner {
+        width: min(100% - 32px, 900px);
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 24px 24px;
+        background: rgba(37, 27, 41, 0.98);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
+      }
+
+      .main-nav.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-nav > a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(232, 168, 183, 0.1);
+      }
+
+      .main-nav a[aria-current="page"]::after {
+        right: auto;
+        width: 42px;
+      }
+
+      .language-switcher {
+        margin: 14px 0 0;
+        padding: 12px 0 0;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 1.55rem;
+      }
+
+      .brand-subtitle {
+        font-size: 0.58rem;
+      }
+
+      .hero {
+        min-height: 290px;
+        padding: 60px 20px;
+      }
+
+      .hero-description {
+        font-size: 0.97rem;
+      }
+
+      main {
+        width: calc(100% - 28px);
+        padding-bottom: 65px;
+      }
+
+      .legal-card {
+        padding: 27px 22px;
+        border-radius: 20px;
+      }
+
+      .legal-section {
+        padding: 23px 0;
+      }
+
+      .contact-box {
+        padding: 16px;
+      }
+
+      .footer-links {
+        gap: 8px 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <span class="brand-name">Lilian Lübke</span>
+        <span class="brand-subtitle">Kreativität · Natur · Klang</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >☰</button>
+
+      <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation">
+        <a href="index.html">Startseite</a>
+        <a href="kraeuter.html">Kräuterwelt</a>
+        <a href="musik.html">Musik</a>
+        <a href="buecher.html">Bücher</a>
+        <a href="angebote.html">Angebote</a>
+        <a href="about.html">Über mich</a>
+        <a class="new-book-link" href="index.html#neues-buch">Neues Buch ✦</a>
+
+        <div class="language-switcher" aria-label="Sprache auswählen">
+          <a href="index.html" aria-label="Deutsch" aria-current="page">
+            <img src="defavicon.png" alt="Deutsch">
+          </a>
+          <a href="/en/" aria-label="English">
+            <img src="enfavicon.png" alt="English">
+          </a>
+          <a href="/dk/" aria-label="Dansk">
+            <img src="dkfavicon.png" alt="Dansk">
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">AGB</p>
+      <h1>Allgemeine Geschäftbedingungen</h1>
+      <p class="hero-description">
+        Hier findest du alle Richtlinien und Geschäftsbedingungen.
+      </p>
+      <div class="hero-ornament" aria-hidden="true">✦</div>
+    </div>
+  </section>
+
+  <main>
+ 
+        <section class="legal-section">
+      
+        <h2>1. Geltungsbereich</h2>
+<p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge über den Verkauf von physischen Waren, digitalen Inhalten (PDF-Downloads) sowie Dienstleistungen, die über die Webseite „Lilian’s Witchy World“ abgeschlossen werden, einschließlich <strong>energetischer Leistungen wie Klangheilung als Fernbehandlung über Zoom</strong>.</p>
+
+<h2>2. Anbieterin</h2>
+<p>Anbieterin im Sinne des § 5 TMG ist die im Impressum dieser Website genannte Person.</p>
+<p>Die Anbieterin tritt als Kleinunternehmerin gemäß §19 UStG auf. Es wird keine Umsatzsteuer ausgewiesen.</p>
+
+<h2>3. Vertragsschluss</h2>
+<p>Die Darstellung der Produkte und Dienstleistungen stellt kein rechtlich bindendes Angebot dar. Mit Abschluss des Bestellvorgangs oder der Terminbuchung gibt die Kundin bzw. der Kunde ein verbindliches Kaufangebot ab. Der Vertrag kommt mit Bestellbestätigung oder Zahlungseingang zustande.</p>
+<p><strong>Für Klangheilung über Zoom:</strong> Mit der Buchung einer Klangheilung über die Webseite oder Zahlungsplattform (z. B. Stripe) wird ein verbindlicher Vertrag über die vereinbarte Leistung geschlossen. Der Termin ist nach Zahlungseingang verbindlich reserviert.</p>
+
+<h2>4. Preise und Zahlungsbedingungen</h2>
+<p>Alle Preise sind Endpreise im Sinne der Kleinunternehmerregelung (§19 UStG). Die Zahlung erfolgt über die im Shop angebotenen Zahlungsmethoden. (Die Zahlungen werden über Stripe.com abgewickelt. Hierbei stehen die von Stripe bereitgestellten Zahlungsmethoden zur Verfügung. Die Zahlung ist sofort fällig und verbindlich.)</p>
+<p><strong>Für Klangheilung über Zoom:</strong> Die Zahlung erfolgt vorab über Stripe. Nach Zahlungseingang ist der Termin verbindlich reserviert.</p>
+
+<h2>5. Lieferung und Versand</h2>
+<p>Die Lieferung physischer Produkte erfolgt an die vom Kunden angegebene Lieferadresse. Die Lieferzeit beträgt in der Regel 1–2 Wochen.</p>
+<p>Sollte es aufgrund von Umständen wie Verzögerungen beim Versanddienstleister, Feiertagen oder unvorhergesehenen Ereignissen zu längeren Lieferzeiten kommen, informieren wir die Kundin bzw. den Kunden umgehend.</p>
+<p>Die Versandkosten sind bereits im Produktpreis enthalten. Das Versandrisiko geht mit Übergabe der Ware an das Versandunternehmen auf die Kundin bzw. den Kunden über.</p>
+<p>Digitale Inhalte (z. B. PDF-Downloads) werden nach Zahlungseingang unmittelbar zum Download bereitgestellt.</p>
+
+<h2>6. Digitale Inhalte (PDF-Downloads)</h2>
+<p>Digitale Inhalte werden nach Zahlungseingang per Download bereitgestellt. Nach erfolgtem Download besteht kein Anspruch auf Rückerstattung.</p>
+<p>Hinweis: Es wird keine Haftung für technische Probleme übernommen.</p>
+
+<h2>7. Widerrufsrecht / Rückgabebedingungen</h2>
+<p>Für physische Produkte gilt das gesetzliche Widerrufsrecht von 14 Tagen. Die Frist beginnt mit Erhalt der Ware. Um das Widerrufsrecht auszuüben, muss die Kundin bzw. der Kunde den Widerruf eindeutig erklären (z. B. per E-Mail oder Brief) und die Ware zurücksenden.</p>
+<p>Die Kosten der Rücksendung trägt die Kundin bzw. der Kunde, es sei denn, die gelieferte Ware entspricht nicht der Bestellung oder ist mangelhaft.</p>
+<p>Die Ware muss in unbenutztem Zustand und möglichst originalverpackt zurückgesendet werden. Bei personalisierten oder speziell angefertigten Produkten besteht kein Widerrufsrecht.</p>
+<p>Digitale Inhalte (z. B. PDF-Downloads) sind vom Widerruf ausgeschlossen, sobald der Download begonnen hat und die Kundin bzw. der Kunde ausdrücklich zugestimmt hat.</p>
+<p><strong>Für Klangheilung über Zoom:</strong> Bei Dienstleistungen, die zu einem vereinbarten Termin erbracht werden, besteht kein Widerrufsrecht, sobald der Termin festgelegt wurde. Bei kurzfristiger Absage kann nach Absprache ein Ersatztermin angeboten werden.</p>
+
+<h2>8. Eigentumsvorbehalt</h2>
+<p>Bis zur vollständigen Bezahlung bleibt die Ware Eigentum der Anbieterin.</p>
+
+<h2>9. Gewährleistung</h2>
+<p>Es gelten die gesetzlichen Gewährleistungsrechte.</p>
+
+<h2>10. Haftung</h2>
+<p>Die Anbieterin haftet nur bei Vorsatz und grober Fahrlässigkeit.</p>
+<p><strong>Für Klangheilung über Zoom:</strong> Die Klangheilung ist eine energetische Begleitung zur Unterstützung des Wohlbefindens. Sie ersetzt keine ärztliche, therapeutische oder heilpraktische Behandlung. Es werden keine Heil-, Erfolgs- oder Wunderversprechen gegeben.</p>
+
+<h2>11. Inhalte & Nutzung auf eigene Verantwortung</h2>
+<p>Alle Inhalte dienen der allgemeinen Information und stellen keine medizinische oder therapeutische Beratung dar.</p>
+<p><strong>Für Klangheilung über Zoom:</strong> Die Teilnahme erfolgt auf eigene Verantwortung. Die Kundin bzw. der Kunde sollte gesundheitlich in der Lage sein, an der Sitzung teilzunehmen.</p>
+
+<h2>12. Urheberrecht</h2>
+<p>Alle Inhalte dieser Website sind urheberrechtlich geschützt. Die Nutzung ist nur mit schriftlicher Genehmigung gestattet.</p>
+
+<h2>13. Newsletter & Datenschutz</h2>
+<p>Mit der Anmeldung zum Newsletter erklärst du dich mit der Verarbeitung deiner Daten einverstanden. Es gilt die separate Datenschutzerklärung.</p>
+<p>Der Newsletter wird nur versendet, wenn du deine ausdrückliche Zustimmung durch Ankreuzen eines entsprechenden Feldes beim Checkout oder über das Newsletter-Anmeldeformular gegeben hast (aktives Opt-in).</p>
+<p><strong>Für Klangheilung über Zoom:</strong> Optional können Fotos der betroffenen Körperstellen per E-Mail zugesandt werden. Diese Daten werden ausschließlich für die Vorbereitung der Sitzung genutzt und nicht an Dritte weitergegeben. Es gilt die Datenschutzerklärung.</p>
+
+<h2>14. Teilnahme an Kursen und Veranstaltungen</h2>
+<h3>14.1 Anmeldung & Vertrag</h3>
+<p>Die Anmeldung ist verbindlich und zahlungspflichtig.</p>
+<h3>14.2 Preise & Zahlung</h3>
+<p>Die Zahlung erfolgt im Voraus.</p>
+<h2>14.3 Vertragslaufzeiten und automatische Verlängerung</h2>
+<p>Monatsangebote für Kurse, Workshops oder andere wiederkehrende Leistungen haben eine Mindestlaufzeit von einem Monat. Sofern keine fristgerechte Kündigung spätestens zwei Wochen vor Ende des jeweiligen Monats erfolgt, verlängert sich der Vertrag automatisch um einen weiteren Monat. Die Kündigung muss schriftlich (z. B. per E-Mail) erfolgen.</p>
+<h3>14.4 Schnupperstunden</h3>
+<p>Einmalig buchbar, 7 €.</p>
+<h3>14.5 Kursausfall</h3>
+<p>Bei Ausfall wird ein Ersatztermin angeboten.</p>
+<h3>14.6 Haftung</h3>
+<p>Teilnahme erfolgt auf eigene Verantwortung.</p>
+<h3>14.7 Gesundheit</h3>
+<p>Die Teilnahme setzt gesundheitliche Eignung voraus.</p>
+<h3>14.8 Nichtteilnahme</h3>
+<p>Keine Rückerstattung bei Nichtteilnahme.</p>
+<h3>14.9 Längere Krankheit</h3>
+<p>Individuelle Kulanzregelung möglich.</p>
+<h3>14.10 Schriftliche Absage</h3>
+<p>Absage 24 Stunden vorher erforderlich.</p>
+<h3>14.11 Kleidung & Materialien</h3>
+<p>Teilnehmende sorgen selbst für geeignete Ausstattung.</p>
+<h3>14.12 Ansteckende Krankheiten</h3>
+<p>Bei bekannten Infektionen kann der Kurs abgesagt werden.</p>
+
+<h2>15. Änderungen der AGB</h2>
+<p>Die Anbieterin behält sich Änderungen vor. Es gilt die jeweils aktuelle Version.</p>
+
+<h2>16. Schlussbestimmungen</h2>
+<p>Es gilt deutsches Recht. Sollte eine Klausel unwirksam sein, bleibt der Rest gültig.</p>
+
+<h2>17. Kleinunternehmerhinweis auf Rechnungen</h2>
+<p>Als Kleinunternehmerin im Sinne des § 19 UStG weise ich auf meinen Rechnungen keine Umsatzsteuer aus.</p>
+<p>Die angegebenen Preise verstehen sich daher <strong>als Endpreise ohne Umsatzsteuer</strong>. Es wird keine Umsatzsteuer erhoben.</p>
+
+<h2>18. Produkthaftung für eigene Produkte</h2>
+<p>Für alle von mir angebotenen physischen Produkte, wie z. B. Salben, Seifen, Cremes, Schmuck oder ähnliche Artikel, sowie digitale Produkte, wie z. B. Rezepte für die genannten Artikel, auch auf meiner Webseite zu finden, auch als PDF-Datei zu kaufen,</p>
+<p>übernehme ich keine Haftung für allergische Reaktionen, Unverträglichkeiten oder gesundheitliche Beeinträchtigungen.</p>
+<p>Die Nutzung erfolgt auf eigene Verantwortung der Kundin bzw. des Kunden. Bitte prüfe vor der Anwendung, ob individuelle Unverträglichkeiten bestehen. Bei Unsicherheiten wird empfohlen, Rücksprache mit einer medizinischen Fachperson zu halten.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">Lilians Kräuter Magie</div>
+    <p class="footer-note">
+      Ein Raum für Naturverbundenheit, Kreativität, Musik und neue Impulse.
+    </p>
+
+    <nav class="footer-links" aria-label="Fußnavigation">
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html" aria-current="page">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </nav>
+
+    <p class="copyright">
+      © <span id="current-year"></span> Lilians Kräuter Magie · Alle Rechte vorbehalten
+    </p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNavigation = document.querySelector(".main-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNavigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Menü schließen" : "Menü öffnen"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    mainNavigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNavigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Menü öffnen");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
