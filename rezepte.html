@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173b22">
+
+    <title>Kräuter & Natur – Lilians Kräutermagie</title>
+
+    <meta name="description" content="Entdecke Lilians Kräuterwelt: Kräuterpädagogik, Pflanzenwissen, natürliche Rezeptideen, TCM, Pilze und Inspiration für mehr Naturverbundenheit.">
+    <meta name="keywords" content="Lilians Kräutermagie, Kräuterpädagogik, Kräuter, Pflanzenwissen, Kräuterrezepte, TCM, Pilze, natürliche Pflege, Kräutertee, Räucherungen">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           FARBEN UND GRUNDLAGEN
+           BLATTGRÜN ALS ZENTRALE FARBWELT
+        ======================================== */
+
+        :root {
+            --midnight: #101f2a;
+            --midnight-light: #1a3540;
+
+            --forest: #173b22;
+            --forest-light: #286b35;
+            --leaf: #63c653;
+            --leaf-bright: #83e16b;
+            --leaf-light: #b8f59c;
+            --leaf-pale: #e1f8d4;
+            --sage: #a9cba0;
+
+            --gold: #e7ce79;
+            --gold-light: #f8e9ad;
+
+            --cream: #f4f8ed;
+            --muted: #c7ddc1;
+
+            --shadow: 0 18px 45px rgba(4, 18, 8, 0.32);
+            --radius: 24px;
+            --content-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+            background: var(--forest);
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--cream);
+
+            background:
+                radial-gradient(
+                    ellipse at 8% 10%,
+                    rgba(99, 198, 83, 0.23),
+                    transparent 34rem
+                ),
+                radial-gradient(
+                    ellipse at 90% 38%,
+                    rgba(40, 107, 53, 0.35),
+                    transparent 38rem
+                ),
+                radial-gradient(
+                    ellipse at 45% 90%,
+                    rgba(131, 225, 107, 0.09),
+                    transparent 35rem
+                ),
+                var(--midnight);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        ::selection {
+            color: var(--forest);
+            background: var(--leaf-light);
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 1rem;
+            z-index: 1000;
+
+            padding: 0.75rem 1rem;
+            color: var(--forest);
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .skip-link:focus {
+            left: 1rem;
+        }
+
+
+        /* ========================================
+           STERNENHIMMEL
+        ======================================== */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.78) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(131,225,107,.72) 1px, transparent 1.7px);
+
+            background-size:
+                97px 91px,
+                151px 137px,
+                211px 183px,
+                263px 227px;
+
+            background-position:
+                12px 17px,
+                48px 62px,
+                91px 24px,
+                19px 105px;
+
+            opacity: 0.32;
+            animation: stars-twinkle 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes stars-twinkle {
+            from { opacity: 0.22; }
+            to { opacity: 0.46; }
+        }
+
+
+        /* ========================================
+           KOPFZEILE UND NAVIGATION
+        ======================================== */
+
+        .site-header {
+            position: relative;
+            z-index: 20;
+
+            background: rgba(14, 39, 24, 0.94);
+            border-bottom: 1px solid rgba(131, 225, 107, 0.32);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .nav-wrap {
+            width: min(var(--content-width), calc(100% - 2rem));
+            min-height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+
+            min-width: max-content;
+            color: var(--cream);
+            text-decoration: none;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            color: var(--leaf-bright);
+            font-size: 1.8rem;
+            text-shadow: 0 0 16px rgba(131, 225, 107, 0.3);
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .main-nav a {
+            padding: 0.65rem 0.8rem;
+            border-radius: 999px;
+
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 800;
+
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(99, 198, 83, 0.17);
+            color: var(--leaf-light);
+        }
+
+        .main-nav a[aria-current="page"] {
+            background: rgba(99, 198, 83, 0.2);
+            color: var(--leaf-light);
+        }
+
+        .main-nav .nav-highlight {
+            background: linear-gradient(120deg, var(--leaf-light), var(--leaf));
+            color: var(--forest);
+        }
+
+        .main-nav .nav-highlight:hover {
+            color: var(--forest);
+            filter: brightness(1.07);
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+
+            padding: 0.55rem 0.8rem;
+            color: var(--cream);
+            background: transparent;
+            border: 1px solid rgba(184, 245, 156, 0.35);
+            border-radius: 12px;
+
+            cursor: pointer;
+        }
+
+        .menu-toggle:hover {
+            color: var(--leaf-light);
+            border-color: var(--leaf-bright);
+        }
+
+
+        /* ========================================
+           SPRACHWAHL
+        ======================================== */
+
+        .language-switcher {
+            position: absolute;
+            z-index: 5;
+            top: 1rem;
+            right: max(1rem, calc((100vw - var(--content-width)) / 2));
+
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-switcher a {
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+            background: rgba(14, 39, 24, 0.88);
+            border: 1px solid rgba(184, 245, 156, 0.28);
+
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            transform: translateY(-2px);
+            border-color: var(--leaf-bright);
+        }
+
+        .language-switcher img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+
+        /* ========================================
+           HERO / TITELBEREICH
+        ======================================== */
+
+        .hero {
+            min-height: 410px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 5rem 1.25rem 4.5rem;
+
+            background:
+                radial-gradient(ellipse at 12% 38%, rgba(99, 198, 83, 0.46), transparent 39%),
+                radial-gradient(ellipse at 43% 15%, rgba(184, 245, 156, 0.2), transparent 35%),
+                radial-gradient(ellipse at 75% 55%, rgba(40, 107, 53, 0.52), transparent 38%),
+                radial-gradient(ellipse at 90% 15%, rgba(231, 206, 121, 0.1), transparent 32%),
+                linear-gradient(110deg, rgba(23, 59, 34, 0.72), rgba(16, 31, 42, 0.65), rgba(30, 83, 39, 0.65));
+
+            border-bottom: 1px solid rgba(131, 225, 107, 0.48);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: -18% -10%;
+            pointer-events: none;
+
+            background:
+                radial-gradient(ellipse at 18% 42%, rgba(99, 198, 83, 0.42), transparent 27%),
+                radial-gradient(ellipse at 40% 18%, rgba(184, 245, 156, 0.25), transparent 28%),
+                radial-gradient(ellipse at 70% 35%, rgba(40, 107, 53, 0.4), transparent 30%),
+                radial-gradient(ellipse at 85% 62%, rgba(231, 206, 121, 0.1), transparent 25%);
+
+            filter: blur(28px);
+            opacity: 0.95;
+            animation: aurora-drift 16s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.75) 1px, transparent 1.8px);
+
+            background-size: 97px 91px, 151px 137px, 211px 183px;
+            background-position: 12px 17px, 48px 62px, 91px 24px;
+            opacity: 0.42;
+        }
+
+        @keyframes aurora-drift {
+            from {
+                transform: translate3d(-1.5%, -1%, 0) rotate(-8deg) scale(1.05);
+            }
+            to {
+                transform: translate3d(2%, 1.5%, 0) rotate(-3deg) scale(1.12);
+            }
+        }
+
+        .hero-inner {
+            width: min(var(--content-width), 100%);
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+
+            color: var(--leaf-light);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 1rem 0;
+
+            color: var(--cream);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(3.3rem, 8vw, 6rem);
+            line-height: 0.96;
+            letter-spacing: -0.035em;
+            text-shadow: 0 4px 28px rgba(5, 23, 8, 0.25);
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-top: 0.25em;
+
+            color: var(--leaf-light);
+            font-style: italic;
+            text-shadow: 0 0 30px rgba(131, 225, 107, 0.32);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 1.25rem auto 0;
+
+            color: #e6f5df;
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+        }
+
+        .hero-divider {
+            width: min(220px, 55%);
+            height: 2px;
+            margin: 2rem auto 0;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--leaf),
+                var(--gold),
+                var(--leaf-light),
+                transparent
+            );
+        }
+
+
+        /* ========================================
+           ALLGEMEINE ABSCHNITTE
+        ======================================== */
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 4.5rem 0;
+        }
+
+        .section-heading {
+            max-width: 780px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0.5rem 0 0.8rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            line-height: 1.05;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+
+        /* ========================================
+           EINLEITUNGSKARTE
+        ======================================== */
+
+        .intro {
+            position: relative;
+            overflow: hidden;
+
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 3.2rem);
+
+            background:
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.22), transparent 48%),
+                radial-gradient(ellipse at 0% 100%, rgba(40, 107, 53, 0.2), transparent 48%),
+                linear-gradient(135deg, rgba(28, 70, 39, 0.97), rgba(16, 31, 42, 0.97));
+
+            border: 1px solid rgba(131, 225, 107, 0.5);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro::before {
+            content: "✧";
+            position: absolute;
+            top: 0.6rem;
+            right: 1.4rem;
+
+            color: rgba(184, 245, 156, 0.6);
+            font-size: 3.2rem;
+            pointer-events: none;
+        }
+
+        .intro h2 {
+            margin: 0 0 1.6rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .intro p {
+            margin: 0 0 1rem;
+            color: #e7f4e2;
+            line-height: 1.85;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro strong {
+            color: var(--leaf-light);
+        }
+
+
+        /* ========================================
+           MEIN PFLANZENWISSEN
+        ======================================== */
+
+        .knowledge-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 1.5rem auto 0;
+        }
+
+        .knowledge-item {
+            padding: 1.4rem 1.25rem;
+            text-align: center;
+
+            background: linear-gradient(
+                145deg,
+                rgba(37, 91, 45, 0.78),
+                rgba(16, 31, 42, 0.94)
+            );
+
+            border: 1px solid rgba(131, 225, 107, 0.3);
+            border-radius: 18px;
+        }
+
+        .knowledge-item .knowledge-symbol {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .knowledge-item h3 {
+            margin: 0 0 0.5rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.55rem;
+            line-height: 1.15;
+        }
+
+        .knowledge-item p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+
+        /* ========================================
+           KATEGORIE / SPRUNG-MENÜ
+        ======================================== */
+
+        .category-section {
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .category-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 190px;
+            padding: 1.5rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            text-decoration: none;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(155deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
+
+            border: 1px solid rgba(131, 225, 107, 0.38);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .category-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--leaf),
+                var(--leaf-light),
+                transparent
+            );
+
+            opacity: 0.85;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--leaf-bright);
+            box-shadow: 0 15px 35px rgba(4, 18, 8, 0.32);
+        }
+
+        .category-symbol {
+            margin-bottom: 0.55rem;
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+
+        .category-card h3 {
+            margin: 0 0 0.5rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .category-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .category-card .category-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           REZEPT-GRUNDLAGE
+        ======================================== */
+
+        .story-section {
+            padding-top: 2rem;
+        }
+
+        .story-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 3rem);
+
+            background:
+                radial-gradient(ellipse at 0% 100%, rgba(40, 107, 53, 0.28), transparent 48%),
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.13), transparent 40%),
+                linear-gradient(135deg, rgba(27, 62, 37, 0.94), rgba(16, 31, 42, 0.98));
+
+            border: 1px solid rgba(131, 225, 107, 0.36);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .story-card h2 {
+            margin: 0 0 1.2rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .story-card h3 {
+            margin: 2rem 0 0.8rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.7rem, 3vw, 2.2rem);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .story-card p {
+            margin: 0 0 1rem;
+            color: #e7f4e2;
+            line-height: 1.85;
+        }
+
+        .story-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-card strong {
+            color: var(--leaf-light);
+        }
+
+        .story-card a {
+            color: var(--leaf-light);
+            text-underline-offset: 4px;
+        }
+
+        .story-card a:hover {
+            color: var(--gold-light);
+        }
+
+
+        /* ========================================
+           HINWEIS ZU ALLERGIEN UND ANWENDUNG
+        ======================================== */
+
+        .notice {
+            max-width: 1000px;
+            margin: 2rem auto 0;
+            padding: clamp(1.3rem, 3vw, 2rem);
+
+            background:
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.12), transparent 55%),
+                linear-gradient(135deg, rgba(47, 68, 34, 0.72), rgba(16, 31, 42, 0.97));
+
+            border: 1px solid rgba(231, 206, 121, 0.52);
+            border-left: 4px solid var(--gold);
+            border-radius: 20px;
+        }
+
+        .notice h3 {
+            margin: 0 0 0.8rem;
+
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .notice p {
+            margin: 0 0 0.9rem;
+            color: #e8efdf;
+            line-height: 1.8;
+        }
+
+        .notice p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* ========================================
+           VIER THEMENBLÖCKE
+        ======================================== */
+
+        .discover-section {
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .discover-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            min-height: 190px;
+            padding: 1.5rem 1.2rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            text-decoration: none;
+
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(150deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
+
+            border: 1px solid rgba(131, 225, 107, 0.38);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .discover-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--leaf),
+                var(--leaf-light),
+                transparent
+            );
+
+            opacity: 0.85;
+            transition: opacity 0.25s ease;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--leaf-bright);
+            box-shadow:
+                0 16px 35px rgba(4, 18, 8, 0.32),
+                0 0 22px rgba(99, 198, 83, 0.12);
+        }
+
+        .discover-card:hover::before {
+            opacity: 1;
+        }
+
+        .discover-symbol {
+            display: block;
+            margin-bottom: 0.65rem;
+
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .discover-card h3 {
+            margin: 0 0 0.55rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .discover-card p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .discover-card .discover-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           URHEBERRECHT
+        ======================================== */
+
+        .copyright {
+            position: relative;
+            z-index: 1;
+
+            width: min(900px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 0 0 1rem;
+
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            text-align: center;
+        }
+
+        .copyright p {
+            margin: 0 0 0.7rem;
+        }
+
+        .copyright .copyright-brand {
+            margin-top: 1.5rem;
+            padding-bottom: 2.5rem;
+
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+
+        /* ========================================
+           FUSSZEILE
+        ======================================== */
+
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+
+            background: #0d2417;
+            border-top: 1px solid rgba(131, 225, 107, 0.3);
+        }
+
+        .footer-inner {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 2rem 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--leaf-light);
+        }
+
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 980px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                padding: 0.4rem 0 1rem;
+            }
+
+            .main-nav.open {
+                display: flex;
+            }
+
+            .main-nav a {
+                border-radius: 12px;
+            }
+
+            .main-nav .nav-highlight {
+                margin-top: 0.35rem;
+                text-align: center;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .discover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .knowledge-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 350px;
+            }
+        }
+
+
+        /* ========================================
+           SMARTPHONES
+        ======================================== */
+
+        @media (max-width: 650px) {
+            body {
+                font-size: 16px;
+            }
+
+            .brand {
+                gap: 0.5rem;
+                font-size: 1.35rem;
+            }
+
+            .brand-mark {
+                font-size: 1.55rem;
+            }
+
+            .language-switcher {
+                top: 0.7rem;
+                right: 0.7rem;
+            }
+
+            .hero {
+                min-height: 330px;
+                padding: 5rem 1rem 3.5rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 14vw, 4.6rem);
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .intro {
+                padding: 1.5rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .intro h2 {
+                font-size: 2.1rem;
+            }
+
+            .intro p {
+                line-height: 1.75;
+            }
+
+            .knowledge-strip {
+                gap: 0.8rem;
+            }
+
+            .knowledge-item {
+                padding: 1.2rem 1rem;
+            }
+
+            .category-section {
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 440px;
+                margin: 0 auto;
+            }
+
+            .category-card {
+                min-height: 160px;
+                padding: 1.3rem;
+            }
+
+            .story-section {
+                padding-top: 1.5rem;
+            }
+
+            .story-card {
+                padding: 1.5rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .story-card p,
+            .notice p {
+                line-height: 1.75;
+            }
+
+            .notice {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+
+            .discover-section {
+                padding-top: 1rem;
+                padding-bottom: 3rem;
+            }
+
+            .discover-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 440px;
+                margin: 0 auto;
+            }
+
+            .discover-card {
+                min-height: 160px;
+                padding: 1.4rem 1rem;
+            }
+
+            .copyright {
+                font-size: 0.88rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand {
+                font-size: 1.15rem;
+            }
+
+            .menu-toggle {
+                padding: 0.5rem 0.65rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .intro,
+            .story-card {
+                padding: 1.25rem 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <div class="stars" aria-hidden="true"></div>
+
+
+    <!-- ========================================
+         KOPFZEILE UND HAUPTNAVIGATION
+    ======================================== -->
+
+    <header class="site-header">
+        <div class="nav-wrap">
+
+            <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>Lilians Kräutermagie</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span class="menu-icon" aria-hidden="true">☰</span>
+                <span class="menu-label">Menü</span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="kräuter.html" aria-current="page">Kräuterwelt</a>
+                <a href="musik.html">Musik</a>
+                <a href="buecher.html">Bücher</a>
+                <a href="about.html">Über Mich</a>
+                <a class="nav-highlight" href="index.html#neues-buch">Neues Buch ✦</a>
+                <a href="angebote.html">Angebote für Dich</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================
+         TITELBEREICH
+    ======================================== -->
+
+    <section class="hero" aria-labelledby="hero-title">
+
+        <div class="language-switcher" aria-label="Sprache wählen">
+            <a href="index.html" aria-label="Deutsch" title="Deutsch">
+                <img src="defavicon.png" alt="">
+            </a>
+
+            <a href="/en/" aria-label="English" title="English">
+                <img src="enfavicon.png" alt="">
+            </a>
+
+            <a href="/dk/" aria-label="Dansk" title="Dansk">
+                <img src="dkfavicon.png" alt="">
+            </a>
+        </div>
+
+        <div class="hero-inner">
+
+            <span class="eyebrow">
+                Pflanzenwissen · Kräuterpädagogik · Naturverbundenheit
+            </span>
+
+            <h1 id="hero-title">
+                Meine
+                <span>liebsten Rezepte</span>
+            </h1>
+
+            <p>
+                Die Natur steckt voller kleiner Schätze. Entdecke mit mir die
+                faszinierende Welt der Kräuter, Pflanzen und Pilze – mit
+                Pflanzenwissen, natürlichen Rezeptideen und einer großen
+                Portion Neugier auf die Vielfalt unserer Natur.
+            </p>
+
+            <div class="hero-divider" aria-hidden="true"></div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         HAUPTINHALT
+    ======================================== -->
+
+    <main id="inhalt">
+
+       
+
+        <!-- ========================================
+             REZEPTKATEGORIEN
+        ======================================== -->
+
+        <section class="section category-section" aria-labelledby="categories-title">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Aus der Natur · Für deinen Alltag</span>
+
+                <h2 id="categories-title">Willkommen bei meinen Rezepten!</h2>
+
+                <p>
+                    Hier findest du Inspiration für natürliche Rezeptideen
+                    rund um Pflege, Pflanzen und Wohlbefinden.
+                    Wähle eine Kategorie, um direkt zum passenden Abschnitt
+                    auf dieser Seite zu gelangen.
+                </p>
+
+            </div>
+
+            <div class="category-grid">
+
+                <a class="category-card" href="#kraeuterrezepte">
+                    <span class="category-symbol" aria-hidden="true">✿</span>
+                    <h3>Kräuter &amp; Pflanzen</h3>
+                    <p>
+                        Entdecke Pflanzenwissen und Ideen rund um Kräuter
+                        und ihre vielseitige Verwendung.
+                    </p>
+                    <span class="category-link">Mehr erfahren →</span>
+                </a>
+
+                <a class="category-card" href="#pflege">
+                    <span class="category-symbol" aria-hidden="true">❋</span>
+                    <h3>Natürliche Pflege</h3>
+                    <p>
+                        Anregungen für selbst gemachte Pflegeideen
+                        und achtsame Alltagsrituale.
+                    </p>
+                    <span class="category-link">Zur Pflege →</span>
+                </a>
+
+                <a class="category-card" href="#achtsamkeit">
+                    <span class="category-symbol" aria-hidden="true">✧</span>
+                    <h3>Wohlbefinden</h3>
+                    <p>
+                        Gedanken über Naturverbundenheit, bewusste Pausen
+                        und einen achtsamen Umgang mit dir selbst.
+                    </p>
+                    <span class="category-link">Entdecken →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             MEINE REZEPTGESCHICHTE
+        ======================================== -->
+
+        <section class="section story-section" aria-labelledby="story-title">
+
+            <div class="story-card">
+
+                <h2 id="story-title">Wie meine Rezeptideen entstanden sind</h2>
+
+                <p>
+                    Diese Rezepte sind aus meinem Wissen über Kräuter und Gewürze
+                    sowie meiner Freude am Experimentieren entstanden. Durch
+                    mein Studium der Kräuterpädagogik und meine fortlaufende
+                    Beschäftigung mit Pflanzen ist meine Neugier immer weiter
+                    gewachsen.
+                </p>
+
+                <p>
+                    Ich möchte mein Wissen nicht als etwas Abgeschlossenes
+                    betrachten. Pflanzenkunde ist ein großes und vielseitiges
+                    Feld. Neue Erkenntnisse, andere Blickwinkel und der Austausch
+                    mit Menschen helfen mir, dazuzulernen und mein Wissen
+                    verantwortungsvoll zu erweitern.
+                </p>
+
+                <p>
+                    Mit der Zeit habe ich mich immer intensiver damit beschäftigt,
+                    welche Inhaltsstoffe in alltäglichen Pflegeprodukten stecken
+                    und wie man die Zusammensetzung von Produkten bewusster
+                    hinterfragen kann.
+                </p>
+
+                <p>
+                    Begriffe wie „grün“ oder „natürlich“ auf einer Verpackung
+                    sagen allein noch nicht alles über die Inhaltsstoffe,
+                    ihre Konzentration oder ihre Verträglichkeit aus.
+                    Deshalb interessiert mich besonders, welche Zutaten verwendet
+                    werden und wie sich einfache Rezeptideen selbst umsetzen lassen.
+                </p>
+
+                <p>
+                    Auch persönliche Erfahrungen haben mich auf diesen Weg gebracht.
+                    Meine Haut war zeitweise sehr empfindlich, und ich reagierte
+                    auf verschiedene Produkte mit Hautreizungen.
+                </p>
+
+                <p>
+                    Deshalb begann ich, mich intensiv damit auseinanderzusetzen,
+                    wie man Pflegeprodukte und pflanzenbasierte Rezeptideen
+                    selbst herstellen kann.
+                </p>
+
+                <p>
+                    Wichtig war mir dabei, Zutaten zu finden, die möglichst leicht
+                    erhältlich und bezahlbar sind und deren Verwendung verständlich
+                    erklärt werden kann.
+                </p>
+
+                <p>
+                    Seit zwei Jahren beschäftige ich mich außerdem mit der
+                    Traditionellen Chinesischen Medizin (TCM) und mit Pilzen.
+                    Mich fasziniert, wie unterschiedlich Menschen Pflanzen,
+                    Naturstoffe und traditionelle Wissenssysteme betrachten.
+                    Auch hier gilt für mich: neugierig bleiben, kritisch
+                    hinterfragen und immer weiterlernen.
+                </p>
+
+                <p>
+                    Hier möchte ich meine Erfahrungen, Ideen und meine Begeisterung
+                    für die Pflanzenwelt mit dir teilen – damit du selbst entdecken
+                    kannst, was zu dir und deinem Alltag passt.
+                </p>
+
+                <h3 id="kraeuterrezepte">Kräuter und Pflanzen entdecken</h3>
+
+                <p>
+                    Kräuter und Gewürze bringen Düfte, Farben und Geschmack in
+                    unser Leben. Manche Pflanzen haben eine lange Tradition
+                    in der Volksheilkunde, andere begegnen uns vor allem in der
+                    Küche oder in der Naturkosmetik.
+                </p>
+
+                <p>
+                    Wenn du dich mit einer Pflanze beschäftigst, lohnt es sich,
+                    ihren Namen, ihre Erkennungsmerkmale, die verwendeten
+                    Pflanzenteile und die richtige Zubereitung genau kennenzulernen.
+                    Nicht jede Pflanze eignet sich für jede Anwendung.
+                    Eine sichere Bestimmung ist besonders wichtig.
+                </p>
+
+                <h3 id="pflege">Natürliche Pflege selbst ausprobieren</h3>
+
+                <p>
+                    Selbst gemachte Pflegeprodukte können eine schöne Möglichkeit
+                    sein, sich bewusster mit den Inhaltsstoffen auseinanderzusetzen.
+                    Dabei sind Hygiene, die richtige Lagerung und die Auswahl
+                    geeigneter Zutaten besonders wichtig.
+                </p>
+
+                <p>
+                    Auch natürliche Inhaltsstoffe können Hautreizungen oder
+                    allergische Reaktionen auslösen. Weniger Zutaten bedeuten
+                    nicht automatisch, dass ein Produkt für jede Haut geeignet ist.
+                </p>
+
+                <h3 id="achtsamkeit">Kleine Rituale für mehr Wohlbefinden</h3>
+
+                <p>
+                    Schon ein Spaziergang, der Duft eines Kräutergartens oder eine
+                    bewusste Pause mit einer Tasse Tee können schöne Momente sein,
+                    in denen wir innehalten und die Natur mit allen Sinnen erleben.
+                </p>
+
+                <p>
+                    Für mich gehört dazu, neugierig zu bleiben, Pflanzen mit
+                    Respekt zu begegnen und auf die eigenen Bedürfnisse zu achten.
+                    Genau diese Freude möchte ich mit meinen Rezeptideen teilen.
+                </p>
+
+            </div>
+
+
+            <!-- WICHTIGER HINWEIS -->
+
+            <aside class="notice" aria-labelledby="notice-title">
+
+                <h3 id="notice-title">Bevor du meine Rezepte ausprobierst</h3>
+
+                <p>
+                    Jeder Mensch ist einzigartig – ebenso wie jede Haut und jedes Haar.
+                    Was eine Person gut verträgt, kann bei einer anderen Reizungen
+                    oder eine allergische Reaktion auslösen.
+                </p>
+
+                <p>
+                    Manche Menschen reagieren beispielsweise auf Korbblütler,
+                    bestimmte Pflanzenbestandteile oder ätherische Öle.
+                    Prüfe deshalb vor der Anwendung, ob dir Unverträglichkeiten
+                    gegenüber den Zutaten bekannt sind. Teste neue äußerlich
+                    angewendete Produkte zunächst vorsichtig an einer kleinen
+                    Hautstelle. Ein solcher Test schließt eine spätere Reaktion
+                    allerdings nicht sicher aus.
+                </p>
+
+                <p>
+                    Stelle zunächst nur kleine Mengen her und achte auf die Hygiene,
+                    die Haltbarkeit und die richtige Aufbewahrung. Bei Reizungen
+                    solltest du die Anwendung abbrechen.
+                </p>
+
+                <p>
+                    <strong>Bitte beachte:</strong> Diese Inhalte dienen der
+                    allgemeinen Information und ersetzen keine medizinische
+                    Beratung, Diagnose oder Behandlung. Bei anhaltenden
+                    Hautbeschwerden, bekannten Allergien, Schwangerschaft,
+                    der Anwendung bei Kindern oder bei Unsicherheit zu Heilpflanzen
+                    hole dir fachlichen Rat. Pflanzliche Mittel sind nicht
+                    automatisch risikofrei und können beispielsweise mit
+                    Medikamenten wechselwirken.
+                </p>
+
+            </aside>
+
+        </section>
+
+
+        <!-- ========================================
+             VIER THEMENBLÖCKE
+        ======================================== -->
+
+        <section class="section discover-section" aria-labelledby="discover-title">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">Noch mehr entdecken</span>
+
+                <h2 id="discover-title">Tritt ein in meine Welt</h2>
+
+                <p>
+                    Kräuter, Musik, Bücher und neue Geschichten –
+                    entdecke die verschiedenen Seiten von Lilians Kräutermagie.
+                </p>
+
+            </div>
+
+            <div class="discover-grid">
+
+                <a class="discover-card" href="seifen.html" aria-current="page">
+                    <span class="discover-symbol" aria-hidden="true">✿</span>
+                    <h3>Körperseifen</h3>
+                    <p>
+                        Hier findest du ein paar meiner Lieblingsrezepte für Körperseifen und Duschjelly.
+                    </p>
+                    <span class="discover-link">Körperseifen selber machen →</span>
+                </a>
+
+                <a class="discover-card" href="haare.html">
+                    <span class="discover-symbol" aria-hidden="true">♫</span>
+                    <h3>Haarprodukte selber machen</h3>
+                    <p>
+                        Auch Haare brauchen eine natürliche Pflege.
+                      Und sind dankbar, für wenige Zutaten und Kräuter.
+                    </p>
+                    <span class="discover-link">Natürlichere Haarpflege entdecken →</span>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             URHEBERRECHT
+        ======================================== -->
+
+        <section class="copyright" aria-label="Urheberrechtshinweise">
+
+            <p>
+                Die Inhalte wurden von mir selbst erstellt und unterliegen
+                dem Urheberrecht.
+            </p>
+
+            <p>
+                Eine Vervielfältigung, Weitergabe oder Nutzung – auch auszugsweise –
+                ist ohne meine ausdrückliche schriftliche Zustimmung nicht gestattet.
+            </p>
+
+            <p class="copyright-brand">
+                © Lilian's Kräuter-Magie
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         FUSSZEILE
+    ======================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                © Lilians Kräutermagie ·
+                Mit Liebe, Neugier und einer Prise Magie gestaltet.
+            </div>
+
+            <div class="footer-links">
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="agb.html">AGB</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================
+         JAVASCRIPT: MOBILES MENÜ
+    ======================================== -->
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector("#main-nav");
+        const menuIcon = document.querySelector(".menu-icon");
+        const menuLabel = document.querySelector(".menu-label");
+
+        function closeMenu() {
+            mainNav.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuIcon.textContent = "☰";
+            menuLabel.textContent = "Menü";
+        }
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuIcon.textContent = isOpen ? "✕" : "☰";
+            menuLabel.textContent = isOpen ? "Schließen" : "Menü";
+        });
+
+        // Menü nach Auswahl eines Links schließen.
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Escape schließt das mobile Menü.
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>
