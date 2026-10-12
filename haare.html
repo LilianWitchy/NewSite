@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173b22">
+
+    <title>Natürliche Haarpflege selber machen – Lilians Kräutermagie</title>
+
+    <meta name="description" content="Entdecke Lilians Rezeptideen für Haaröl und eine Honig-Kokosjoghurt-Haarkur sowie Hinweise zu Zutaten und Haarpflege.">
+    <meta name="keywords" content="Lilians Kräutermagie, Haaröl selber machen, Haarkur, trockene Haare, lockige Haare, Brennnessel, Rosmarin, Lavendel, Kokosöl">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           FARBEN UND GRUNDLAGEN
+        ======================================== */
+
+        :root {
+            --midnight: #101f2a;
+            --midnight-light: #1a3540;
+            --forest: #173b22;
+            --forest-light: #286b35;
+            --leaf: #63c653;
+            --leaf-bright: #83e16b;
+            --leaf-light: #b8f59c;
+            --leaf-pale: #e1f8d4;
+            --sage: #a9cba0;
+            --gold: #e7ce79;
+            --gold-light: #f8e9ad;
+            --cream: #f4f8ed;
+            --muted: #c7ddc1;
+            --shadow: 0 18px 45px rgba(4, 18, 8, 0.32);
+            --radius: 24px;
+            --content-width: 1180px;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+            background: var(--forest);
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--cream);
+            background:
+                radial-gradient(ellipse at 8% 10%, rgba(99, 198, 83, 0.23), transparent 34rem),
+                radial-gradient(ellipse at 90% 38%, rgba(40, 107, 53, 0.35), transparent 38rem),
+                radial-gradient(ellipse at 45% 90%, rgba(131, 225, 107, 0.09), transparent 35rem),
+                var(--midnight);
+        }
+
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+        button { font: inherit; }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        ::selection {
+            color: var(--forest);
+            background: var(--leaf-light);
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 1rem;
+            z-index: 1000;
+            padding: 0.75rem 1rem;
+            color: var(--forest);
+            background: var(--cream);
+            border-radius: 10px;
+        }
+
+        .skip-link:focus { left: 1rem; }
+
+        /* ========================================
+           STERNENHIMMEL
+        ======================================== */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.78) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(131,225,107,.72) 1px, transparent 1.7px);
+            background-size: 97px 91px, 151px 137px, 211px 183px, 263px 227px;
+            background-position: 12px 17px, 48px 62px, 91px 24px, 19px 105px;
+            opacity: 0.32;
+            animation: stars-twinkle 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes stars-twinkle {
+            from { opacity: 0.22; }
+            to { opacity: 0.46; }
+        }
+
+        /* ========================================
+           KOPFZEILE UND NAVIGATION
+        ======================================== */
+
+        .site-header {
+            position: relative;
+            z-index: 20;
+            background: rgba(14, 39, 24, 0.94);
+            border-bottom: 1px solid rgba(131, 225, 107, 0.32);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .nav-wrap {
+            width: min(var(--content-width), calc(100% - 2rem));
+            min-height: 82px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            min-width: max-content;
+            color: var(--cream);
+            text-decoration: none;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            color: var(--leaf-bright);
+            font-size: 1.8rem;
+            text-shadow: 0 0 16px rgba(131, 225, 107, 0.3);
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .main-nav a {
+            padding: 0.65rem 0.8rem;
+            border-radius: 999px;
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 800;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(99, 198, 83, 0.17);
+            color: var(--leaf-light);
+        }
+
+        .main-nav a[aria-current="page"] {
+            background: rgba(99, 198, 83, 0.2);
+            color: var(--leaf-light);
+        }
+
+        .main-nav .nav-highlight {
+            background: linear-gradient(120deg, var(--leaf-light), var(--leaf));
+            color: var(--forest);
+        }
+
+        .main-nav .nav-highlight:hover {
+            color: var(--forest);
+            filter: brightness(1.07);
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 0.8rem;
+            color: var(--cream);
+            background: transparent;
+            border: 1px solid rgba(184, 245, 156, 0.35);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .menu-toggle:hover {
+            color: var(--leaf-light);
+            border-color: var(--leaf-bright);
+        }
+
+        /* ========================================
+           SPRACHWAHL
+        ======================================== */
+
+        .language-switcher {
+            position: absolute;
+            z-index: 5;
+            top: 1rem;
+            right: max(1rem, calc((100vw - var(--content-width)) / 2));
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-switcher a {
+            width: 35px;
+            height: 35px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(14, 39, 24, 0.88);
+            border: 1px solid rgba(184, 245, 156, 0.28);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            transform: translateY(-2px);
+            border-color: var(--leaf-bright);
+        }
+
+        .language-switcher img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        /* ========================================
+           HERO / TITELBEREICH
+        ======================================== */
+
+        .hero {
+            min-height: 410px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 5rem 1.25rem 4.5rem;
+            background:
+                radial-gradient(ellipse at 12% 38%, rgba(99, 198, 83, 0.46), transparent 39%),
+                radial-gradient(ellipse at 43% 15%, rgba(184, 245, 156, 0.2), transparent 35%),
+                radial-gradient(ellipse at 75% 55%, rgba(40, 107, 53, 0.52), transparent 38%),
+                radial-gradient(ellipse at 90% 15%, rgba(231, 206, 121, 0.1), transparent 32%),
+                linear-gradient(110deg, rgba(23, 59, 34, 0.72), rgba(16, 31, 42, 0.65), rgba(30, 83, 39, 0.65));
+            border-bottom: 1px solid rgba(131, 225, 107, 0.48);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: -18% -10%;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at 18% 42%, rgba(99, 198, 83, 0.42), transparent 27%),
+                radial-gradient(ellipse at 40% 18%, rgba(184, 245, 156, 0.25), transparent 28%),
+                radial-gradient(ellipse at 70% 35%, rgba(40, 107, 53, 0.4), transparent 30%),
+                radial-gradient(ellipse at 85% 62%, rgba(231, 206, 121, 0.1), transparent 25%);
+            filter: blur(28px);
+            opacity: 0.95;
+            animation: aurora-drift 16s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.8px),
+                radial-gradient(circle, rgba(184,245,156,.95) 1.2px, transparent 2px),
+                radial-gradient(circle, rgba(231,206,121,.75) 1px, transparent 1.8px);
+            background-size: 97px 91px, 151px 137px, 211px 183px;
+            background-position: 12px 17px, 48px 62px, 91px 24px;
+            opacity: 0.42;
+        }
+
+        @keyframes aurora-drift {
+            from { transform: translate3d(-1.5%, -1%, 0) rotate(-8deg) scale(1.05); }
+            to { transform: translate3d(2%, 1.5%, 0) rotate(-3deg) scale(1.12); }
+        }
+
+        .hero-inner {
+            width: min(var(--content-width), 100%);
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            color: var(--leaf-light);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 1rem 0;
+            color: var(--cream);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(3.3rem, 8vw, 6rem);
+            line-height: 0.96;
+            letter-spacing: -0.035em;
+            text-shadow: 0 4px 28px rgba(5, 23, 8, 0.25);
+        }
+
+        .hero h1 span {
+            display: block;
+            margin-top: 0.25em;
+            color: var(--leaf-light);
+            font-style: italic;
+            text-shadow: 0 0 30px rgba(131, 225, 107, 0.32);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 1.25rem auto 0;
+            color: #e6f5df;
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+        }
+
+        .hero-divider {
+            width: min(220px, 55%);
+            height: 2px;
+            margin: 2rem auto 0;
+            background: linear-gradient(90deg, transparent, var(--leaf), var(--gold), var(--leaf-light), transparent);
+        }
+
+        /* ========================================
+           ALLGEMEINE ABSCHNITTE
+        ======================================== */
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 4.5rem 0;
+        }
+
+        .section-heading {
+            max-width: 780px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0.5rem 0 0.8rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            line-height: 1.05;
+        }
+
+        .section-heading p { color: var(--muted); }
+
+        /* ========================================
+           KATEGORIEKARTEN
+        ======================================== */
+
+        .category-section {
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .category-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 190px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(155deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
+            border: 1px solid rgba(131, 225, 107, 0.38);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .category-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--leaf), var(--leaf-light), transparent);
+            opacity: 0.85;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--leaf-bright);
+            box-shadow: 0 15px 35px rgba(4, 18, 8, 0.32);
+        }
+
+        .category-symbol {
+            margin-bottom: 0.55rem;
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+
+        .category-card h3 {
+            margin: 0 0 0.5rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .category-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .category-card .category-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        /* ========================================
+           REZEPTBEREICH
+        ======================================== */
+
+        .story-section { padding-top: 2rem; }
+
+        .story-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 3rem);
+            background:
+                radial-gradient(ellipse at 0% 100%, rgba(40, 107, 53, 0.28), transparent 48%),
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.13), transparent 40%),
+                linear-gradient(135deg, rgba(27, 62, 37, 0.94), rgba(16, 31, 42, 0.98));
+            border: 1px solid rgba(131, 225, 107, 0.36);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .story-card h2 {
+            margin: 0 0 1.2rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            font-weight: 600;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .story-card h3 {
+            margin: 2rem 0 0.8rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(1.7rem, 3vw, 2.2rem);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .story-card p {
+            margin: 0 0 1rem;
+            color: #e7f4e2;
+            line-height: 1.85;
+        }
+
+        .story-card p:last-child { margin-bottom: 0; }
+
+        .story-card strong { color: var(--leaf-light); }
+
+        .recipe-box {
+            margin: 1.5rem 0;
+            padding: clamp(1.2rem, 3vw, 1.8rem);
+            background:
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.12), transparent 55%),
+                rgba(13, 36, 23, 0.72);
+            border: 1px solid rgba(131, 225, 107, 0.28);
+            border-radius: 18px;
+        }
+
+        .recipe-box h4 {
+            margin: 0 0 1rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.65rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .recipe-box ul,
+        .recipe-box ol {
+            margin: 0;
+            padding-left: 1.5rem;
+            color: #e7f4e2;
+        }
+
+        .recipe-box li {
+            padding-left: 0.25rem;
+            margin-bottom: 0.65rem;
+            line-height: 1.75;
+        }
+
+        .recipe-box li:last-child { margin-bottom: 0; }
+        .recipe-box li::marker { color: var(--leaf-bright); }
+        .recipe-box p { margin: 0 0 1rem; }
+        .recipe-box p:last-child { margin-bottom: 0; }
+
+        /* ========================================
+           HINWEISE ZU HAUTVERTRÄGLICHKEIT
+        ======================================== */
+
+        .notice {
+            max-width: 1000px;
+            margin: 2rem auto 0;
+            padding: clamp(1.3rem, 3vw, 2rem);
+            background:
+                radial-gradient(ellipse at 100% 0%, rgba(99, 198, 83, 0.12), transparent 55%),
+                linear-gradient(135deg, rgba(47, 68, 34, 0.72), rgba(16, 31, 42, 0.97));
+            border: 1px solid rgba(231, 206, 121, 0.52);
+            border-left: 4px solid var(--gold);
+            border-radius: 20px;
+        }
+
+        .notice h3 {
+            margin: 0 0 0.8rem;
+            color: var(--gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .notice p {
+            margin: 0 0 0.9rem;
+            color: #e8efdf;
+            line-height: 1.8;
+        }
+
+        .notice p:last-child { margin-bottom: 0; }
+
+        /* ========================================
+           WEITERE THEMEN
+        ======================================== */
+
+        .discover-section {
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .discover-card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 190px;
+            padding: 1.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(99, 198, 83, 0.22), transparent 60%),
+                linear-gradient(150deg, rgba(37, 91, 45, 0.92), rgba(16, 31, 42, 0.98));
+            border: 1px solid rgba(131, 225, 107, 0.38);
+            border-radius: 22px;
+            box-shadow: 0 8px 28px rgba(4, 18, 8, 0.25);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .discover-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--leaf), var(--leaf-light), transparent);
+            opacity: 0.85;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--leaf-bright);
+            box-shadow: 0 16px 35px rgba(4, 18, 8, 0.32), 0 0 22px rgba(99, 198, 83, 0.12);
+        }
+
+        .discover-symbol {
+            display: block;
+            margin-bottom: 0.65rem;
+            color: var(--leaf-bright);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .discover-card h3 {
+            margin: 0 0 0.55rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .discover-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .discover-card .discover-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        /* ========================================
+           URHEBERRECHT
+        ======================================== */
+
+        .copyright {
+            position: relative;
+            z-index: 1;
+            width: min(900px, calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 0 0 1rem;
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            text-align: center;
+        }
+
+        .copyright p { margin: 0 0 0.7rem; }
+
+        .copyright .copyright-brand {
+            margin-top: 1.5rem;
+            padding-bottom: 2.5rem;
+            color: var(--leaf-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* ========================================
+           FUSSZEILE
+        ======================================== */
+
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem;
+            background: #0d2417;
+            border-top: 1px solid rgba(131, 225, 107, 0.3);
+        }
+
+        .footer-inner {
+            width: min(var(--content-width), calc(100% - 2rem));
+            margin: auto;
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover { color: var(--leaf-light); }
+
+        /* ========================================
+           TABLET
+        ======================================== */
+
+        @media (max-width: 980px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle { display: inline-flex; }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0.4rem 0 1rem;
+            }
+
+            .main-nav.open { display: flex; }
+            .main-nav a { border-radius: 12px; }
+
+            .main-nav .nav-highlight {
+                margin-top: 0.35rem;
+                text-align: center;
+            }
+
+            .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .discover-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .hero { min-height: 350px; }
+        }
+
+        /* ========================================
+           SMARTPHONES
+        ======================================== */
+
+        @media (max-width: 650px) {
+            body { font-size: 16px; }
+
+            .brand {
+                gap: 0.5rem;
+                font-size: 1.35rem;
+            }
+
+            .brand-mark { font-size: 1.55rem; }
+
+            .language-switcher {
+                top: 0.7rem;
+                right: 0.7rem;
+            }
+
+            .hero {
+                min-height: 330px;
+                padding: 5rem 1rem 3.5rem;
+            }
+
+            .hero h1 { font-size: clamp(3rem, 14vw, 4.6rem); }
+            .hero p { font-size: 1rem; }
+            .section { padding: 3rem 0; }
+
+            .category-section {
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .category-grid,
+            .discover-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 440px;
+                margin: 0 auto;
+            }
+
+            .category-card,
+            .discover-card {
+                min-height: 160px;
+                padding: 1.3rem;
+            }
+
+            .story-section { padding-top: 1.5rem; }
+
+            .story-card {
+                padding: 1.5rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .story-card p,
+            .notice p { line-height: 1.75; }
+
+            .recipe-box {
+                padding: 1.15rem 1rem;
+                border-radius: 15px;
+            }
+
+            .recipe-box li { line-height: 1.7; }
+
+            .notice {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+
+            .discover-section {
+                padding-top: 1rem;
+                padding-bottom: 3rem;
+            }
+
+            .copyright { font-size: 0.88rem; }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand { font-size: 1.15rem; }
+
+            .menu-toggle {
+                padding: 0.5rem 0.65rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 { font-size: 2.8rem; }
+
+            .story-card { padding: 1.25rem 1rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+    <div class="stars" aria-hidden="true"></div>
+
+    <!-- KOPFZEILE UND HAUPTNAVIGATION -->
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="index.html" aria-label="Lilians Kräutermagie – Startseite">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <span>Lilians Kräutermagie</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+                <span class="menu-icon" aria-hidden="true">☰</span>
+                <span class="menu-label">Menü</span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="kräuter.html">Kräuterwelt</a>
+                <a href="musik.html">Musik</a>
+                <a href="buecher.html">Bücher</a>
+                <a href="about.html">Über Mich</a>
+                <a class="nav-highlight" href="index.html#neues-buch">Neues Buch ✦</a>
+                <a href="angebote.html">Angebote für Dich</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TITELBEREICH -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="language-switcher" aria-label="Sprache wählen">
+            <a href="index.html" aria-label="Deutsch" title="Deutsch">
+                <img src="defavicon.png" alt="">
+            </a>
+            <a href="/en/" aria-label="English" title="English">
+                <img src="enfavicon.png" alt="">
+            </a>
+            <a href="/dk/" aria-label="Dansk" title="Dansk">
+                <img src="dkfavicon.png" alt="">
+            </a>
+        </div>
+
+        <div class="hero-inner">
+            <span class="eyebrow">Natürliche Pflege · Seifenrezepte · Kräuterwissen</span>
+            <h1 id="hero-title">Meine <span>Körperseifen</span></h1>
+            <p>
+                Entdecke meine Rezeptideen für selbst gemachte Seifen und
+                natürliche Pflege. Mit ausgewählten Zutaten, etwas Geduld
+                und einem achtsamen Blick auf die Bedürfnisse deiner Haut.
+            </p>
+            <div class="hero-divider" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- HAUPTINHALT -->
+    <main id="inhalt">
+
+        <!-- REZEPTKATEGORIEN -->
+        <section class="section category-section" aria-labelledby="categories-title">
+            <div class="section-heading">
+                <span class="eyebrow">Ausgewählte Zutaten · Haarpflege</span>
+                <h2 id="categories-title">Willkommen bei meinen Haarrezepten!</h2>
+                <p>
+                    Hier findest du Ideen für ein selbst gemachtes Haaröl und eine
+                    feuchtigkeitsspendende Haarkur. Wähle eine Kategorie, um direkt
+                    zum passenden Rezept zu springen.
+                </p>
+            </div>
+
+            <div class="category-grid">
+                <a class="category-card" href="#haaroel">
+                    <span class="category-symbol" aria-hidden="true">✿</span>
+                    <h3>Haaröl</h3>
+                    <p>Eine Ölrezeptur mit Leinöl, Kokosöl und getrockneten Kräutern.</p>
+                    <span class="category-link">Zum Rezept →</span>
+                </a>
+
+                <a class="category-card" href="#haarkur">
+                    <span class="category-symbol" aria-hidden="true">❋</span>
+                    <h3>Haarkur mit Honig</h3>
+                    <p>Eine einfache Mischung mit Honig und Kokosjoghurt.</p>
+                    <span class="category-link">Zur Haarkur →</span>
+                </a>
+
+                <a class="category-card" href="#hinweise">
+                    <span class="category-symbol" aria-hidden="true">✧</span>
+                    <h3>Wichtige Hinweise</h3>
+                    <p>Was du bei Zutaten, Verträglichkeit und Aufbewahrung beachten solltest.</p>
+                    <span class="category-link">Hinweise lesen →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- HAARREZEPTE -->
+        <section class="section story-section" aria-labelledby="story-title">
+            <div class="story-card">
+                <h2 id="story-title">Meine Rezepte für natürliche Haarpflege</h2>
+
+                <p>
+                    In vielen heutigen Haarprodukten stecken zahlreiche Inhaltsstoffe,
+                    die nicht zu jedem Haar passen. Je nach Rezeptur und individueller
+                    Verträglichkeit können manche Produkte das Haar trocken oder
+                    beschwert wirken lassen.
+                </p>
+
+                <p>
+                    Mit diesen Rezeptideen möchte ich allen helfen, die ihren Haaren
+                    mehr Natürlichkeit und eine Pflege mit ausgewählten Zutaten
+                    schenken möchten.
+                </p>
+
+                <p>
+                    Bitte probiere die Rezepte nur aus, wenn du die verwendeten
+                    Inhaltsstoffe verträgst. Das gilt insbesondere für Kräuter und
+                    ätherische Öle. Auch natürliche Zutaten können Reizungen oder
+                    allergische Reaktionen auslösen.
+                </p>
+
+                <p>
+                    Besonders wichtig ist mir die Qualität der Zutaten: Verwende
+                    möglichst reine Rohstoffe und achte auf die Produktangaben.
+                    Keine Zutaten mit unerwünschten Zusätzen verwenden und bei
+                    ätherischen Ölen auf Qualität sowie die vorgesehene Anwendung
+                    achten.
+                </p>
+
+                <!-- HAARÖL -->
+                <h3 id="haaroel">Haaröl für lockiges, trockenes Haar</h3>
+
+                <p>
+                    Dieses Rezept ist eine Idee für ein Haaröl mit Leinöl,
+                    Kokosöl und getrockneten Pflanzen. Bei empfindlicher Kopfhaut
+                    solltest du besonders vorsichtig sein und die Mischung zunächst
+                    nicht direkt auf gereizte oder verletzte Haut auftragen.
+                </p>
+
+                <div class="recipe-box">
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>2 Esslöffel Leinöl</li>
+                        <li>2 Esslöffel Kokosöl</li>
+                        <li>1 Esslöffel vollständig getrocknete Brennnesselblätter</li>
+                        <li>1 Esslöffel vollständig getrocknete Rosmarinblätter</li>
+                        <li>1 Esslöffel vollständig getrocknete Rosenblütenblätter</li>
+                        <li>1 Esslöffel vollständig getrocknete Lavendelblüten</li>
+                        <li>Ein sauberes, vollständig trockenes Glasgefäß mit Deckel</li>
+                    </ul>
+                </div>
+
+                <div class="recipe-box">
+                    <h4>Anleitung</h4>
+                    <ol>
+                        <li>Ein sauberes, vollständig trockenes Glasgefäß und alle Arbeitsutensilien vorbereiten.</li>
+                        <li>Leinöl und Kokosöl in ein hitzebeständiges Gefäß geben und im Wasserbad vorsichtig erwärmen, bis sich das Kokosöl verflüssigt hat. Nicht stark erhitzen.</li>
+                        <li>Die vollständig getrockneten Kräuter hinzugeben und vorsichtig umrühren.</li>
+                        <li>Die Mischung bei sehr niedriger Temperatur etwa 15–20 Minuten im Wasserbad ziehen lassen. Das Öl nicht heiß werden lassen.</li>
+                        <li>Alternativ kann das Öl mit den getrockneten Kräutern in einem verschlossenen, trockenen Gefäß an einem kühlen, dunklen Ort ziehen. Dabei das Gefäß sauber halten und regelmäßig auf Veränderungen prüfen.</li>
+                        <li>Die Kräuter durch ein sehr feines, sauberes Sieb oder ein sauberes Tuch vollständig abseihen.</li>
+                        <li>Das Öl in ein sauberes, trockenes Glasgefäß füllen, beschriften und kühl sowie lichtgeschützt aufbewahren.</li>
+                        <li>Vor der Anwendung eine kleine Menge zunächst an einer kleinen Hautstelle testen. Bei Brennen, Juckreiz oder Rötung nicht weiterverwenden.</li>
+                        <li>Für die Anwendung eine kleine Menge sparsam in Haarlängen und Spitzen verteilen. Bei guter Verträglichkeit kann eine kleine Menge auch vor der Haarwäsche verwendet werden.</li>
+                        <li>Etwa 30 Minuten einwirken lassen und anschließend mit Shampoo gründlich auswaschen. Nicht jede Kopfhaut verträgt Öl oder Kräuter gleich gut.</li>
+                    </ol>
+                </div>
+
+                <div class="recipe-box">
+                    <h4>Aufbewahrung des Haaröls</h4>
+                    <p>
+                        Da selbst gemachte Ölauszüge nicht konserviert sind, lässt sich
+                        ihre Haltbarkeit ohne Prüfung nicht zuverlässig angeben. Stelle
+                        lieber eine kleine Menge her, verwende nur vollständig trockene
+                        Kräuter und entsorge das Öl bei verändertem Geruch, Aussehen
+                        oder anderen Auffälligkeiten. Bei Unsicherheit nicht verwenden.
+                    </p>
+                </div>
+
+                <!-- HAARKUR -->
+                <h3 id="haarkur">Feuchtigkeitsspendende Haarkur mit Honig und Kokosjoghurt</h3>
+
+                <div class="recipe-box">
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>2 Esslöffel Honig</li>
+                        <li>1 Esslöffel Kokosjoghurt</li>
+                        <li>1 Teelöffel Aloe-vera-Gel (optional; nicht jedes Haar und jede Haut verträgt es)</li>
+                        <li>Etwas lauwarmes Wasser, bis eine cremige Konsistenz entsteht</li>
+                    </ul>
+                    <p>
+                        Verwende Honig aus einer vertrauenswürdigen Quelle. Honig aus
+                        dem Handel ist nicht grundsätzlich Zuckersirup; bei der Auswahl
+                        lohnt sich ein Blick auf Herkunft und Zutatenangaben.
+                    </p>
+                </div>
+
+                <div class="recipe-box">
+                    <h4>Anleitung</h4>
+                    <ol>
+                        <li>Honig, Kokosjoghurt und bei Bedarf Aloe-vera-Gel in einer sauberen Schüssel vermischen.</li>
+                        <li>Nach und nach etwas lauwarmes Wasser einrühren, bis die Mischung cremig und gut aufzutragen ist.</li>
+                        <li>Die Kur auf das feuchte, frisch gewaschene Haar auftragen. Bei empfindlicher Kopfhaut möglichst den direkten Kontakt mit der Kopfhaut vermeiden.</li>
+                        <li>Etwa 20–30 Minuten einwirken lassen.</li>
+                        <li>Anschließend gründlich mit lauwarmem Wasser ausspülen. Falls nötig, ein mildes Shampoo verwenden.</li>
+                        <li>Die Mischung frisch zubereiten und Reste entsorgen. Wegen des Joghurtanteils nicht aufbewahren.</li>
+                    </ol>
+                    <p>
+                        Wenn sich die Mischung für dein Haar zu reichhaltig anfühlt,
+                        kannst du eine kleinere Menge ausprobieren, zum Beispiel
+                        1 Esslöffel Honig und 2 Esslöffel Kokosjoghurt.
+                    </p>
+                    <p>
+                        Die Häufigkeit hängt von deinem Haar und deiner Kopfhaut ab.
+                        Beginne lieber gelegentlich statt die Kur automatisch mehrmals
+                        pro Woche anzuwenden. Bei Juckreiz, Brennen oder anderen
+                        Reaktionen die Anwendung abbrechen.
+                    </p>
+                </div>
+            </div>
+
+            <!-- HINWEISE ZU VERTRÄGLICHKEIT UND ANWENDUNG -->
+            <aside class="notice" id="hinweise" aria-labelledby="notice-title">
+                <h3 id="notice-title">Bevor du meine Haarrezepte ausprobierst</h3>
+
+                <p>
+                    Jeder Mensch und jedes Haar ist anders. Natürliche Zutaten,
+                    Kräuter und ätherische Öle können ebenfalls Reizungen oder
+                    allergische Reaktionen auslösen. Ein vorsichtiger Hauttest
+                    kann eine spätere Reaktion nicht sicher ausschließen.
+                </p>
+
+                <p>
+                    Stelle kleine Mengen her, arbeite sauber und verwende für
+                    selbst gemachte Mischungen nur saubere, trockene Gefäße.
+                    Mischungen mit Joghurt oder Wasser sollten frisch zubereitet
+                    und nicht aufbewahrt werden.
+                </p>
+
+                <p>
+                    Bei empfindlicher, gereizter oder verletzter Kopfhaut solltest
+                    du neue Mischungen besonders vorsichtig einsetzen und sie bei
+                    Beschwerden nicht weiterverwenden. Bei anhaltenden Problemen
+                    hole dir medizinischen Rat.
+                </p>
+
+                <p>
+                    <strong>Bitte beachte:</strong> Die Rezepte dienen der
+                    allgemeinen Information und ersetzen keine medizinische
+                    Beratung, Diagnose oder Behandlung. Sie sind nicht
+                    dermatologisch geprüft und nicht für jede Person geeignet.
+                </p>
+            </aside>
+        </section>
+
+        <!-- WEITERE THEMEN -->
+        <section class="section discover-section" aria-labelledby="discover-title">
+            <div class="section-heading">
+                <span class="eyebrow">Noch mehr entdecken</span>
+                <h2 id="discover-title">Tritt ein in meine Welt</h2>
+                <p>
+                    Kräuter, Musik, Bücher und neue Geschichten –
+                    entdecke die verschiedenen Seiten von Lilians Kräutermagie.
+                </p>
+            </div>
+
+            <div class="discover-grid">
+                <a class="discover-card" href="seifen.html">
+                    <span class="discover-symbol" aria-hidden="true">✿</span>
+                    <h3>Körperseifen</h3>
+                    <p>Hier findest du meine Rezeptideen für Körperseifen und natürliche Pflege.</p>
+                    <span class="discover-link">Körperseifen selber machen →</span>
+                </a>
+
+                <a class="discover-card" href="haare.html" aria-current="page">
+                    <span class="discover-symbol" aria-hidden="true">✧</span>
+                    <h3>Haarprodukte selber machen</h3>
+                    <p>Entdecke Ideen für Haarpflege mit ausgewählten Zutaten und Kräutern.</p>
+                    <span class="discover-link">Natürlichere Haarpflege entdecken →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- URHEBERRECHT -->
+        <section class="copyright" aria-label="Urheberrechtshinweise">
+            <p>Die Inhalte wurden von mir selbst erstellt und unterliegen dem Urheberrecht.</p>
+            <p>
+                Eine Vervielfältigung, Weitergabe oder Nutzung – auch auszugsweise –
+                ist ohne meine ausdrückliche schriftliche Zustimmung nicht gestattet.
+            </p>
+            <p class="copyright-brand">© Lilian's Kräuter-Magie</p>
+        </section>
+    </main>
+
+    <!-- FUSSZEILE -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                © Lilians Kräutermagie ·
+                Mit Liebe, Neugier und einer Prise Magie gestaltet.
+            </div>
+            <div class="footer-links">
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="agb.html">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT: MOBILES MENÜ -->
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector("#main-nav");
+        const menuIcon = document.querySelector(".menu-icon");
+        const menuLabel = document.querySelector(".menu-label");
+
+        function closeMenu() {
+            mainNav.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuIcon.textContent = "☰";
+            menuLabel.textContent = "Menü";
+        }
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuIcon.textContent = isOpen ? "✕" : "☰";
+            menuLabel.textContent = isOpen ? "Schließen" : "Menü";
+        });
+
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
